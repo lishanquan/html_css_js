@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>表格</title>
+</head>
+<body>
+    <table>
+        <!--table row-->
+        <tr>
+            <!--table data cell-->
+            <td>单元格1</td>
+            <td>单元格2</td>
+        </tr>
+        <tr>
+            <td>单元格3</td>
+            <td>单元格4</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table>
+        <caption>考试成绩表</caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>语文</th>
+                <th>英语</th>
+                <th>数学</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>小明</td>
+                <td>80</td>
+                <td>80</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>小红</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>小杰</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>平均</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+
+    <!--合并行rowspan-->
+    <table>
+        <!--第一行-->
+        <tr>
+            <td>姓名：</td>
+            <td>小明</td>
+        </tr>
+        <!--第二行-->
+        <tr>
+            <td rowspan="2">喜欢水果：</td>
+            <td>苹果</td>
+        </tr>
+        <!--第三行-->
+        <tr>
+            <td>香蕉</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <!--列合并colspan-->
+    <table>
+        <tr>
+            <td colspan="2">绿叶学习网精品教程</td>
+        </tr>
+        <tr>
+            <td>HTML教程</td>
+            <td>CSS教程</td>
+        </tr>
+        <tr>
+            <td>jQuery教程</td>
+            <td>SEO教程</td>
+        </tr>
+    </table>
+
+</body>
