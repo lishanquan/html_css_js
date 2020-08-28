@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CSS内边距padding属性</title>
+	<!--
+		“padding:20px;”表示四个方向的内边距都是20px；
+		“padding:20px 40px;”表示padding-top和padding-bottom为20px，padding-right和padding-left为40px。
+		“padding:20px 40px 60px 80px;”表示padding-top为20px，padding-right为40px，padding-bottom为60px，padding-left为80px。大家按照顺时针方向记忆就可以了。
+	-->
+	<style type="text/css">
+		#main{
+			display: inline-block;/*将块元素转换为inline-block元素*/
+			border: 1px solid #CCCCCC;
+		}
+		.c1{
+			display: inline-block;/*将块元素转换为inline-block元素*/
+			padding: 40px 80px;
+			margin: 40px;
+			border: 1px solid red;
+		}
+		span{
+			border: 1px solid blue;
+			background-color: #C5FCDF;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div class="c1"><span>Hello, CSS Box Model.</span></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CSS内边距margin属性</title>
+	<!--
+		“margin:20px;”表示四个方向的外边距都是20px；
+		“margin:20px 40px;”表示margin-top和margin-bottom为20px，margin-right和margin-left为40px。
+		“margin:20px 40px 60px 80px;”表示margin-top为20px，margin-right为40px，margin-bottom为60px，margin-left为80px。大家按照顺时针方向记忆就可以了。
+	-->
+	<style type="text/css">
+		#main{
+            display:inline-block;/*将块元素转换为inline-block元素*/
+            border:1px solid #CCCCCC;
+        }
+        .c1
+        {
+            display:inline-block; /*将块元素转换为inline-block元素*/
+            padding:20px;
+            margin:40px 80px;
+            border:1px solid red;
+            background-color:#FCE9B8;
+        }
+        span{border:1px solid blue;background-color:#C5FCDF;}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div class="c1"><span>Hello, CSS Box Model.</span></div>
+	</div>
+</body>
+</html>

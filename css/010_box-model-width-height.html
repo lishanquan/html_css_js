@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>宽度width和高度height</title>
+	<!--
+		只有块元素能设置width和height，行内元素无法设置width和height。
+		div元素是块元素，span是行内元素。因此div元素可以设置宽度width和高度height，而span元素无法设置宽度width和高度height。
+	-->
+	<style type="text/css">
+		#main div{
+			width: 100px;
+			height: 30px;
+			border: 1px solid red;
+		}
+		#main span{
+			width: 100px;	
+			height: 30px;
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div></div>
+		<span></span>
+	</div>
+</body>
+</html>

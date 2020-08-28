@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CSS盒子模型</title>
+	<!--
+		可以在caption元素或者table元素中设置，效果是一样的。但是一般情况下我们都在caption元素中设置。
+	-->
+	<style type="text/css">
+		#main{
+			display: inline-block;/*将块元素转换为inline-block元素*/
+			border: 1px solid #CCCCCC;
+		}
+		.c1{
+			display: inline-block;/*将块元素转换为inline-block元素*/
+			padding: 20px;
+			margin: 40px;
+			border: 1px solid red;
+			background-color: #FCE9B8;
+		}
+		span{
+			border: 1px solid blue;
+			background-color: #C5FCDF;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div class="c1">
+			<span>Hello, CSS Box Model.</span>
+		</div>
+	</div>
+</body>
+</html>
