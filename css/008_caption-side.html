@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>caption-side属性</title>
+	<!--
+		可以在caption元素或者table元素中设置，效果是一样的。但是一般情况下我们都在caption元素中设置。
+	-->
+	<style type="text/css">
+		table,th,td{border: 1px solid grey;}
+		caption{caption-side: bottom;}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>表格标题</caption>
+		<!--表头-->
+		<thead>
+			<tr>
+				<th>表头单元格1</th>
+				<th>表头单元格2</th>
+			</tr>
+		</thead>
+		<!--表身-->
+		<tbody>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+		</tbody>
+		<!--表脚-->
+		<tfoot>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>

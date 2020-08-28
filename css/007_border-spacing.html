@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>border-spacing属性</title>
+	<!--
+		该属性指定单元格边界之间的距离。当只指定了1个像素值时，这个值将作用于横向和纵向上的间距；当指定了2个length值时，第1个作用于横向间距，第2个作用于纵向间距。
+	-->
+	<style type="text/css">
+		table,th,td{border: 1px solid grey;}
+		table{border-spacing: 5px 10px;}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>表格标题</caption>
+		<!--表头-->
+		<thead>
+			<tr>
+				<th>表头单元格1</th>
+				<th>表头单元格2</th>
+			</tr>
+		</thead>
+		<!--表身-->
+		<tbody>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+		</tbody>
+		<!--表脚-->
+		<tfoot>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>

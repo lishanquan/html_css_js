@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>border-collapse属性</title>
+	<!--
+		border-collapse属性值：
+		separate：默认值，边框分开，不合并
+		collapse：边框合并，如果相邻，则共用一个边框
+		只需要在table元素中设置border-collapse属性值就行，没必要在th、td这些元素也设置，造成代码冗余。
+	-->
+	<style type="text/css">
+		table,th,td{border: 1px solid grey;}
+		table{border-collapse: collapse;}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>表格标题</caption>
+		<!--表头-->
+		<thead>
+			<tr>
+				<th>表头单元格1</th>
+				<th>表头单元格2</th>
+			</tr>
+		</thead>
+		<!--表身-->
+		<tbody>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+		</tbody>
+		<!--表脚-->
+		<tfoot>
+			<tr>
+				<td>标准单元格1</td>
+				<td>标准单元格2</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>
