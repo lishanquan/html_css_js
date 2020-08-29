@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CSS相对定位absolute属性</title>
+	<!--
+		默认情况下，固定定位元素和绝对定位元素的位置是相对于浏览器而言，而相对定位元素的位置是相对原始位置而言。
+    -->
+	<style type="text/css">
+		#father{
+            padding: 15px;
+            border: 1px solid silver;
+            background-color: #0C6A9D;
+        }
+        #father div{
+            padding: 10px;
+            border: 1px dashed red;
+            background-color: #FCD568;
+        }
+        #son2{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+	</style>
+</head>
+<body>
+    <div id="father">
+        <div id="son1">box1</div>
+		<div id="son2">box2</div>
+		<div id="son3">box3</div>
+    </div>
+</body>
+</html>

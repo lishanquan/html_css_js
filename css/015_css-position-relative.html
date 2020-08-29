@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CSS相对定位relative属性</title>
+	<!--
+		默认情况下，CSS相对定位元素的位置是相对于原始位置而言，而CSS固定定位元素的位置是相对浏览器而言！
+    -->
+	<style type="text/css">
+		#father{
+            margin-top: 30px;
+            margin-left: 30px;
+            border: 1px solid silver;
+            background-color: #B7F1FF;
+        }
+        #father div{
+            width: 100px;
+            height: 60px;
+            margin: 10px;
+            border: 1px solid silver;
+            background-color: #FA16C9;
+        }
+        #son2{
+            position: relative;
+            top: 20px;
+            left: 40px;
+        }
+	</style>
+</head>
+<body>
+    <div id="father">
+        <div id="son1">第1个无定位的div元素</div>
+		<div id="son2">相对定位的div元素</div>
+		<div id="son3">第2个无定位的div元素</div>
+    </div>
+</body>
+</html>

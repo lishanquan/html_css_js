@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CSS固定定位fixed属性</title>
+	<!--
+		默认情况下，CSS相对定位元素的位置是相对于原始位置而言，而CSS固定定位元素的位置是相对浏览器而言！
+    -->
+	<style type="text/css">
+		#first{
+            width: 120px;
+            height: 600px;
+            border: 1px solid grey;
+            background-color: #B7F1FF;
+        }
+        #second{
+            position: fixed;
+            top: 30px;
+            left: 160px;
+            width: 60px;
+            height: 60px;
+            border: 1px solid silver;
+            background-color: #FA16C9;
+        }
+	</style>
+</head>
+<body>
+    <div id="first">无定位的div元素</div>
+    <div id="second">固定定位的div元素</div>
+</body>
+</html>
