@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        var n = 5;
+        window.onload = function(){
+            var t = setInterval("countDown()", 1000);
+        }
+        function countDown(){
+            if(n > 0){
+                n--;
+                document.getElementById("num").innerHTML = n;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>倒计时：<span id="num">5</span></p>
+</body>
+</html>
