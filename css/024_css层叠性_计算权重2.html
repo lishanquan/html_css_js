@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        第一个样式和第二个样式的权重相同。但第二个样式的书写顺序靠后，因此以第二个样式为准（就近原则）。
+    -->
+    <style type="text/css">
+        /*权重：1,1,1*/
+        #d1 .c2 p{
+            color: red;
+        }
+        /*权重：1,1,1*/
+        #d2 div .pp{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1" id="d1">
+        <div class="c2" id="d2">
+            <div class="c3" id="d3">
+                <p class="pp">猜猜看是什么颜色?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

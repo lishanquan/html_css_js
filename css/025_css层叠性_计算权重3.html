@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        第二个样式比第一个样式的权重要大。因此在实战中可以实现这种效果：所有人当中，让某一个人为红，让其他所有人为蓝。
+        为了达到这种效果，即为了防止权重不够，比较稳妥的做法是：把第二个样式表照着第一个样式表来写，在此基础上，给第二个样式表再加一个权重。
+    -->
+    <style type="text/css">
+        .c1 ul li{
+            color: blue;
+        }
+        .c1 ul li.l1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">
+        <ul>
+            <li class="l1">文字</li>
+            <li>文字</li>
+            <li>文字</li>
+            <li>文字</li>
+            <li>文字</li>
+            <li>文字</li>
+            <li>文字</li>
+            <li>文字</li>
+        </ul>
+    </div>
+</body>
+</html>

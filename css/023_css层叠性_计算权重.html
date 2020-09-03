@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        统计各个选择器的数量，优先级高的胜出。文字的颜色为红色。
+    -->
+    <style type="text/css">
+        /*权重：1,1,1*/
+        #d1 .c2 p{
+            color: red;
+        }
+        /*权重：1,0,3*/
+        div div #d3 p{
+            color: green;
+        }
+        /*权重：0,3,4*/
+        div.c1 div.c2 div.c3 p{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1" id="d1">
+        <div class="c2" id="d2">
+            <div class="c3" id="d3">
+                <p>猜猜看是什么颜色?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
