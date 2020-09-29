@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        行内元素和块级元素的相互转换：
+        我们可以通过display属性将块级元素和行内元素进行相互转换。display即“显示模式”。
+
+        块级元素可以转换为行内元素：
+        给一个块级元素（比如div）设置：display: inline;
+        那么，这个标签将立即变为行内元素，此时它和一个span无异。inline就是“行内”。
+        也就是说：
+        1.此时这个div不能设置宽度、高度；
+        2.此时这个div可以和别人并排了。
+        
+    -->
+    <style type="text/css">
+        div{
+            display: inline;
+            background-color: pink;
+            width: 500px;
+            height: 80px;
+        }
+        h1{
+            display: inline;
+            background-color: red;
+            width: 500px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div>我是div 1</div>
+    <div>我是div 2</div>
+
+    <h1>我是大标题</h1>
+</body>
+</html>

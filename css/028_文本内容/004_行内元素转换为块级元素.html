@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        行内元素和块级元素的相互转换：
+        我们可以通过display属性将块级元素和行内元素进行相互转换。display即“显示模式”。
+
+        行内元素转换为块级元素：
+        同样的道理，一旦给一个行内元素（比如span）设置：display: block;
+        那么，这个标签将立即变为块级元素，此时它与一个div无异。block是“块”的意思。
+        也就是说：
+        1.此时，这个span可以设置宽度、高度；
+        2.此时，这个span必须霸占一行了，其它元素无法与它并排；
+        3.如果不设置宽度，将占满整行
+        
+    -->
+    <style type="text/css">
+        span{
+            display: block;
+            background-color: pink;
+            /* width: 500px;
+            height: 80px; */
+        }
+    </style>
+</head>
+<body>
+    <span>我是span 1</span>
+    <span>我是span 2</span>
+</body>
+</html>

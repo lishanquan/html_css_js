@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        浮动的性质1：浮动的元素脱标。
+        一旦设置为浮动之后，即使不转换为块级元素，行内元素也能设置宽度、高度。
+
+        浮动的性质2：浮动的元素互相贴靠。
+
+        浮动的性质3：浮动的元素有“字围”效果。
+        标准流中的文字不会被浮动的盒子遮挡住。（文字就像水一样）
+
+        一个原则：永远不是一个东西单独浮动，浮动都是一起浮动，要浮动，大家都浮动。
+
+        浮动的性质4：收缩
+        一个浮动的元素，如果没有设置width，那么将自动收缩为内容的宽度（这点非常像行内元素）。
+        
+    -->
+    <style type="text/css">
+        span{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <span>湖人总冠军</span>
+</body>
+</html>
