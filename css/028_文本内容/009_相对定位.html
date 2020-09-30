@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        相对定位：
+        让元素相对于自己原来的位置，进行位置调整（可用于盒子的位置微调）。
+        背景属性中：background-position: 向右偏移量 向下偏移量;
+        定位属性中：
+        position: relative; 
+        left: 50px; 
+        top: 50px;
+    -->
+    <style type="text/css">
+        body{
+            margin: 0px;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        .div2{
+            position: relative;
+            left: 50px;
+            top: 50px;
+
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">湖人</div>
+    <div class="div2">总冠军</div>
+</body>
+</html>
