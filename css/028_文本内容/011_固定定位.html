@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        固定定位：
+        相对浏览器窗口进行定位。无论页面如何滚动，这个盒子显示的位置不变。
+        
+        用途1：网页右下角的“返回到顶部”
+
+        用途2：顶部导航条
+        需要注意的是，假设顶部导航条的高度是60px，那么，为了防止其他的内容被导航条覆盖，我们要给body标签设置60px的padding-top。
+        顶部导航条的实现如下：
+
+
+        z-index属性：
+        有如下特性：
+        （1）属性值大的位于上层，属性值小的位于下层。
+        （2）z-index值没有单位，就是一个正整数。默认的z-index值是0。
+        （3）如果大家都没有z-index值，或者z-index值一样，那么在HTML代码里写在后面，谁就在上面能压住别人。定位了的元素，永远能够压住没有定位的元素。
+        （4）只有定位了的元素，才能有z-index值。也就是说，不管相对定位、绝对定位、固定定位，都可以使用z-index值。而浮动的元素不能用。
+        （5）从父现象：父亲怂了，儿子再牛逼也没用。意思是，如果父亲1比父亲2大，那么，即使儿子1比儿子2小，儿子1也能在最上层。
+    -->
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /*为什么要写这个？*/
+			/*不希望我们的页面被nav挡住*/
+			padding-top: 60px;
+			/*IE6不兼容固定定位，所以这个padding没有什么用，就去掉就行了*/
+			_padding-top: 0;
+        }
+        .nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #333;
+            z-index: 99999999;
+        }
+        .inner_c{
+            width: 1000px;
+            height: 60px;
+            margin: 0 auto;
+        }
+        .inner_c ul{
+            list-style: none;
+        }
+        .inner_c ul li{
+            float: left;
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .inner_c ul li a{
+            display: block;
+            width: 100px;
+            height: 60px;
+            color: white;
+            text-decoration: none;
+        }
+        .inner_c ul li a:hover{
+            background-color: gold;
+        }
+        p{
+            font-size: 30px;
+        }
+        .btn{
+			display: block;
+			width: 120px;
+			height: 30px;
+			background-color: orange;
+			position: relative;
+			top: 2px;
+			left: 1px;
+		}
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="inner_c">
+            <ul>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+                <li><a href="#">网页栏目</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

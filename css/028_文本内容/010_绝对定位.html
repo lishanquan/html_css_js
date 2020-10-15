@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        绝对定位：
+        定义横纵坐标。原点在父容器的左上角或左下角。横坐标用left表示，纵坐标用top表示或者bottom表示。
+        格式举例如下：
+        position: absolute;  /*绝对定位*/
+        left: 10px;  /*横坐标*/
+        top/bottom: 20px;  /*纵坐标*/
+
+        绝对定位的盒子脱离了标准文档流。
+        所以，所有的标准文档流的性质，绝对定位之后都不遵守了。
+        绝对定位之后，标签就不区分所谓的行内元素、块级元素了，不需要display:block就可以设置宽、高了。
+
+        绝对定位的参考点：
+        1）如果用top描述，那么参考点就是页面的左上角，而不是浏览器的左上角；
+        2）如果用bottom描述，那么参考点就是浏览器首屏窗口尺寸，对应的页面的左下角；
+
+        以盒子为参考点：
+        一个绝对定位的元素，如果父辈元素中也出现了已定位（无论是绝对定位、相对定位、还是固定定位）的元素，那么将以父辈这个元素，作为参考点。
+
+        让绝对定位中的盒子在父亲里居中:
+        left:50%; margin-left:父的宽度的一半
+    -->
+    <style type="text/css">
+        .box{
+            margin: 100px;
+            width: 308px;
+            height: 307px;
+            border: 1px solid #FF7E00;
+            position: relative; /*父绝子相*/
+        }
+        .box .image img{
+            width: 308px;
+            height: 196px;
+        }
+        .box .dtc{
+            display: block; /*转为块级元素，才能设置span的宽高*/
+            width: 52px;
+            height: 28px;
+            background-image: url(http://img.smyhvae.com/20180116_1115.png);
+            background-position: -108px 0px; /*这里用到了精灵图*/
+            position: absolute;
+            top: -9px;
+            left: 13px;
+        }
+        .box h4{
+            background-color: black;
+            color: white;
+            width: 308px;
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            top: 156px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="dtc"></span>
+        <div class="image">
+            <img src="http://img.smyhvae.com/20180116_1116.jpg" alt="">
+        </div>
+        <h4>广东深圳宝安海雅缤纷城4楼</h4>
+    </div>
+</body>
+</html>
