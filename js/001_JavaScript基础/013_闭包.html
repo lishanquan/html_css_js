@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!--
+        闭包（closure）：指有权访问另一个函数作用域中变量的函数。
+        可以把闭包理解成是一种现象。具体解释如下。
+        简单理解就是：如果这个作用域可以访问另外一个函数内部的局部变量，那就产生了闭包（此时，你可以把闭包理解成是一种现象）；
+        而另外那个作用域所在的函数称之为闭包函数。注意，这里强调的是访问局部变量。        
+    -->
+    <script>
+        function fn1() {
+            let a = 10;
+
+            function fn2() {
+                console.log(a);
+            }
+
+            fn2();
+        }
+
+        fn1();
+    </script>
+
+    <!--
+        闭包的作用：延伸变量的作用范围
+    -->
+    <script>
+        function fn3() {
+            let a = 20;
+
+            function fn4() {
+                console.log(a);
+            }
+            return fn4;
+        }
+
+        const foo = fn3(); // 执行 fn3() 之后，会得到一个返回值。foo 代表的就是 fn4 函数
+        foo();
+    </script>
+    <!--
+        一般来说，在 fn3 函数执行完毕后，它里面的变量 a 会立即销毁。但此时由于产生了闭包，所以 fn3 函数中的变量 a 不会立即销毁，因为 fn4 函数还要继续调用变量 a。只有等所有函数把变量 a 调用完了，变量 a 才会销毁。
+        而且，可以看出， 在执行 foo()语句之后，竟然能够打印出 20，这就完美通过闭包实现了：全局作用局成功访问到了局部作用域中的变量 a。
+        因此，我们可以看出，闭包的主要作用就是：延伸了变量的作用范围。
+        上面的代码也可以简写成：
+    -->
+    <script>
+        function fn5() {
+            let a = 30;
+
+            return function() {
+                console.log(a);
+            };
+        }
+
+        const foo2 = fn5(); // 执行 fn5() 之后，会得到一个返回值。这个返回值是函数
+        foo2();
+    </script>
+</body>
+</html>
