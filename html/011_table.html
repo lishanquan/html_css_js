@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>表格</title>
+    <!--
+      在HTML中，表格一般都会有一个标题，我们可以使用caption标签来实现。
+      一个表格只能有一个标题，也就是只能有一个caption标签。在默认情况下，标题都是位于整个表格内的第一行。
+
+      在HTML中，单元格其实有两种：表头单元格，使用th标签；表行单元格，使用td标签。
+      th，指的是table header cell（表头单元格）。td，指的是table data cell（表行单元格）。
+    -->
+    <!--这里为了效果明显，使用CSS为表格加上边框-->
+    <style>
+      table,tr,th,td{border: 1px solid silver;}
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>考试成绩表</caption>
+      <tr>
+        <th>姓名</th>
+        <th>语文</th>
+        <th>英语</th>
+        <th>数学</th>
+      </tr>
+      <tr>
+        <td>小明</td>
+        <td>80</td>
+        <td>80</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>小红</td>
+        <td>90</td>
+        <td>90</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>小杰</td>
+        <td>100</td>
+        <td>100</td>
+        <td>100</td>
+      </tr>
+    </table>
+  </body>
+</html>
