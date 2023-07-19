@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>表格</title>
+    <!--
+      在HTML中，表格一般都会有一个标题，我们可以使用caption标签来实现。
+      一个表格只能有一个标题，也就是只能有一个caption标签。在默认情况下，标题都是位于整个表格内的第一行。
+
+      在HTML中，单元格其实有两种：表头单元格，使用th标签；表行单元格，使用td标签。
+      th，指的是table header cell（表头单元格）。td，指的是table data cell（表行单元格）。
+
+      一个完整的表格包含：table、caption、tr、th、td。为了更深一步地对表格进行语义化，HTML引入了thead、tbody和tfoot标签。
+      thead、tbody和tfoot把表格划分为3部分：表头、表身、表脚。有了这些标签，表格语义更加良好，结构更加清晰，也更具有可读性和可维护性。
+
+      分析：
+      表脚（tfoot）往往用于统计数据的。对于thead、tbody和tfoot标签，不一定全部都上，例如tfoot就很少用。一般情况下，我们都是根据实际需要来使用这些标签。
+      thead、tbody和tfoot标签也是表格中非常重要的标签，它从语义上区分了表头、表身和表脚，很多人容易忽略它们。
+      此外，thead、tbody和tfoot除了使得代码更具有语义之外，还有另外一个重要作用：方便分块来控制表格的CSS样式。
+    -->
+    <!--这里为了效果明显，使用CSS为表格加上边框-->
+    <style>
+      table,tr,th,td{border: 1px solid silver;}
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>考试成绩表</caption>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>语文</th>
+          <th>英语</th>
+          <th>数学</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>小明</td>
+          <td>80</td>
+          <td>80</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>小红</td>
+          <td>90</td>
+          <td>90</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>小杰</td>
+          <td>100</td>
+          <td>100</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>平均</td>
+          <td>90</td>
+          <td>90</td>
+          <td>90</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

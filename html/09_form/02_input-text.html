@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8"/>
+    <title>input - text</title>
+    <!--
+      单行文本框常用属性
+      属性	       说明
+      value	      设置文本框的默认值，也就是默认情况下文本框，如果没有设置，就是空白
+      size	      设置文本框的长度，不过在实际开发中，我们一般不会用到这个属性，而是使用CSS来控制。
+      maxlength	  设置文本框中最多可以输入的字符数
+
+      对于元素属性的定义，是没有先后顺序的，你可以将value定义在前面，也可以定义在后面，都无所谓。
+    -->
+  </head>
+  <body>
+    <form method="post">
+      姓名：<input type="text" size="10"/><br>
+      姓名：<input type="text" size="20" maxlength="15"/>
+    </form>
+  </body>
+</html>

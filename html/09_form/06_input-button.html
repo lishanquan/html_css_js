@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8"/>
+    <title>input - button</title>
+    <!--
+      3种按钮虽然从外观上看起来是一样的，但是实际功能却是不一样的。最后，我们总结一下普通按钮、提交按钮以及重置按钮的区别。
+      （1）普通按钮一般情况下都是配合JavaScript来进行各种操作的。
+      （2）提交按钮一般都是用来给服务器提交数据的。
+      （3）重置按钮一般用来清除用户在表单中输入的内容。(要注意一点：重置按钮只能清空它“所在form标签”内表单中的内容，对于当前所在form标签之外的表单清除是无效的。)
+
+      其实还有一种按钮是使用button标签来实现的。
+      <button></button>
+      在实际开发中，比较少用到button标签
+    -->
+    <script>
+      window.onload = function() {
+        var oBtn = document.getElementsByTagName("input");
+        oBtn[0].onclick = function() {
+          alert("I ❤ HTML!");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form method="post">
+      <input type="button" value="表白" />
+      <input type="submit" value="按钮" />
+      <input type="reset" value="按钮" />
+    </form>
+  </body>
+</html>

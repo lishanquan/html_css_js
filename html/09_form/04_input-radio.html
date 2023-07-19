@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8"/>
+    <title>input - radio</title>
+    <!--
+      checked 等价于 checked="checked"
+
+      必须要加上name属性（否则会出现同时选中两个选项的情况），
+      而且同一页面不同组单选框的name不能相同（否则会出现两组选项之间互斥的情况）
+
+      为了更好地语义化，表单元素与后面的文本一般都需要借助label标签关联起来。
+
+      对于单选框，加上value和没加上好像没啥区别啊？为啥还要加上呢？
+      一般情况下，value属性取值跟后面的文本是相同的。
+      之所以加上value属性，是为了方便JavaScript或者服务器操作数据用的。实际上，所有表单元素的value属性的作用都是一样的。
+    -->
+  </head>
+  <body>
+    <form method="post">
+      性别：
+      <label><input type="radio" name="gender" value="男" />男</label>
+      <label><input type="radio" name="gender" value="女" />女</label><br />
+      年龄：
+      <label><input type="radio" name="age" value="80后" />80后</label>
+      <label><input type="radio" name="age" value="90后" />90后</label>
+      <label><input type="radio" name="age" value="00后" />00后</label>
+    </form>
+  </body>
+</html>
