@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>font-family</title>
+    <!--
+      font-family可以指定多种字体。使用多个字体时，将按从左到右的顺序排列，并且以英文逗号（,）隔开。
+      如果我们不定义font-family，浏览器默认字体类型一般是“宋体”。
+
+      对于font-family属性，如果字体类型只有一个英文单词，则不需要加上双引号；
+      如果字体类型是多个英文单词或者中文的，则需要加上双引号。
+      注意，这里的双引号是英文双引号，而不是中文双引号。
+
+      p{font-family:Arial,Verdana,Georgia;}
+      这一句的意思是：p元素优先使用“Aria字体”来显示，如果你的电脑没有装“Arial字体”，那就接着考虑“Verdana字体”。
+      如果你的电脑还是没有装“Verdana字体”，那就接着考虑“Georgia字体”……以此类推。
+      如果Arial、Verdana、Georgia字体都没有安装，那么p元素就会以默认字体（即宋体）来显示。
+
+      在实际开发中，比较美观的中文字体有微软雅黑、苹方，英文字体有Times New Roman 、Arial和Verdana（这个技巧对实际开发很重要）。
+    -->
+    <style type="text/css">
+      #div1 {font-family: Arial;}
+      #div2 {font-family: "Times New Roman";}
+      #div3 {font-family: "微软雅黑";}
+    </style>
+</head>
+<body>
+  <div id="div1">Arial</div>
+  <div id="div2">Times New Roman</div>
+  <div id="div3">微软雅黑</div>
+</body>
+</html>

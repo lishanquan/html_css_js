@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>群组选择器</title>
+    <!--
+      对于群组选择器，两个选择器之间必须要用英文逗号（,）隔开，不然群组选择器就无法生效。
+
+      h3,div,p,span{……}表示选中所有的h3元素、div元素、p元素和span元素。
+
+      #sz,.lv,span{……}表示选中id为sz的元素、class为lv的元素以及所有的span元素。
+    -->
+    <style type="text/css">
+      #sz, .lv, span {color: red;}
+    </style>
+</head>
+<body>
+  <div>中国深圳</div>
+  <p id="sz">中国深圳</p>
+  <span>中国深圳</span>
+  <div class="lv">中国深圳</div>
+</body>
+</html>

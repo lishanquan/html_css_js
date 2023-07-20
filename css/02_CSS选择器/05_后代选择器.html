@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>后代选择器</title>
+    <!--
+      父元素和后代元素必须要用空格隔开，从而表示选中某个元素内部的后代元素。
+    -->
+    <style type="text/css">
+      #father1 div {color: red;}
+      #father2 span {color: blue;}
+    </style>
+</head>
+<body>
+  <div id="father1">
+    <div>中国深圳</div>
+    <div>中国深圳</div>
+  </div>
+  <div id="father2">
+    <p>中国深圳</p>
+    <p>中国深圳</p>
+    <span>中国深圳</span>
+  </div>
+</body>
+</html>

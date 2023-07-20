@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>link</title>
+    <!--
+      想要在一个页面引入CSS，共有以下3种方式。
+      （1）外部样式表
+      （2）内部样式表
+      （3）行内样式表
+
+      外部样式表是最理想的CSS引入方式。
+      在实际开发中，为了提升网站的性能速度和可维护性，一般都是使用外部样式表。
+      所谓的外部样式表，指的是把CSS代码和HTML代码都单独放在不同文件中，然后在HTML文档中使用link标签来引用CSS样式表。
+
+      内部样式表，指的是把HTML代码和CSS代码放到同一个HTML文件中。
+      type="text/css"是必须添加的，表示这是标准的CSS。
+      CSS样式必须在style标签内定义，而style标签是放在head标签内的。
+
+      行内样式表跟内部样式表类似，也是把HTML代码和CSS代码放到同一个HTML文件。
+      但是两者有着本质的区别：内部样式表的CSS是在“style标签”内定义的，而行内样式表的CSS是在“标签的style属性”中定义的。
+
+      1、不是说CSS有4种引入方式吗？还有一种是@import方式。
+      @import方式跟外部样式表很相似。不过在实际开发中，我们极少使用@import方式，而更倾向于使用link方式（外部样式）。
+      原因在于@import方式会先加载HTML后加载CSS，而link是先加载CSS后加载HTML。
+      如果HTML在CSS之前加载，页面用户体验就会非常差。因此对于@import这种方式，我们不需要去了解。
+    -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<body>
+</body>
+</html>
