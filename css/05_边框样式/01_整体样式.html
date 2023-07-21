@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>整体样式</title>
+    <style type="text/css">
+      /*
+        边框样式属性
+        属性	           说明
+        border-width	  边框的宽度，取值是一个像素值。
+        border-style	  边框的外观
+        border-color	  边框的颜色，取值可以是“关键字”或“16进制RGB值”。
+        想要为一个元素定义边框样式，必须要同时设置border-width、border-style、border-color属性才会有效果。
+
+        border-style常用取值如下所示:
+        属性值	   说明
+        none	    无样式
+        dashed	  虚线
+        solid	    实线
+
+        简写：
+        想要为一个元素定义边框，我们需要完整地给出border-width、border-style和border-color。
+        这种写法代码量过多，很费时费力。不过CSS为我们提供了一种简写形式：
+        border: 1px solid red;
+        上面代码其实等价于：
+        border-width: 1px;
+        border-style: solid;
+        border-color: red;
+      */
+      /* 定义所有div样式 */
+      div {
+        width: 100px;
+        height: 30px;
+      }
+      /* 定义单独div样式 */
+      #div1 {
+        border-width: 1px;
+        border-style: dashed;
+        border-color: red;
+      }
+      #div2 {
+        border-width: 1px;
+        border-style: solid;
+        border-color: green;
+      }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>

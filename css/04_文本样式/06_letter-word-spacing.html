@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>letter-spacing & word-spacing</title>
+    <style type="text/css">
+      /* 
+      在CSS中，我们可以使用letter-spacing属性来定义两个字之间的距离。
+      letter-spacing，从英文意思上就可以知道这是“字母间距”。注意，每一个中文汉字都被当做一个“字”，而每一个英文字母也当做一个“字”。
+
+      word-spacing属性来定义两个单词之间的距离。
+      word-spacing，从英文意思上就可以知道这是“单词间距”。一般来说，word-spacing只针对英文单词而言。
+
+      在实际开发中，对于中文网页来说，我们很少去定义字间距以及词间距这些东西。
+      letter-spacing和word-spacing只会用于英文网页，这两个平常我们几乎用不上，因此只需简单了解即可。
+      */
+      #p1 {
+        letter-spacing: 0px;
+      }
+      #p2 {
+        letter-spacing: 3px;
+      }
+      #p3 {
+        letter-spacing: 5px;
+      }
+      #p4 {
+        word-spacing: 0px;
+      }
+      #p5 {
+        word-spacing: 3px;
+      }
+      #p6 {
+        word-spacing: 5px;
+      }
+    </style>
+</head>
+<body>
+  <p id="p1">Rome was't built in a day.罗马不是一天建成的。</p><hr/>
+  <p id="p2">Rome was't built in a day.罗马不是一天建成的。</p><hr/>
+  <p id="p3">Rome was't built in a day.罗马不是一天建成的。</p><hr/>
+  <p id="p4">Rome was't built in a day.罗马不是一天建成的。</p><hr/>
+  <p id="p5">Rome was't built in a day.罗马不是一天建成的。</p><hr/>
+  <p id="p6">Rome was't built in a day.罗马不是一天建成的。</p>
+</body>
+</html>

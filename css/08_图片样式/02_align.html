@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>text-align</title>
+    <style type="text/css">
+      /*
+        在CSS中，我们可以使用text-align属性来定义图片水平对齐方式。
+        语法：text-align: 取值;
+        说明：text-align属性取值有3个，如下所示:
+        属性值	  说明
+        left	  左对齐（默认值）
+        center	居中对齐
+        right	  右对齐
+
+        text-align属性一般只用于两个地方：文本水平对齐和图片水平对齐。
+
+
+      */
+      div {
+        width: 300px;
+        height: 80px;
+        border: 1px solid silver;
+      }
+      img {
+        width: 60px;
+        height: 60px;
+      }
+      .div1 {text-align: left;}
+      .div2 {text-align: center;}
+      .div3 {text-align: right;}
+    </style>
+</head>
+<body>
+  <div class="div1">
+    <img src="../00_img/girl.png" alt="卡通女孩" />
+  </div>
+  <div class="div2">
+    <img src="../00_img/girl.png" alt="卡通女孩" />
+  </div>
+  <div class="div3">
+    <img src="../00_img/girl.png" alt="卡通女孩" />
+  </div>
+</body>
+</html>
