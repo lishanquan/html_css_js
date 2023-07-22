@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>vertical-align</title>
+    <style type="text/css">
+      /*
+        在CSS中，我们可以使用vertical-align来定义图片的垂直对齐方式。
+        语法：vertical-align: 取值;
+        说明：vertical指的是“垂直的”，align指的是“使排整齐”。
+        学习CSS属性跟学习HTML标签一样，根据英文意思去理解和记忆往往事半功倍。
+
+        vertical-align属性取值有4个，如下所示：
+        属性值	    说明
+        top	      顶部对齐
+        middle	  中部对齐
+        baseline	基线对齐
+        bottom	  底部对齐
+
+        vertical-align属性定义周围的行内元素或文本相对于该元素的垂直方式
+      */
+      img {
+        width: 60px;
+        height: 60px;
+      }
+      #img1 {vertical-align: top;}
+      #img2 {vertical-align: middle;}
+      #img3 {vertical-align: bottom;}
+      #img4 {vertical-align: baseline;}
+    </style>
+</head>
+<body>
+  风景<img id="img1" src="../00_img/girl.png" alt="卡通女孩" />风景(top)
+  <hr />
+  风景<img id="img2" src="../00_img/girl.png" alt="卡通女孩" />风景(middle)
+  <hr />
+  风景<img id="img3" src="../00_img/girl.png" alt="卡通女孩" />风景(bottom)
+  <hr />
+  风景<img id="img4" src="../00_img/girl.png" alt="卡通女孩" />风景(baseline)
+</body>
+</html>

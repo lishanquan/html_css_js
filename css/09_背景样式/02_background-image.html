@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>background-image</title>
+    <style type="text/css">
+      /*
+        在CSS中，我们可以使用background-image属性来为元素定义背景图片。
+        语法：background-image: url(图片路径);
+        说明：跟引入图片（即img标签）一样，引入背景图片也需要给出图片路径才可以显示。
+
+        背景图片跟图片是不一样的，背景图片是使用CSS来实现，而图片是使用HTML来实现。
+        两者的使用场合也不一样，大多数情况下都是使用图片来实现，不过某些场合无法使用图片时我们再考虑背景图片形式。
+
+        此外还有一点要说明一下：下面这两种引入背景图片的方式都是正确的，一个给路径加上了引号，另外一个没加引号。
+        不过在实际开发中，建议采用不加引号的方式，因为这种方式更加简洁。
+      */
+      div{
+        width: 500px;
+        height: 200px;
+        background-image: url(../00_img/leaf.png);
+      }
+    </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
