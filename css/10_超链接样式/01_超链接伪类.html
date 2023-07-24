@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>超链接伪类</title>
+    <style type="text/css">
+      /*
+        在CSS中，我们可以使用“超链接伪类”来定义超链接在鼠标点击的不同时期的样式。
+        语法：
+        a:link{…}
+        a:visited{…}
+        a:hover{…}
+        a:active{…}
+        说明：
+        伪类	      说明
+        a:link	  定义a元素未访问时的样式
+        a:visited	定义a元素访问后的样式
+        a:hover	  定义鼠标经过a元素时的样式
+        a:active	定义鼠标点击激活时的样式
+
+        定义4个伪类，必须按照“link、visited、hover、active”的顺序进行，不然浏览器可能无法正常显示这4种样式。请记住，这4种样式定义顺序不能改变。
+        小伙伴们可能觉得很难把这个顺序记住。不用担心，这里有一个挺好的记忆方法：“love hate”。
+        我们把这个顺序规则称之为“爱恨原则”，以后大家回忆一下“爱恨原则”，自然就写出来了。
+
+
+        大家可能会问：是不是每一个超链接都必须要定义4种状态下的样式呢？当然不是！在实际开发中，我们只会用到两种状态：未访问时状态和鼠标经过状态。
+        语法：
+        a{…}
+        a:hover{…}
+        说明：对于未访问时状态，我们直接针对a元素定义就行了，没必要使用a:link。
+
+        事实上，对于超链接伪类来说，我们只需要记住a:hover这一个就够了，因为在实际开发中也只会用到这一个。
+
+        常见问题：
+        1、为什么我的浏览器中的超链接是紫色的呢？用color属性重新定义也无效，这是怎么回事？
+        如果某一个地址的超链接在之前被点击过，浏览器就会记下你的访问记录。
+        那么下次你再用这个地址作为超链接地址时，由于之前你已经访问过了，当然就是紫色的啦。小伙伴们换一个地址就可以了。
+      */
+      /* a {text-decoration: none;}
+      a:link {color: red;}
+      a:visited {color: purple;}
+      a:hover {color: yellow;}
+      a:active {color: blue;} */
+
+      a {
+        color: red;
+        text-decoration: none;
+      }
+      a:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
+</head>
+<body>
+  <a href="http://www.lvyestudy.com" target="_blank">绿叶学习网</a>
+</body>
+</html>

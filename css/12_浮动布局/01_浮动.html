@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>浮动</title>
+    <style type="text/css">
+      /*
+        浮动是CSS布局的最佳利器，我们可以通过浮动来灵活地定位页面元素，以达到布局网页的目的。
+        例如我们可以通过设置float属性让元素向左浮动或者向右浮动，以便让周围的元素或文本环绕着这个元素。
+        语法：float: 取值;
+        说明：float属性取值只有2个，如下所示：
+        属性值	说明
+        left	元素向左浮动
+        right	元素向右浮动
+      */
+      #father {
+        width: 300px;
+        background-color:#0C6A9D;
+        border: 1px solid silver;
+      }
+      #father div {
+        padding: 10px;
+        margin: 15px;
+      }
+      #son1 {
+        background-color: hotpink;
+        float: left;
+      }
+      #son2 {
+        background-color: #FCD568;
+        float: left;
+      }
+    </style>
+</head>
+<body>
+  <div id="father">
+    <div id="son1">box1</div>
+    <div id="son2">box2</div>
+  </div>
+</body>
+</html>

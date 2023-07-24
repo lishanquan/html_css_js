@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>清除浮动</title>
+    <style type="text/css">
+      /*
+        在CSS中，我们可以使用clear属性来清除浮动带来的影响。
+        语法：clear: 取值;
+        说明：clear属性取值如下所示：
+        属性值	说明
+        left	清除左浮动
+        right	清除右浮动
+        both	同时清除左浮动和右浮动
+
+        在实际开发中，我们几乎不会使用clear:left或clear:right来单独清除左浮动或右浮动，
+        往往都是直截了当地使用clear:both来把所有浮动清除，也就是说，我们只需要记住clear:both就可以了。
+
+        我们一般都是在浮动元素后面再增加一个空元素，然后为这个空元素定义clear:both来清除浮动。说白了，前面小弟干了太多坏事，后面得大哥出面才能解决。
+        在实际开发中，凡是用了浮动之后发现有什么不对劲的地方，首先应该检查的是有没有清除浮动。
+
+        事实上，清除浮动不仅仅只有clear:both，还有overflow:hidden，以及更为常用的伪元素。
+        当然，这些都是后话了。作为初学者，我们只需要掌握clear:both就可以了。
+
+        最后的话：float属性很简单，只有2个属性：left和right。
+        但是浮动涉及的理论知识极其复杂，其中包括：块元素和行内元素、CSS盒子模型、脱离文档流、BFC、层叠上下文。
+      */
+      #father {
+        width: 300px;
+        background-color:#0C6A9D;
+        border: 1px solid silver;
+      }
+      #father div {
+        padding: 10px;
+        margin: 15px;
+      }
+      #son1 {
+        background-color: hotpink;
+        float: left;
+      }
+      #son2 {
+        background-color: #FCD568;
+        float: right;
+      }
+      .clear {
+        clear: both;
+      }
+    </style>
+</head>
+<body>
+  <div id="father">
+    <div id="son1">box1</div>
+    <div id="son2">box2</div>
+    <div class="clear"></div>
+  </div>
+</body>
+</html>

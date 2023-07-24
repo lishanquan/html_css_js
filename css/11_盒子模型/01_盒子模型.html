@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>盒子模型</title>
+    <style type="text/css">
+      /*
+        在“CSS盒子模型”理论中，页面中的所有元素都可以看成一个盒子，并且占据着一定的页面空间。
+        
+        一个页面由很多这样的盒子组成，这些盒子之间会互相影响，因此掌握盒子模型需要从两个方面来理解：
+        一是理解单独一个盒子的内部结构（往往是padding）；
+        二是理解多个盒子之间的相互关系（往往是margin）。
+
+        每个元素都看成一个盒子，盒子模型是由四个属性组成的：content（内容）、padding（内边距）、margin（外边距）和border（边框）。
+        此外，在盒子模型中，还有宽度width和高度height两大辅助性属性。
+        记住，所有的元素都可以看成一个盒子。
+
+        从上面我们可以知道，盒子模型的组成部分有4个，如下所示：
+        属性	    说明
+        content	内容，可以是文本或图片
+        padding	内边距，用于定义内容与边框之间的距离
+        margin	外边距，用于定义当前元素与其他元素之间的距离
+        border	边框，用于定义元素的边框
+
+        1．内容区
+        内容区是CSS盒子模型的中心，它呈现了盒子的主要信息内容，这些内容可以是文本、图片等多种类型。
+        内容区是盒子模型必备的组成部分，其他3个部分都是可选的。
+
+        内容区有3个属性：width、height和overflow。
+        使用width和height属性可以指定盒子内容区的高度和宽度。
+        在这里注意一点，width和height这两个属性是针对内容区content而言，并不包括padding部分。
+
+        当内容过多超出width和height时，可以使用overflow属性来指定溢出处理方式。
+
+        2．内边距
+        内边距，指的是内容区和边框之间的空间，可以看成是内容区的背景区域。
+        关于内边距的属性有5种：padding-top、padding-bottom、padding-left、padding-right以及综合了以上4个方向的简写内边距属性padding。
+        使用这5种属性可以指定内容区与各方向边框之间的距离。
+
+        3．外边距
+        外边距，指的是两个盒子之间的距离，它可能是子元素与父元素之间的距离，也可能是兄弟元素之间的距离。
+        外边距使得元素之间不必紧凑地连接在一起，是CSS布局的一个重要手段。
+
+        外边距的属性也有5种：margin-top、margin-bottom、margin-left、margin-right以及综合了以上4个方向的简写外边距属性margin。
+
+        同时，CSS允许给外边距属性指定负数值，当外边距为负值时，整个盒子将向指定负值的相反方向移动，
+        以此可以产生盒子的重叠效果，这就是传说中的“负margin技术”。
+
+        4．边框
+        在CSS盒子模型中，边框跟我们之前学过的边框是一样的。
+        边框属性有border-width、border-style、border-color以及综合了3类属性的简写边框属性border。
+
+        其中，border-width指定边框的宽度，border-style指定边框类型，border-color指定边框的颜色。下面两段代码是等价的：
+        /代码1/
+        border-width:1px;
+        border-style:solid;
+        border-color:gray;
+        /代码2/
+        border:1px solid gray;
+      
+      在这个例子中，display:inline-block表示将元素转换为行内块元素（即inline-block），其中inline-block元素的宽度是由内容区撑起来的。
+      我们之所以在这个例子中将元素转换为inline-block元素，也是为了让元素的宽度由内容区撑起来，以便更好地观察。
+      不过display也是一个非常复杂的属性，我们在CSS进阶教程中再详细介绍。
+      */
+      div {
+        display: inline-block; /* 将块元素转换为inline-block元素*/
+        padding: 20px;
+        margin: 40px;
+        border: 2px solid silver;
+        background-color: #FFDEAD;
+      }
+    </style>
+</head>
+<body>
+  <div>绿叶学习网</div>
+</body>
+</html>

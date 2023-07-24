@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>鼠标样式</title>
+    <style type="text/css">
+      /*
+      在CSS中，我们可以使用cursor属性来定义鼠标样式。
+      语法：cursor: 取值;
+      说明：在实际开发中我们一般只会用到3个：default、pointer和text。
+
+      除了使用浏览器自带的鼠标样式，我们还可以使用cursor属性来自定义鼠标样式。只不过语法稍微有点不一样。
+      语法：cursor: url(图片地址), 属性值;
+      说明：这个“图片地址”是鼠标图片地址，其中鼠标图片后缀名一般都是.cur，我们可以使用Photoshop来制作.
+      */
+      div {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: hotpink;
+        color: white;
+        font-size: 14px;
+      }
+      /* #div_default {cursor: default;}
+      #div_pointer {cursor: pointer;} */
+      #div_default {cursor:url(../00_img/default.cur), default;}
+      #div_pointer {cursor:url(../00_img/pointer.cur), pointer;}
+    </style>
+</head>
+<body>
+  <div id="div_default">鼠标默认样式</div>
+  <div id="div_pointer">鼠标手状样式</div>
+</body>
+</html>

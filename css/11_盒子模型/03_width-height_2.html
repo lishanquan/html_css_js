@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>盒子模型</title>
+    <style type="text/css">
+      /*
+        块元素设置的width和height会生效。此外，要是没有给块元素设置width，那么块元素就会延伸到整一行.
+
+        行内元素设置的width和height无法生效，它的宽度和高度只能由内容区撑起来。
+
+        常见问题：
+        1．如果我们想要为行内元素（如span等）设置宽度和高度，那该怎么办呢？
+        在CSS中，我们可以使用display属性来将行内元素转换为块元素，也可以将块元素转换为行内元素。
+      */
+      #span1 {
+        width: 100px;
+        height: 40px;
+        border: 1px solid red;
+      }
+      #span2 {
+        width: 100px;
+        height: 80px;
+        border: 1px solid blue;
+      }
+    </style>
+</head>
+<body>
+  <span id="span1">绿叶学习网</span>
+  <span id="span2">绿叶学习网</span>
+</body>
+</html>

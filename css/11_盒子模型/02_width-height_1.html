@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>盒子模型</title>
+    <style type="text/css">
+      /*
+        只有块元素才可以设置width和height，行内元素是无法设置width和height的。（我们这里不考虑inline-block元素）
+
+        div是块元素，因此可以设置width和height。span是行内元素，因此不可以设置width和height。
+      */
+      div, span {
+        width: 100px;
+        height: 50px;
+        
+      }
+      div {
+        border: 1px solid red;
+      }
+      span {
+        border: 1px solid blue;
+      }
+    </style>
+</head>
+<body>
+  <div></div>
+  <span></span>
+</body>
+</html>

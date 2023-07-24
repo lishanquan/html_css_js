@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>padding</title>
+    <style type="text/css">
+      /*
+        从CSS盒子模型中我们可以看出，内边距分为4个方向：padding-top、padding-right、padding-bottom、padding-left。
+        语法：
+        padding-top: 像素值;
+        padding-right: 像素值;
+        padding-bottom: 像素值;
+        padding-left: 像素值;
+
+        跟border属性一样，padding属性也有简写形式。在实际开发中，我们往往使用简写形式，因为这样开发效率更高。padding写法有3种，如下所示。
+        语法：
+        padding: 像素值;
+        padding: 像素值1 像素值2;
+        padding: 像素值1 像素值2 像素值3 像素值4;
+        说明：
+        padding:20px表示4个方向的内边距都是20px。
+        padding:20px 40px表示padding-top和padding-bottom为20px，padding-right和padding-left为40px。
+        padding:20px 40px 60px 80px表示padding-top为20px，padding-right为40px，padding-bottom为60px，padding-left为80px。
+        大家按照顺时针方向记忆就可以了。
+      */
+      /* div {
+        display: inline-block;
+        padding-top: 20px;
+        padding-right: 40px;
+        padding-bottom: 60px;
+        padding-left: 80px;
+        border: 2px solid red;
+        background-color: #FFDEAD;
+      } */
+
+      div {
+        display: inline-block;
+        padding: 40px 80px;
+        margin: 40px;
+        border: 2px solid red;
+        background-color: #FFDEAD;
+      }
+    </style>
+</head>
+<body>
+  <div>绿叶学习网</div>
+</body>
+</html>
