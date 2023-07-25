@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>position:fixed</title>
+    <style type="text/css">
+      /*
+        CSS定位使你可以将一个元素精确地放在页面上你指定的地方。联合使用定位和浮动，能够创建多种高级而精确地布局。其中，定位布局共有4种方式。
+        这4种方式都是通过position属性来实现的，其中position属性取值如下所示：
+        属性值	    说明
+        fixed	    固定定位
+        relative	相对定位
+        absolute	绝对定位
+        static	  静态定位（默认值）
+
+        在CSS中，我们可以使用“position:fixed;”来实现固定定位。所谓的固定定位，指的是被固定的元素不会随着滚动条的拖动而改变位置。
+        语法：
+        position: fixed;
+        top: 像素值;
+        bottom: 像素值;
+        left: 像素值;
+        right: 像素值;
+
+        说明：
+        position:fixed;是结合top、bottom、left和right这4个属性一起使用的。
+        其中，position:fixed使得元素成为固定定位元素，接着使用top、bottom、left和right这4个属性来设置元素相对浏览器的位置。
+        top、bottom、left和right这4个属性不一定全部都用到，一般只会用到其中两个。注意，这4个值的参考对象是浏览器的4条边。
+      */
+      #first {
+        width: 120px;
+        height: 1800px;
+        border: 1px solid silver;
+        line-height: 600px;
+        background-color: #B7F1FF;
+      }
+      #second {
+        position: fixed;
+        top: 30px;
+        left: 160px;
+        width: 60px;
+        height: 60px;
+        border: 1px solid silver;
+        background-color: hotpink;
+      }
+    </style>
+</head>
+<body>
+  <div id="first">无定位的div元素</div>
+  <div id="second">固定定位的div元素</div>
+</body>
+</html>

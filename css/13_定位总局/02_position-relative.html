@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>position:relative</title>
+    <style type="text/css">
+      /*
+        在CSS中，我们可以使用“position:relative;”来实现相对定位。所谓的相对定位，指的是该元素的位置是相对于它的原始位置计算而来的。
+        语法：
+        position: relative;
+        top: 像素值;
+        bottom: 像素值;
+        left: 像素值;
+        right: 像素值;
+
+        说明：
+        position:relative;也是结合top、bottom、left和right这4个属性一起使用的，
+        其中，position:relative;使得元素成为相对定位元素，接着使用top、bottom、left和right这4个属性来设置元素相对原始的位置。
+        top、bottom、left和right这4个属性不一定全部都用到，一般只会用到其中两个。这4个值的参考对象是该元素的原始位置。
+
+        注意，在默认情况下，固定定位元素的位置是相对浏览器而言，而相对定位元素的位置是相对于原始位置而言！
+      */
+      #father {
+        margin-top: 30px;
+        margin-left: 30px;
+        border: 1px solid silver;
+        background-color: lightskyblue;
+      }
+      #father div {
+        width: 100px;
+        height: 60px;
+        margin: 10px;
+        background-color: hotpink;
+        color: white;
+        border: 1px solid white;
+      }
+      #son2 {
+        position: relative;
+        top: 20px;
+        left: 40px;
+      }
+    </style>
+</head>
+<body>
+  <div id="father">
+    <div id="son1">第1个无定位的div元素</div>
+    <div id="son2">相对定位的div元素</div>
+    <div id="son3">第2个无定位的div元素</div>
+  </div>
+</body>
+</html>

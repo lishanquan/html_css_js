@@ -4,14 +4,46 @@
     <meta charset="utf-8" />
     <title>test</title>
     <style type="text/css">
-      
+      #wrapper {
+        width: 800px;
+        height: 600px;
+      }
+      #header, #footer {
+        height: 100px;
+        background-color: lightskyblue;
+      }
+      .main-left, .main-right {
+        height: 380px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: hotpink;
+      }
+      .main-left {
+        float: left;
+        width: 595px;
+        /* 
+          注意此处不用指定 margin-right，
+          因为main-left、main-right的宽度给出，而且已经设置了float
+        margin-right: 10px */
+      }
+      .main-right {
+        float: right;
+        width: 195px;
+      }
+      .clear {
+        clear: both;
+      }
     </style>
 </head>
 <body>
-  <div id="father">
-    <div id="son1">box1</div>
-    <div id="son2">box2</div>
-    <div class="clear"></div>
+  <div id="wrapper">
+    <div id="header"></div>
+    <div id="main">
+      <div class="main-left"></div>
+      <div class="main-right"></div>
+      <div class="clear"></div>
+    </div>
+    <div id="footer"></div>
   </div>
 </body>
 </html>
