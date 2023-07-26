@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用sort()方法来对数组中所有元素进行大小比较，然后按从大到小或者从小到大进行排序。
+      语法：数组名.sort(函数名)
+      说明：“函数名”是定义数组元素排序的函数的名字。
+
+      在JavaScript中，我们可以使用reverse()方法来实现数组中所有元素的反向排列，也就是颠倒数组元素的顺序。reverse，就是“反向”的意思。
+      语法：数组名.reverse();
+
+      在JavaScript中，我们可以使用join()方法来将数组中的所有元素连接成一个字符串。
+      语法：数组名.join("连接符");
+      说明：连接符是可选参数，用于指定连接元素之间的符号。默认情况下，则采用英文逗号（,）作为连接符来连接。
+      */
+      // 定义一个升序函数
+      function up(a, b) {
+        return a - b;
+      }
+      // 定义一个降序函数
+      function down(a, b) {
+        return b - a;
+      }
+      var arr = [3, 6, 8, 2, 10, 56, 33];
+      arr.sort(up);
+      document.write("升序：" + arr.join("、") + "<br/>");
+      arr.sort(down);
+      document.write("降序：" + arr.join());
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用push()方法在数组结尾添加新元素，并且可以得到一个新的数组（也就是原数组变了）。
+      语法：数组名.push(新元素1, 新元素2, ……, 新元素n)
+      说明：“新元素1, 新元素2, ……, 新元素n”表示在数组结尾添加的新元素。
+
+      push()方法在实际开发，特别是面向对象开发的时候用得非常多，可以说是数组中最常用的一个方法。
+      */
+      var arr = ["JavaScript", "jQuery"];
+      document.write("添加前：<br/>arr[2]:" + arr[2] + "<br/>arr[3]:" + arr[3] + "<br/>数组长度：" + arr.length + "<hr/>");
+      arr.push("HTML", "CSS")
+      document.write("添加后：<br/>arr[2]:" + arr[2] + "<br/>arr[3]:" + arr[3] + "<br/>数组长度：" + arr.length);
+    </script>
+</head>
+<body>
+</body>
+</html>

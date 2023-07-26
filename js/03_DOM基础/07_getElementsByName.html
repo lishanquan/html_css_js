@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      对于表单元素来说，它有一个一般元素都没有的name属性。如果想要通过name属性来获取表单元素，我们可以使用getElementsByName()方法来实现。
+      语法：document.getElementsByName("name名")
+      说明：
+      getElementsByName()获取的也是一个类数组，如果想要准确得到某一个元素，可以使用数组下标形式来获取。
+      getElementsByName()只用于表单元素，一般只用于单选按钮和复选框。
+
+      oInput[2].checked = true;表示将类数组中的第3个元素的checked属性设置为true，也就是将第3个单选按钮选中。
+      */
+      window.onload = function () {
+        var oInput = document.getElementsByName("status");
+        oInput[2].checked = true;
+      }
+    </script>
+</head>
+<body>
+  <label><input type="radio" name="status" value="本科">本科</label>
+  <label><input type="radio" name="status" value="硕士">硕士</label>
+  <label><input type="radio" name="status" value="博士">博士</label>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用createElement()来创建一个元素节点，
+      也可以使用createTextNode()来创建一个文本节点，
+      然后可以将元素节点与文本节点“组装”成为我们平常所看到的“有文本内容的元素”。
+      这种方式又被称为“动态DOM操作”。所谓的“动态DOM”，指的是使用JavaScript创建的元素，这个元素一开始在HTML中是不存在的。
+      */
+      window.onload = function () {
+        var oDiv = document.getElementById("content");
+        var oStrong = document.createElement("strong");
+        var oTxt = document.createTextNode("绿叶学习网");
+        oStrong.appendChild(oTxt);
+        oDiv.appendChild(oStrong);
+      }
+    </script>
+</head>
+<body>
+  <div id="content"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用unshift()方法在数组开头添加新元素，并且可以得到一个新的数组（也就是原数组变了）。
+      语法：数组名.unshift(新元素1, 新元素2, ……, 新元素n)
+      说明：“新元素1, 新元素2, ……, 新元素n”表示在数组开头添加的新元素。
+      */
+      var arr = ["JavaScript", "jQuery"];
+      document.write("添加前：<br/>arr[0]:" + arr[0] + "<br/>arr[1]:" + arr[1] + "<br/>数组长度：" + arr.length + "<hr/>");
+      arr.unshift("HTML", "CSS")
+      document.write("添加后：<br/>arr[0]:" + arr[0] + "<br/>arr[1]:" + arr[1] + "<br/>数组长度：" + arr.length);
+    </script>
+</head>
+<body>
+</body>
+</html>

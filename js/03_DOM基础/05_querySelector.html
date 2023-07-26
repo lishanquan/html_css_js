@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      querySelector()表示选取满足选择条件的第1个元素，querySelectorAll()表示选取满足条件的所有元素。
+      这两个方法都是非常简单的，它们的写法跟CSS选择器的写法是完全一样的。
+      document.querySelector("#main")
+      document.querySelector("#list li:nth-child(1)")
+      document.querySelectorAll("#list li")
+      document.querySelectorAll("input:checkbox")
+      
+      对于id选择器来说，由于页面只有一个元素，建议大家用getElementById()，而不是用querySelector()或querySelectorAll()这两个。
+      因为getElementById()方法效率更高，性能也更快。
+
+      document.querySelector("#list li:nth-child(3)")表示选取id为list的元素下的第3个元素，nth-child(n)属于CSS3的选择器。
+      */
+      window.onload = function () {
+        var oLi = document.querySelector("#list li:nth-child(3)");
+        oLi.style.color = "red";
+      }
+    </script>
+</head>
+<body>
+  <ul id="list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+</body>
+</html>
