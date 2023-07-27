@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      .main {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      /*
+      在JavaScript中，我们可以使用removeAttribute()方法来删除元素的某个属性。
+      语法：obj.removeAttribute("attr")
+      说明：想要删除元素的某个属性，我们只有removeAttribute()这一个方法。
+
+      如果我们用oP[0].className="";来代替oP[0].removeAttribute("class");，效果也是一样的。
+
+      想要为一个元素添加一个class（即使不存在class属性），可以使用：
+      oP[0].className = "main";
+      
+      想要为一个元素删除一个class，可以使用：
+      oP[0].className = "";
+      或
+      oP[0].removeAttribute("class");
+      */
+     window.onload = function() {
+      var oP = document.getElementsByTagName("p");
+      var oBtnAdd = document.getElementById("btn_add");
+      var oBtnRemove = document.getElementById("btn_remove");
+      oBtnAdd.onclick = function() {
+        oP[0].className = "main";
+        // oP[0].setAttribute("class", "main");
+      }
+      oBtnRemove.onclick = function() {
+        oP[0].removeAttribute("class");
+        // oP[0].className = "";
+      }
+     }
+    </script>
+</head>
+<body>
+  <p class="main">你偷走了我的影子，无论你在哪里，我都会一直想着你。</p>
+  <input id="btn_add" type="button" value="添加样式" />
+  <input id="btn_remove" type="button" value="删除样式" />
+</body>
+</html>

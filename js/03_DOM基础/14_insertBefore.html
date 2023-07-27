@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用insertBefore()方法将一个新元素插入到父元素中的某一个子元素“之前”。
+      语法：A.insertBefore(B,ref);
+      说明：A表示父元素，B表示新子元素。ref表示指定子元素，在这个元素之前插入新子元素。
+      */
+      window.onload = function () {
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function() {
+          var oUl = document.getElementById("list");
+          var oTxt = document.getElementById("txt");
+          // 将文本内容转换成文本节点
+          var textNode = document.createTextNode(oTxt.value);
+          var oLi = document.createElement("li");
+          oLi.appendChild(textNode);
+          // oUl.firstElementChild表示获取ul元素下的第一个子元素。
+          oUl.insertBefore(oLi, oUl.firstElementChild);
+        }
+      }
+    </script>
+</head>
+<body>
+  <ul id="list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+  <input id="txt" type="text"/><input id="btn" type="button" value="插入">
+</body>
+</html>

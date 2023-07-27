@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在操作动态DOM时，设置元素class用的是className而不是class，这是初学者最容易忽略的地方。
+      为什么JavaScript不用class，而是用className呢？
+      其实我们在“2.2 常量与变量”这一节讲过，JavaScript有很多关键字和保留字，其中class已经作为保留字（可以回去翻一下），所以就另外起了一个className来用。
+      了解这个背后的故事，以后我们也不容易犯错。
+      */
+      window.onload = function () {
+        var oImg = document.createElement("img");
+        oImg.className = "pic";
+        oImg.src = "../00_img/haizei.png";
+        oImg.style.border = "1px solid silver";
+        document.body.appendChild(oImg);
+      }
+    </script>
+</head>
+<body>
+</body>
+</html>

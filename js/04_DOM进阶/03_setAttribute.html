@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用setAttribute()方法来设置元素的某个属性的值。
+      语法：obj.setAttribute("attr","值")
+      说明：obj是元素名，attr是属性名。setAttribute()方法有两个参数：第1个参数是属性名；第2个参数是你要设置的属性值。
+      下面两种设置属性值的形式是等价的：
+      obj.setAttribute("attr","值")
+      obj.attr = "值";
+
+      同样的，对于自定义属性的值设置，我们也只能用setAttribute()方法来实现。
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      oBtn.onclick = function() {
+        oBtn.setAttribute("value", "button");
+      }
+     }
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="修改" />
+</body>
+</html>

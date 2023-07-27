@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用getAttribute()方法来获取元素的某个属性的值。
+      语法：obj.getAttribute("attr")
+      说明：obj是元素名，attr是属性名。getAttribute()方法只有一个参数。注意，attr是要用英文引号括起来的，初学者很容易忽略这个问题。
+      
+      下面两种获取属性值的形式是等价的。
+      obj.getAttribute("attr")
+      obj.attr
+      这两种方式都可以用来获取静态HTML的属性值以及动态DOM的属性值。
+
+      获取自定义属性值，使用obj.attr是无法实现的，只能用getAttribute("attr")来实现。
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      oBtn.onclick = function() {
+        // 获取自定义属性值，使用obj.attr是无法实现的，只能用getAttribute("attr")来实现。
+        // alert(oBtn.data);
+        alert(oBtn.getAttribute("data"));
+      }
+     }
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="获取" data="JavaScript"/>
+</body>
+</html>
