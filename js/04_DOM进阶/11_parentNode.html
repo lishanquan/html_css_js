@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      table {
+        border-collapse: collapse;
+      }
+      table, tr, td {
+        border: 1px solid grey;
+      }
+    </style>
+    <script>
+      /*
+      在JavaScript中，我们可以使用parentNode属性来获得某个元素的父元素。
+      语法：obj.parentNode
+      说明：obj是一个DOM对象，指的是使用getElementById()、getElementsByTagName()等方法获取的元素。
+
+      这个例子实现的效果是：当我们随便点击一个单元格时，就会为该单元格所在的行设置样式。
+      也就是说，我们要找到当前td元素的父元素（即tr）。
+      如果我们尝试使用querySeletor()和querySelectorAll()是没办法实现的。
+
+      不少初学者在接触DOM操作的时候，不知道什么时候用类数组，什么时候不用类数组？
+      其实凡是单数的就不用，例如parentNode只有一个，何必用数组呢？
+      */
+     window.onload = function() {
+      var oTd = document.getElementsByTagName("td");
+      for (var i = 0; i < oTd.length; i++) {
+        oTd[i].onclick = function() {
+          var oParent = this.parentNode;
+          oParent.style.color = "white";
+          oParent.style.backgroundColor = "red";
+        }
+      }
+     }
+    </script>
+</head>
+<body>
+  <table>
+    <caption>考试成绩表</caption>
+    <tr>
+        <td>小明</td>
+        <td>80</td>
+        <td>80</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>小红</td>
+        <td>90</td>
+        <td>90</td>
+        <td>90</td>
+    </tr>
+    <tr>
+        <td>小杰</td>
+        <td>100</td>
+        <td>100</td>
+        <td>100</td>
+    </tr>
+  </table>
+</body>
+</html>

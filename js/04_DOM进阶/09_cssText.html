@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: hotpink;
+      }
+    </style>
+    <script>
+      /*
+      在JavaScript中，我们可以使用cssText属性来同时设置多个CSS属性，这也是在元素的style属性来添加的。
+      语法：obj.style.cssText = "值";
+      说明：obj表示DOM对象，cssText的值是一个字符串，例如：
+      oDiv.style.cssText = "width:100px;height:100px;border:1px solid gray;";
+
+      注意，这个字符串中的属性名不再使用骆驼峰型写法，而是使用平常的CSS写法，
+      例如background-color应该写成background-color，而不是backgroundColor。
+
+      在实际开发的时候，如果想要为一个元素同时设置多个CSS属性，我们很少使用cssText来实现，
+      更倾向于使用操作HTML属性的方式给元素加上一个class属性值，从而把样式整体给元素添加上。这个技巧非常棒，在实际开发中经常用到。
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oBox = document.getElementById("box");
+      oBtn.onclick = function() {
+        var txt = document.getElementById("txt").value;
+        oBox.style.cssText = txt;
+      }
+     }
+    </script>
+</head>
+<body>
+  <input id="txt" type="text" /><br />
+  <input id="btn" type="button" value="设置" />
+  <div id="box"></div>
+</body>
+</html>

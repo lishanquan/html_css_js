@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在前面的学习中，如果想要创建一个动态DOM元素，我们都是将元素节点、属性节点、文本节点一个个使用appendChild()等方法拼凑起来。
+      如果插入的元素比较简单，这种方法还可以。要是插入的元素非常复杂的话，就不太适合了。
+
+      在JavaScript中，我们可以使用innerHTML属性很方便地获取和设置一个元素的“内部元素”，
+      也可以使用innerText属性获取和设置一个元素的“内部文本”。
+
+      如果让大家使用之前的appendChild()方法来实现，这可真是难为我们这些“程序猿”了。
+      细心的小伙伴可能还注意到了一点，这个例子innerHTML后面的字符串居然可以换行来写！
+      一般情况下，代码里面的字符串是不能换行的，但是为了可读性，我们往往希望将字符串截断分行显示。
+      方法很简单，只需要在字符串每一行后面加上个反斜杠（\）就可以了。这是一个非常实用的小技巧。
+
+      1．很多书上不是说innerText兼容不好吗？为什么还要用它呢？
+      在以前，只有IE、Chrome等都支持innerText，而Firefox不支持。
+      现在Firefox新版本已经全面支持innerText了，对于旧版本的Firefox的兼容性，不需要去理睬。
+      Web前端速度如此之快，我们都是往前看，而不是往后看的。现在还有谁故意去装一个旧版本的Firefox呢？
+      事实上，还有一个跟innerText等价的属性，那就是textContent。
+      在以前，为了兼容所有浏览器，我们用的都是这个。当然，现在也可以使用textContent来代替innerText，效果是一样的。
+      不过为了减轻记忆负担，我们记住innerText就行了。innerText，从字面上来看，刚好对应于innerHTML，更容易记住。
+      */
+     window.onload = function() {
+      var oDiv = document.getElementsByTagName("div")[0];
+      oDiv.innerHTML = '<span>绿叶学习网</span>\
+      <span style="color:hotpink;">JavaScript</span>\
+      <span style="color:deepskyblue">入门教程</span>';
+     }
+    </script>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

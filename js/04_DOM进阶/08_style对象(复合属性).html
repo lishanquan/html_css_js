@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: hotpink;
+      }
+    </style>
+    <script>
+      /*
+      对于复合属性（如border、font等）来说，操作方式也是一样的，
+      例如： oBox.style.border = "2px solid blue";
+
+      我们获取的文本框value值其实是字符串，也就是说变量attr和val都是字符串来的。
+      因此是不能使用obj.style.attr这种方式来设置CSS属性的，而必须使用obj.style[“attr”]这种方式，这个我们要认真琢磨清楚。
+
+      使用style来设置CSS属性，最终是在元素的style属性添加的。
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oBox = document.getElementById("box");
+      oBtn.onclick = function() {
+        var attr = document.getElementById("attr").value;
+        var val = document.getElementById("val").value;
+        oBox.style[attr] = val;
+      }
+     }
+    </script>
+</head>
+<body>
+  属性：<input id="attr" type="text" /><br />
+  取值：<input id="val" type="text" /><br />
+  <input id="btn" type="button" value="设置" />
+  <div id="box"></div>
+</body>
+</html>

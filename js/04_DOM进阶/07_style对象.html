@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: hotpink;
+      }
+    </style>
+    <script>
+      /*
+      在JavaScript中，想要设置一个CSS属性的值，我们有2种方式来实现。
+      1．style对象
+      使用style对象来设置一个CSS属性的值，其实就是在元素的style属性来添加样式，这个设置的是“行内样式”。
+      语法：obj.style.attr = "值";
+      说明：obj表示DOM对象，attr表示CSS属性名，采用的同样是“骆驼峰”型。
+
+      obj.style.attr等价于obj.style[“attr”]，例如oDiv.style.width等价于oDiv.style[“width”];
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oBox = document.getElementById("box");
+      oBtn.onclick = function() {
+        oBox.style.backgroundColor = "lightskyblue";
+      }
+     }
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="设置" />
+  <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用以下两组方式来获得父元素中的所有子元素或某个子元素。
+      （1）childNodes、firstChild、lastChild
+      （2）children、firstElementChild、lastElementChild
+      其中，childNodes获取的是所有的子节点。注意，这个子节点是包括元素节点以及文本节点的。而children获取的是所有的元素节点，不包括文本节点。
+
+      children.length获取的是元素节点的长度，返回结果为3，这个我们没有疑问。
+      childNodes.length获取的是子节点的长度，返回结果却是7，这是怎么回事呢？
+      其实对于ul元素来说，childNodes包括了3个子元素节点和4个子文本节点。
+      我们可以看到每一个li元素之间都是换行的，对吧？每一次换行都是一个空白节点，JavaScript会把这些空白节点当成文本节点来处理。
+      */
+     window.onload = function() {
+      var oUl = document.getElementById("list");
+      var childNodesLen = oUl.childNodes.length;
+      var childrenLen = oUl.children.length;
+      alert("childNodes的长度为：" + childNodesLen + "\n" + "children的长度为：" + childrenLen);
+     }
+    </script>
+</head>
+<body>
+  <ul id="list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+</body>
+</html>

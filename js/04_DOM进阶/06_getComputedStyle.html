@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: hotpink;
+      }
+    </style>
+    <script>
+      /*
+      CSS属性操作，指的是使用JavaScript来操作一个元素的CSS样式。
+      在JavaScript中，CSS属性操作同样有2种。
+      获取CSS属性值。
+      设置CSS属性值。
+
+      在JavaScript中，我们可以使用getComputedStyle()方法来获取一个CSS属性的取值。
+      语法：getComputedStyle(obj).attr
+      说明：attr表示CSS属性名。我们要特别注意一点，这里的属性名使用的是“骆驼峰型”的CSS属性名。
+
+      getComputedStyle()方法其实有两种写法，以下两种是等价的。也就是说： getComputedStyle(obj).attr等价于
+      getComputedStyle(obj)["attr"]。
+      eg:
+      getComputedStyle(oBox).backgroundColor
+      getComputedStyle(oBox)["backgroundColor"]
+
+      事实上，凡是对象的属性都有这两种写法，
+      例如oBtn.id可以写成oBtn["id"]，document.getElementById("btn")可以写成document["getElementById"]("btn")，以此类推。
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oBox = document.getElementById("box");
+      oBtn.onclick = function() {
+        alert(getComputedStyle(oBox).backgroundColor);
+      }
+     }
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="获取颜色" />
+  <div id="box"></div>
+</body>
+</html>

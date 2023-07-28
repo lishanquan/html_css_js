@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      请使用两种方法在body元素中插入一个按钮：<input id=“btn” type=“button” value=“按钮”/>，
+      一种是使用appendChild()方法，
+      另外一种是使用innerHTML属性。
+      */
+     window.onload = function() {
+      // 1.使用innerHTML属性
+      // document.body.innerHTML = '<input id="btn" type="button" value="按钮"/>';
+      // 2
+      // var oInput = document.createElement("input");
+      // oInput.setAttribute("id", "btn");
+      // oInput.setAttribute("type", "button");
+      // oInput.setAttribute("value", "按钮");
+      // document.body.appendChild(oInput);
+      // 3
+      var oInput = document.createElement("input");
+      oInput.id = "btn";
+      oInput.type = "button";
+      oInput.value = "按钮";
+      document.body.appendChild(oInput);
+     }
+    </script>
+</head>
+<body>
+</body>
+</html>

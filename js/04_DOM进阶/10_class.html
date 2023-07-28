@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      .oldBox {
+        width: 100px;
+        height: 100px;
+        background-color: hotpink;
+      }
+      .newBox {
+        width: 50px;
+        height: 50px;
+        background-color: lightskyblue;
+      }
+    </style>
+    <script>
+      /*
+      在实际开发的时候，如果想要为一个元素同时设置多个CSS属性，我们很少使用cssText来实现，
+      更倾向于使用操作HTML属性的方式给元素加上一个class属性值，从而把样式整体给元素添加上。这个技巧非常棒，在实际开发中经常用到。
+
+      获取CSS属性值，不可以用obj.style.attr或obj.style.cssText吗？为什么一定要用getComputedStyle()呢？
+      
+      其实我们都知道，obj.style.attr只可以获取元素style属性中设置的CSS属性，对于内部样式或者外部样式，它是没办法获取的。
+      我们使用行内样式，点击按钮后，就可以获取到宽度了。可能有些人会想到使用oBox.cssText.width，其实JavaScript中是没有这种写法的。到这里，相信大家都知道为什么只能用getComputedStyle()方法了吧。
+
+      getComputedStyle()，从名字上就可以看出来：get computed style（获取计算后的样式）。
+      所谓“计算后的样式”，即不管是内部样式，还是行内样式，最终获取的是根据CSS优先级计算后的结果。
+      CSS优先级是相当重要的，也是属于CSS进阶的技巧，我们在CSS进阶教程中详细介绍。
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oBox = document.getElementById("box");
+      oBtn.onclick = function() {
+        oBox.className = "newBox";
+      }
+     }
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="切换" />
+  <div id="box" class="oldBox"></div>
+</body>
+</html>

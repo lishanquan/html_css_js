@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在前面的学习中，如果想要创建一个动态DOM元素，我们都是将元素节点、属性节点、文本节点一个个使用appendChild()等方法拼凑起来。
+      如果插入的元素比较简单，这种方法还可以。要是插入的元素非常复杂的话，就不太适合了。
+
+      在JavaScript中，我们可以使用innerHTML属性很方便地获取和设置一个元素的“内部元素”，
+      也可以使用innerText属性获取和设置一个元素的“内部文本”。
+
+      1.document.write()和innerHTML之间有什么区别？（前端面试题）
+      document.write()会重绘整个页面，而innerHTML可以重绘页面的某一部分。
+      */
+     window.onload = function() {
+      var oP = document.getElementById("content");
+      document.getElementById("txt1").value = oP.innerHTML;
+      document.getElementById("txt2").value = oP.innerText;
+     }
+    </script>
+</head>
+<body>
+  <p id="content"><strong style="color:hotpink;">绿叶学习网</strong></p>
+  innerHTML是：<input id="txt1" type="text"><br />
+  innerText是：<input id="txt2" type="text">
+</body>
+</html>

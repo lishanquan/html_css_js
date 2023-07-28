@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，我们可以使用以下2组方式来获得兄弟元素。
+      （1）previousSibling、nextSibling
+      （2）previousElementSibling、nextElementSibling
+      previousSibling查找前一个兄弟节点，nextSibling查找后一个兄弟节点。
+      previousElementSibling查找前一个兄弟元素节点，nextElementSibling查找后一个兄弟元素节点。
+
+      跟查找子元素的两组方式一样，previousSibling和nextSibling查找出来的可能是文本节点（一般是空白节点），
+      因此如果你希望只操作元素节点，建议使用previousElementSibling和nextElementSibling。
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oUl = document.getElementById("list");
+      oBtn.onclick = function() {
+        var preElement = oUl.children[2].previousElementSibling;
+        oUl.removeChild(preElement);
+      }
+     }
+    </script>
+</head>
+<body>
+  <ul id="list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+  <input id="btn" type="button" value="删除" />
+</body>
+</html>

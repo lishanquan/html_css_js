@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      当我们尝试点击【删除】按钮时，会发现一个很奇怪的现象：需要点击两次才可以删除一个li元素！
+      为什么会这样呢？
+      其实好多小伙伴都忘了：两个元素之间的“换行空格”其实也是一个节点。
+      因此在删除节点的时候，第1次点击删除的是“文本节点”，第2次点击删除的才是li元素。
+      
+      解决办法有两个。
+      （1）将li元素间的“换行空格”去掉。
+      （2）使用nodeType来判断：我们都知道，元素节点的nodeType属性值为1，文本节点的nodeType属性值为3。
+      然后使用if判断，如果oUl.lastChild.nodeType值为3，则执行removeChild()两次，第1次删除“空白节点”，第2次删除元素。
+      如果oUl.lastChild.nodeType值不为3，则只执行removeChild()一次。
+      */
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oUl = document.getElementById("list");
+      oBtn.onclick = function() {
+        // 原有删除方法
+        // oUl.removeChild(oUl.lastChild);
+        // 改进后的删除方法
+        if (oUl.lastChild.nodeType == 3) {
+          oUl.removeChild(oUl.lastChild);
+          oUl.removeChild(oUl.lastChild);
+        } else {
+          oUl.removeChild(oUl.lastChild);
+        }
+      }
+     }
+    </script>
+</head>
+<body>
+  <ul id="list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+  <input id="btn" type="button" value="删除" />
+</body>
+</html>
