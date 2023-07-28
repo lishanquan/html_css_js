@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在实际开发中，我们有可能会使用多次window.onload，但是会发现JavaScript只执行最后一次window.onload。
+      为了解决这个问题，我们就可以使用addEventListener()来实现。
+      在这个例子中，我们只需要将每一个window.onload改为以下代码即可：
+      window.addEventListener("load",function(){……},false);
+
+      事实上，还有一种解决方法，那就是使用网上流传甚广的addLoadEvent()函数。
+      addLoadEvent不是JavaScript内置函数，而是需要自己定义的。其中，addLoadEvent()函数代码如下：
+
+      //装饰者模式
+      function addLoadEvent(func)
+      {
+          var oldonload = window.onload;
+          if (typeof window.onload != "function") 
+          {
+              window.onload = func;
+          }else {
+              window.onload = function()
+              {
+                  oldonload();
+                  func();
+              }
+          }
+      }
+      
+      然后我们只需要调用addLoadEvent()函数，就等于调用window.onload了。
+      调用方法如下：
+      addLoadEvent(function(){
+          ……
+      });
+    -->
+    <script>
+      //装饰者模式
+      function addLoadEvent(func) {
+          var oldonload = window.onload;
+          if (typeof window.onload != "function") {
+              window.onload = func;
+          } else {
+              window.onload = function() {
+                  oldonload();
+                  func();
+              }
+          }
+      }
+
+     window.addLoadEvent(function(){
+      var oBtn1 = document.getElementById("btn1");
+        oBtn1.onclick = function () {
+            alert("第1次");
+        };
+     });
+     
+     window.addLoadEvent(function(){
+      var oBtn1 = document.getElementById("btn2");
+        oBtn1.onclick = function () {
+            alert("第2次");
+        };
+     });
+
+     window.addLoadEvent(function(){
+      var oBtn1 = document.getElementById("btn3");
+        oBtn1.onclick = function () {
+            alert("第3次");
+        };
+     });
+    </script>
+</head>
+<body>
+  <input id="btn1" type="button" value="按钮1" /><br/>
+  <input id="btn2" type="button" value="按钮2" /><br />
+  <input id="btn3" type="button" value="按钮3" />
+</body>
+</html>

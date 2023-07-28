@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，想要给元素添加一个事件，其实我们有以下2种方式。
+      （1）事件处理器
+      （2）事件监听器
+
+      事件处理器是没办法为一个元素添加多个相同事件的。
+      如果想要为一个元素添加多个相同的事件，该如何实现呢？
+      这就需要用到另外一种添加事件的方式了，那就是——事件监听器。
+
+      所谓的“事件监听器”，指的是使用addEventListener()方法来为一个元素添加事件，我们又称之为“绑定事件”。
+      语法：obj.addEventListener(type , fn , false)
+      说明：
+      obj是一个DOM对象，指的是使用getElementById()、getElementsByTagName()等方法获取到的元素节点。
+      type是一个字符串，指的是事件类型。例如单击事件用click，鼠标移入用mouseover等。一定要注意，这个事件类型是不需要加上“on”前缀的。
+      fn是一个函数名，或者一个匿名函数。
+      false表示事件冒泡阶段调用。对于事件冒泡，我们在JavaScript进阶教程再详细介绍。这里简单了解即可。
+
+      //fn是一个函数名
+      oBtn.addEventListener("click", alertMes, false);
+      function alertMes() 
+      {
+          alert("JavaScript");
+      }
+
+      //fn是一个匿名函数
+      oBtn.addEventListener("click", function () {
+          alert("JavaScript");
+      }, false);
+      上面两段代码是等价的：一种是使用函数名；另外一种是使用匿名函数。
+    -->
+    <script>
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      oBtn.addEventListener("click", alertMes, false);
+      function alertMes() {
+        alert("JavaScript");
+      };
+     };
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="按钮"/>
+</body>
+</html>

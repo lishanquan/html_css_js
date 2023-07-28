@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，我们可以使用onselectstart事件来防止页面内容被选取。
+      语法：
+      document.body.onselectstart=function()
+      {
+          return false;
+      }
+    -->
+    <script>
+     window.onload = function() {
+      document.body.onselectstart = function () {
+        return false;
+      };
+     };
+    </script>
+</head>
+<body>
+  <div>成功的人总喜欢神化自己，为的是让其他人觉得成功很难。</div>
+</body>
+</html>

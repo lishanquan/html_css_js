@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      #search {color: #bbbbbb;}
+    </style>
+    <script>
+      /*
+      再回到实际开发中，我们在使用搜索框的时候，每次点击搜索框，
+      它就自动帮我们把文本框内的文本全选中了（大家先去看看百度搜索是不是这样的），这个又是怎么实现的呢？
+      这就用到了select()方法。
+
+      select()跟onselect是不一样的。select()是一个方法，仅仅用于全选文本。而onselect是一个属性，它是用于事件操作的。
+      */
+     window.onload = function() {
+      var oSearch = document.getElementById("search");
+      oSearch.onclick = function () {
+        this.select();
+      };
+     };
+    </script>
+</head>
+<body>
+  <input id="search" type="text" value="百度一下，你就知道" />
+</body>
+</html>

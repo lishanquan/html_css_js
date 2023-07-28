@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，我们可以使用oncontextmenu事件来禁止鼠标右键。
+      语法：
+      document.oncontextmenu = function () 
+      {
+          return false;
+      }
+
+      虽然鼠标右键功能被禁止了，但是我们依旧可以用快捷键，如使用ctrl+c快捷键来复制内容；使用ctrl+s快捷键来保存网页等。
+
+      总的来说，oncopy、onselectstart、oncontextmenu这3个在大多数情况下都是用来保护版权的。
+      不过为了更好的用户体验，我们还是少用为妙，除非是迫不得已的情况。
+    -->
+    <script>
+     window.onload = function() {
+      document.oncontextmenu = function () {
+        return false;
+      };
+     };
+    </script>
+</head>
+<body>
+  <div>每个人的人生掌握在自己的手里，而不是别人的评价里。</div>
+</body>
+</html>

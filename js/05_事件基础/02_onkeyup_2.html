@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*验证输入是否正确*/
+     window.onload = function() {
+      var oTxt = document.getElementById("txt");
+      var oDiv = document.getElementById("content");
+      // 定义一个变量，保存正则表达式
+      var myRegex = /^[0-9]*$/;
+      oTxt.onkeyup = function () {
+        if (myRegex.test(oTxt.value)) {
+          oDiv.innerHTML = "输入正确";
+        } else {
+          oDiv.innerHTML = "请输入数字";
+        }
+      };
+     };
+    </script>
+</head>
+<body>
+  <input id="txt" type="text" />
+  <div id="content" style="color:red;"></div>
+</body>
+</html>

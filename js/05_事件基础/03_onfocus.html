@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      #search {color: #bbbbbb;}
+    </style>
+    <script>
+      /*
+      在JavaScript中，常用的表单事件有3种。
+      （1）onfocus和onblur
+      （2）onselect
+      （3）onchange
+      实际上，除了上面这几个，还有一个onsubmit事件。不过onsubmit事件一般都是结合后端技术来使用。
+
+      onfocus表示获取焦点时触发的事件，而onblur表示失去焦点时触发的事件，两者是相反操作。
+      onfocus和onblur这两个事件往往都是配合一起使用的。
+      例如用户准备在文本框中输入内容时，此时它会获得光标，就会触发onfocus事件。当文本框失去光标时，就会触发onblur事件。
+
+      并不是所有的HTML元素都有焦点事件，具有“获取焦点”和“失去焦点”特点的元素只有2种。
+      （1）表单元素（单选框、复选框、单行文本框、多行文本框、下拉列表）
+      （2）超链接
+      判断一个元素是否具有焦点很简单，我们打开一个页面后按Tab键，能够选中的就是具有焦点特性的元素。
+      在实际开发中，焦点事件（onfocus和onblur）一般用于单行文本框和多行文本框这两个，其他地方比较少用。
+
+      像上面这种搜索框的提示文字效果，其实我们也可以使用HTML5表单元素新增的placeholder属性来实现，代码如下：
+      <input id="search" type="text" placeholder="百度一下，你就知道" />
+
+      对于焦点事件来说，还有一点要补充的。
+      默认情况下，文本框是不会自动获取焦点的，而必须点击文本框才会获取。
+      但是我们却经常看到很多页面一打开的时候，文本框就已经自动获取到了焦点，例如百度首页（大家可以去看看）。
+      那么这个效果是怎么实现的呢？
+      很简单，一个focus()方法就可以轻松搞定。
+
+      focus()跟onfocus是不一样的。focus()是一个方法，仅仅用于让元素获取焦点。而onfocus是一个属性，它是用于事件操作的。
+      */
+     window.onload = function() {
+      var oSearch = document.getElementById("search");
+      oSearch.onfocus = function () {
+        if (this.value == "百度一下，你就知道") {
+          this.value = "";
+        }
+      };
+      oSearch.onblur = function () {
+        if (this.value == "") {
+          this.value = "百度一下，你就知道";
+        }
+      };
+     };
+    </script>
+</head>
+<body>
+  <input id="search" type="text" value="百度一下，你就知道" />
+  <input type="button" value="搜索" />
+</body>
+</html>

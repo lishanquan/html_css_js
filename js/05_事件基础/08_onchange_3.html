@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      对于select元素来说，我们可以使用obj.options[n]的方式来得到某一个列表项，这个列表项也是一个DOM对象。
+      并且还可以使用obj.selectedIndex来获取你所选择的这个列表项的下标。这两个都是下拉列表所独有的也是经常用的方法。
+
+      有一点要提醒大家的：选择下拉列表的某一项时，触发的是onchange事件，而不是onselect事件。
+      onselect事件仅仅在选择文本框中的内容时才会触发，我们要清楚这两者的区别。
+    -->
+    <script>
+     window.onload = function() {
+      var oList = document.getElementById("list");
+      oList.onchange = function () {
+        var link = this.options[this.selectedIndex].value;
+        window.open(link);
+      }
+     };
+    </script>
+</head>
+<body>
+  <select id="list">
+    <option value="http://wwww.baidu.com">百度</option>
+    <option value="http://www.sina.com.cn">新浪</option>
+    <option value="http://www.qq.com">腾讯</option>
+    <option value="http://www.sohu.com">搜狐</option>
+  </select>
+</body>
+</html>

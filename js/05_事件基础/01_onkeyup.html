@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+      /*
+      在JavaScript中，常用的键盘事件共有2种。
+      （1）键盘按下：onkeydown
+      （2）键盘松开：onkeyup
+      onkeydown表示键盘按下一瞬间所触发的事件，而onkeyup表示键盘松开一瞬间所触发的事件。
+      对于键盘来说，都是先有“按下”，才有“松开”，也就是onkeydown发生在onkeyup之前。
+      */
+     window.onload = function() {
+      var oTxt = document.getElementById("txt");
+      var oNum = document.getElementById("num");
+      oTxt.onkeyup = function () {
+        var str = oTxt.value;
+        oNum.innerHTML = str.length;
+      }
+     }
+    </script>
+</head>
+<body>
+  <input id="txt" type="text" />
+  <div>字符串长度为：<span id="num">0</span></div>
+</body>
+</html>

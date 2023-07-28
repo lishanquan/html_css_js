@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，onbeforeunload表示离开页面之前触发的一个事件。
+      语法：
+      window.onbeforeunload = function(){
+          ……
+      }
+      说明：与window.onload相对的应该是window.onunload，不过一般情况下我们极少用到window.onunload，而更倾向于使用window.onbeforeunload。
+    -->
+    <script>
+     window.onload = function() {
+      alert("welcome!");
+     };
+     window.onbeforeunload = function() {
+      alert("bye!");
+     };
+    </script>
+</head>
+<body>
+</body>
+</html>
