@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      属性选择器，指的是通过“元素的属性”来选择元素的一种方式。元素的属性，我们都知道是什么，像下面这句代码中的id、type、value就是input元素的属性。
+
+      <input id="btn" type="button" value="按钮" />
+      在jQuery中，常见的属性选择器如表所示。其中E指的是元素，attr指的是属性（attr），value指的是属性值。
+
+      jQuery属性选择器
+      选择器	              说明
+      E[attr]	            选择元素E，其中E元素必须带有attr属性
+      E[attr = “value”]	  选择元素E，其中E元素的attr属性取值是value
+      E[attr!= “value”]	  选择元素E，其中E元素的attr属性取值不是value
+      E[attr ^= “value”]	选择元素E，其中E元素的attr属性取值是以“value”开头的任何字符
+      E[attr $=“value”]	  选择元素E，其中E元素的attr属性取值是以“value”结尾的任何字符
+      E[attr *= “value”]	选择元素E，其中E元素的attr属性取值是包含“value”的任何字符
+      E[attr |= “value”]	选择元素E，其中E元素的attr属性取值等于“value”或者以“value”开头
+      E[attr ~= “value”]	选择元素E，其中E元素的attr属性取值等于“value”或者包含“value”
+
+      jQuery这些属性选择器使得选择器具有通配符的功能，有点正则表达式的感觉。下面我们通过一些简单实例来认识一下。
+
+      选取含有class属性的div元素：
+      $("div[class]")
+
+      选取type取值为checkbox的input元素：
+      $("input[type = 'checkbox']")
+
+      选取type取值不是checkbox的input元素：
+      $("input[type != 'checkbox']")
+
+      选取class属性包含nav的div元素（class属性可以包含多个值）：
+      $("div[class *= 'nav']")
+
+      选取class属性以nav开头的div元素，例如：
+      <div class="nav-header"></div>：
+      $("div[class ^= 'nav']")
+
+      选取class属性以nav结尾的div元素，例如：
+      <div class="first-nav"></div>：
+      $("div[class $= 'nav']")
+
+      选取带有id属性并且class属性是以nav开头的div元素，例如：
+      <div id="container" class="nav-header"></div>：
+      $("div[id][class ^='nav']")
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("li[class]").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li class="select">CSS</li>
+    <li>JavaScript</li>
+    <li class="select">jQuery</li>
+    <li>Vue.js</li>
+</ul>
+  </div>
+</body>
+</html>

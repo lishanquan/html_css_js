@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      相邻选择器，就是选中元素后面（不包括前面）的某一个“相邻”的兄弟元素。相邻选择器跟兄弟选择器也非常相似，不过也有明显的区别。
+      （1）兄弟选择器选取元素后面“所有”的某一类元素。
+      （2）相邻选择器选取元素后面“相邻”的某一个元素。
+      语法：$("M+N")
+      说明：在相邻选择器中，“M元素”和“N元素”之间使用“+”选择符，表示选中M元素后面的某一个相邻的兄弟元素N。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#second+p").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <div id="first">
+    <p>lvye的子元素</p>
+    <p>lvye的子元素</p>
+    <div id="second">
+      <p>lvye子元素的子元素</p>
+      <p>lvye子元素的子元素</p>
+    </div>
+    <p>lvye的子元素</p>
+    <p>lvye的子元素</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      class选择器，就是我们常说的“类选择器”。我们可以对“相同的元素”或者“不同的元素”定义一个相同的class，然后针对这个class的元素进行各种操作。
+      语法：$(".类名")
+      说明：类名前面必须加上前缀英文句号（.），否则该选择器无法生效。类名前面加上英文句号（.）， 表示这是一个class选择器。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $(".lv").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <div>绿叶学习网</div>
+  <p class="lv">绿叶学习网</p>
+  <span class="lv">绿叶学习网</span>
+  <div>绿叶学习网</div>
+</body>
+</html>

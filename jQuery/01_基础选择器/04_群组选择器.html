@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      群组选择器，指的是同时对几个选择器进行相同的操作。
+      语法：$("选择器1, 选择器2, ... , 选择器n");
+      说明：对于群组选择器，两个选择器之间必须用英文逗号（,）隔开，不然选择器无法生效。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("h3, p, span, #div2").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <h3>绿叶学习网</h3>
+  <div>绿叶学习网</div>
+  <p>绿叶学习网</p>
+  <div id="div2">绿叶学习网</div>
+  <span>绿叶学习网</span>
+</body>
+</html>

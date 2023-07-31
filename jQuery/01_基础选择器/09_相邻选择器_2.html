@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      ("li+li")使用的是相邻选择器，表示“选择li元素相邻的下一个li元素”。
+      由于最后一个li元素没有相邻的下一个li元素，所以对于最后一个li元素，它是没有下一个li元素可以选取的。
+
+      这是一个非常棒的技巧，在实际开发中如果我们想要在两两元素之间实现什么效果（border、margin等），我们会经常用到这个技巧！大家一定要重点掌握。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("li+li").css("border-top", "2px solid red");
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>第1个元素</li>
+    <li>第2个元素</li>
+    <li>第3个元素</li>
+    <li>第4个元素</li>
+    <li>第5个元素</li>
+  </ul>
+  </div>
+</body>
+</html>

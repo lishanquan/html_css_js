@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      层次选择器，就是通过元素之间的层次关系来选择元素。层次选择器在实际开发中，也是相当重要的。常见的层次关系包括：父子、后代、兄弟、相邻。
+
+      在jQuery中，层次选择器共有4种，如下表所示。
+      选择器	  说明
+      M N	  后代选择器，选择M元素内部后代N元素（所有N元素）
+      M > N	子代选择器，选择M元素内部子代N元素（所有第1级N元素）
+      M ~ N	兄弟选择器，选择M元素后面所有的同级N元素
+      M + N	相邻选择器，选择M元素相邻的下一个元素（M、N是同级元素）
+      
+      此外，我们还需要注意以下4点。
+      （1）("M N")可以使用(M).find(N)代替
+      （2）("M>N")可以使用(M).children(N)代替
+      （3）("M~N")可以使用(M).nextAll(N)代替
+      （4）("M+N")可以使用(M).next(N)代替
+
+      后代选择器，就是选择元素内部中所有的某一种元素，包括子元素和其他后代元素。
+      语法：$("M N")
+      说明：在后代选择器中，“M元素”和“N元素”之间用空格隔开，表示选中M元素内部的后代N元素（即所有N元素）。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#first p").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <div id="first">
+    <p>lvye的子元素</p>
+    <p>lvye的子元素</p>
+    <div id="second">
+      <p>lvye子元素的子元素</p>
+      <p>lvye子元素的子元素</p>
+    </div>
+    <p>lvye的子元素</p>
+    <p>lvye的子元素</p>
+  </div>
+</body>
+</html>
