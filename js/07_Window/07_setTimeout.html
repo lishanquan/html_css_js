@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，我们可以使用setTimeout()方法来“一次性”地调用函数，并且可以使用clearTimeout()来取消执行setTimeout()。
+      语法：setTimeout(code, time);
+      说明：
+      参数code可以是一段代码，可以是一个函数，也可以是一个函数名。
+      参数time是时间，单位为毫秒，表示要过多长时间才执行code中的代码。
+    -->
+    <script>
+      window.onload = function() {
+        var oBtn = document.getElementsByTagName("input");
+        var timer = null;
+        oBtn[0].onclick = function() {
+          timer = setTimeout(function() {
+            alert("欢迎来到绿叶学习网");
+          }, 2000);
+        };
+        oBtn[1].onclick = function() {
+          clearTimeout(timer);
+        };
+      };
+    </script>
+</head>
+<body>
+  <p>点击“开始按钮”，2秒后提示欢迎语。</p>
+  <input type="button" value="开始" />
+  <input type="button" value="暂停" />
+</body>
+</html>

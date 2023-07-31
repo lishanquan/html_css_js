@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，我们可以通过event对象来获取一个事件的详细信息。
+      属性	    说明
+      type	    事件类型
+      keyCode	  键码值
+      shiftKey	是否按下shift键
+      ctrlKey	  是否按下Ctrl键
+      altKey	  是否按下Alt键
+      
+      在JavaScript中，我们可以使用event对象的type属性来获取事件的类型。
+    -->
+    <script>
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      // 每次调用一个事件的时候，JavaScript都会默认给这个事件函数加上一个隐藏的参数，这个参数就是event对象。
+      oBtn.onclick = function (e) {
+        alert(e.type);
+      }
+     };
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="按钮" />
+</body>
+</html>

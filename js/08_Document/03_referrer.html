@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，我们可以使用document对象的referrer属性来获取用户在访问当前页面之前所在页面的地址。
+      例如我从页面A的某个链接进入页面B，如果在页面B中使用document.referrer，就可以获取到页面A的地址。
+      
+      document.referrer非常酷，因为我们可以通过它来统计用户都是通过什么方式来到你的网站的。
+    -->
+    <script>
+      var url = document.referrer;
+      document.write("来源地址是：" + url);
+    </script>
+</head>
+<body>
+</body>
+</html>

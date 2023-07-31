@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，我们可以使用window.close()来关闭一个新窗口。
+      语法：window.close()
+      说明：window.close()方法是没有参数的。
+    -->
+    <script>
+      window.onload = function() {
+        var btnOpen = document.getElementById("btn_open");
+        var btnClose = document.getElementById("btn_close");
+        var opener = null;
+        btnOpen.onclick = function() {
+          opener = window.open("http://www.lvyestudy.com");
+        };
+        btnClose.onclick = function() {
+          opener.close();
+        };
+      };
+    </script>
+</head>
+<body>
+  <input id="btn_open" type="button" value="打开新窗口" />
+  <input id="btn_close" type="button" value="关闭新窗口" />
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，如果我们想要获取按下了键盘中的哪个键，可以使用event对象的keyCode属性来获取。
+      语法：event.keyCode
+      说明：event.keyCode返回的是一个数值，常用的按键及对应的键码如表所示。
+
+      常用的按键及对应的键码
+      按键	 键码
+      W（上）	87
+      S（下）	83
+      A（左）	65
+      D（右）	68
+      ↑	     38
+      ↓	     40
+      ←	     37
+      →	     39
+
+      如果是shift、ctrl和alt键，我们不需要通过keyCode属性来获取，而是可以通过shiftKey、ctrlKey和altKey属性获取。
+
+      e.keyCode返回的是一个数字，而e.shiftKey、e.ctrlKey、e.altKey返回的都是布尔值（true或false），我们注意一下两者的区别。
+    -->
+    <script>
+     window.onload = function() {
+      document.onkeydown = function(e) {
+        if (e.shiftKey || e.ctrlKey || e.altKey) {
+          alert("禁止使用shift、alt、ctrl键！");
+        }
+      }
+     };
+    </script>
+</head>
+<body>
+  <p> 鱼对水说：你看不见我的眼泪，因为我在水中。<br/>水对鱼说；我能感觉到你的眼泪，因为你在我心中。 </p>
+</body>
+</html>

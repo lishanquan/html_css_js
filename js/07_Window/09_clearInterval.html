@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      i = i % colors.length;
+      使得i可以不断循环0、1、2、3、4、5，这是一个非常棒的技巧，特别是在图片轮播开发中非常有用，小伙伴们认真琢磨一下。
+
+      当我们快速不断地点击【开始】按钮，神奇的一幕发生了：背景颜色切换的速度加快了。然后点击【暂停】按钮，却发现根本停不下来！那是什么原因导致的呢？
+
+      其实每一次点击，都会新开一个setInterval()，当你不断点击按钮，setInterval()就会累加起来。
+      也就是说，当你点击3次按钮时，其实已经开了3个setInterval()，此时如果你想要停下来，就必须点击3次【暂停】按钮。
+      为了避免这个累加的bug，我们在每次点击【开始】按钮的一开始就要清除一次定时器
+    -->
+    <style type="text/css">
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid silver;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        var oBtn = document.getElementsByTagName("input");
+        var oDiv = document.getElementsByTagName("div")[0];
+        var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+        var timer = null;
+        var i = 0;
+        oBtn[0].onclick = function() {
+          timer = setInterval(function() {
+            oDiv.style.backgroundColor = colors[i];
+            i++;
+            i = i % colors.length;
+          }, 1000);
+        };
+        oBtn[1].onclick = function() {
+          clearInterval(timer);
+        };
+      };
+    </script>
+</head>
+<body>
+  <input type="button" value="开始" />
+  <input type="button" value="暂停" />
+  <div></div>
+</body>
+</html>

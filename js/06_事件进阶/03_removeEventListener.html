@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，我们可以使用removeEventListener()方法为元素解绑（或解除）某个事件。解绑事件与绑定事件是相反的操作。
+      语法：obj.removeEventListener(type , fn , false);
+      说明：
+      obj是一个DOM对象，指的是使用getElementById()、getElementsByTagName()等方法获取到的元素节点。
+      type是一个字符串，指的是事件类型。例如，单击事件用click，鼠标移入用mouseover等。一定要注意，这里我们是不需要加上on前缀的。
+      对于removeEventListener()方法来说，fn必须是一个函数名，而不能是一个函数。
+    -->
+    <script>
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oP = document.getElementById("content");
+      // 为p添加事件
+      oP.addEventListener("click", changeColor, false);
+      // 点击按钮后，为p解除事件
+      oBtn.addEventListener("click", function () {
+        oP.removeEventListener("click", changeColor, false);
+      }, false);
+
+      function changeColor() {
+        this.style.color = "hotpink";
+      };
+     };
+    </script>
+</head>
+<body>
+  <p id="content">绿叶学习网</p>
+  <input id="btn" type="button" value="解除"/>
+</body>
+</html>

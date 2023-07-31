@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，prompt()对话框不仅提示文字，还返回一个字符串。
+      语法：prompt("提示文字")
+
+      对于alert()、confirm()和prompt()对话框，我们总结一下（如下表所示）。
+      方法	      说明
+      alert()	  仅提示文字，没有返回值
+      confirm()	具有提示文字，返回“布尔值”（true或false）
+      prompt()	具有提示文字，返回“字符串”
+
+      在实际开发中，这3种对话框经常会用到，不过我们不会采用浏览器默认的对话框，因为这些默认对话框外观真的是太丑了。
+      为了更好的用户体验，我们都倾向于使用div元素来模拟出来，并且结合CSS3、JavaScript等来实现酷炫的动画效果。
+    -->
+    <script>
+      window.onload = function() {
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function() {
+          var name = prompt("请输入你的名字");
+          document.write("欢迎来到<strong>" + name + "</strong>");
+        };
+      };
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="按钮" />
+</body>
+</html>

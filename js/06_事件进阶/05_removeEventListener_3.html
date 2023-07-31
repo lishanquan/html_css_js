@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      解除事件都有什么用呢？一般情况下我们都是添加完事件就算了，没必要去解除事件啊！
+      其实大多数情况确实如此，但是不少情况下是必须要解除事件的。
+
+      这个例子实现的效果是：限制按钮只可以执行一次点击事件。实现思路很简单，在点击事件函数的最后解除事件就可以了。
+      在实际开发中，像拖拽这种效果，我们在onmouseup事件中就必须要解除onmousemove事件，如果没有解除就会有bug。
+    -->
+    <script>
+     window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      oBtn.addEventListener("click", alertMsg, false);
+
+      function alertMsg() {
+        alert("good!");
+        oBtn.removeEventListener("click", alertMsg, false);
+      };
+     };
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="弹出" />
+</body>
+</html>
