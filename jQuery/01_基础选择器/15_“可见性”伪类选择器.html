@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      可见性伪类选择器，指的就是根据元素“可见”与“不可见”这两种状态来选取元素。
+      在jQuery中，可见性伪类选择有两种，如下所示:
+      选择器	    说明
+      :visible	选取所有可见元素
+      :hidden	  选取所有不可见元素
+      所谓的不可见元素，指的是定义了display:none的元素。
+
+      $("li:hidden")表示选取所有不可见的li元素。
+      
+      $("#btn").click(function(){
+          ……
+      });
+      上面这段代码表示鼠标单击事件，这个是jQuery的语法，等价于JavaScript的obj.onclick = function(){}。
+    -->
+    <style type="text/css">
+      .select {display: none;}
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function(){
+          $("li:hidden").css("display", "block");
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li class="select">jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+  <input id="btn" type="button" value="显示">
+</body>
+</html>

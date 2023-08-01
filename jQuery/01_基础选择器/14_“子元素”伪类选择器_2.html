@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      二、:first-of-type、:last-of-type、:nth-of-type(n)、:only-of-type
+      :first-of-type、:last-of-type、:nth-of-type(n)、:only-of-type
+      和
+      :first-child、:last-child、:nth-child(n)、:only-child
+      这两类子元素伪类选择器看起来非常相似，但是两者其实有着本质的区别。
+
+      子元素伪类选择器（第2类）
+      选择器	            说明
+      E:first-of-type	  选择父元素下的第一个E类型的子元素
+      E:last-of-type	  选择父元素下的最后一个E类型的子元素
+      E:nth-of-type(n)	选择父元素下的第n个E类型的子元素或奇偶元素，n取值有3种：数字、odd、even
+      E:only-of-type	  选择父元素下唯一的E类型的子元素，该父元素可以有多个子元素
+
+      对于上面的解释，大家可能觉得比较难理解，我们先来看一个最简单的例子：
+      <div>
+          <h1><h1>
+          <p></p>
+          <span></span>
+          <span></span>
+      </div>
+
+      对于:first-child来说，我们可以得到以下结果。
+      h1:first-child：
+      选择的是h1，因为父元素（即div）下的第一个子元素就是h1。
+
+      p:first-child：
+      选择不到任何元素，因为父元素（即div）下的第一个子元素是h1，不是p。
+
+      span:first-child：
+      选择不到任何元素，因为父元素（即div）下的第一个子元素是h1，不是span。
+
+      对于:first-of-type来说，我们可以得到以下结果。
+      h1:first-of-type：
+      选择的是h1，因为h1是父元素中h1类型的子元素，我们选择其中第一个（实际上也只有一个h1）。
+
+      p:first-of-type：
+      选择的是p，因为p是父元素中p类型的子元素，我们选择其中第一个（实际上也只有一个p）。
+
+      span:first-of-type：
+      选择的是第一个span，因为span是父元素中span类型的子元素，我们选择其中第一个。
+    -->
+</head>
+<body>
+</body>
+</html>

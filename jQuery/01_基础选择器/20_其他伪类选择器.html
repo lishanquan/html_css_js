@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      除了之前介绍的伪类选择器，jQuery还为我们提供了其他用途的选择器，如下所示。
+      选择器	          说明
+      :not(selector)	选取除了某个选择器之外的所有元素
+      :animated	      选取所有正在执行动画的元素
+      :root	          选取页面根元素，即html元素
+      :header	        选取h1~h6的标题元素
+      :target	        选取锚点元素
+      :lang(language)	选取特定语言的元素
+
+      在实际开发中，一般情况下只会用到:not()、:animated这两个。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("li:not(#select)").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li id="select">jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+</body>
+</html>

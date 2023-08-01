@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      表单伪类选择器，指的是专门操作表单元素的一种伪类选择器。
+      
+      在jQuery中，常用的表单伪类选择器如下所示。
+      选择器	    说明
+      :input	  选取所有input元素
+      :button	  选取所有普通按钮，即<input type="button" />
+      :submit	  选取所有提交按钮，即<input type="submit" />
+      :reset	  选取所有重置按钮，即<input type="reset" />
+      :text	    选取所有单行文本框
+      :textarea	选取所有多行文本框
+      :password	选取所有密码文本框
+      :radio	  选取所有单选框
+      :checkbox	选取所有复选框
+      :image	  选取所有图片域
+      :file	    选取所有文件域
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("input:checkbox").attr("checked", "checked");
+      });
+    </script>
+</head>
+<body>
+  <p>性别：
+    <label><input type="radio" name="gendar"/>男</label>
+    <label><input type="radio" name="gendar"/>女</label>
+  </p>
+  <p>喜欢的水果：
+      <label><input type="checkbox"/>苹果</label>
+      <label><input type="checkbox"/>西瓜</label>
+      <label><input type="checkbox"/>蜜桃</label>
+  </p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      表单属性伪类选择器，指的是根据表单元素的属性来选取的一种伪类选择器。
+      
+      在jQuery中，常见的表单属性伪类选择器如下所示。
+      选择器	      说明
+      :checked	  选取所有被选中的表单元素，一般是单选框或复选框
+      :selected	  选取被选中的表单元素的选项，一般是下拉列表
+      :enabled	  选取所有可用的表单元素
+      :disabled	  选取所有不可用的表单元素
+      :read-only	选取所有只读的表单元素
+      :focus	    选取所有获得焦点的表单元素
+
+      像上表这些表单属性伪类选择器，在实际开发中用得非常多，大家一定要重视。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        var result = $("input:checked").val();
+        alert(result);
+      });
+    </script>
+</head>
+<body>
+  <p>喜欢的水果：
+      <label><input type="checkbox"/>苹果</label>
+      <label><input type="checkbox" checked/>西瓜</label>
+      <label><input type="checkbox"/>蜜桃</label>
+  </p>
+</body>
+</html>

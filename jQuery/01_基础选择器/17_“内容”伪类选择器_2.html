@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      内容伪类选择器，指的是根据元素的内部文本或者子元素来选取元素。在jQuery中，常用的内容伪类选择器如下表所示。
+      选择器	          说明
+      :contains(text)	选取包含指定文本的元素
+      :has(selector)	选取包含指定选择器的元素
+      :parent	        选取含有文本或者子元素的元素
+      :empty	        选取不含有文本以及子元素的元素，即空元素
+    -->
+    <style type="text/css">
+      *{padding: 0;margin: 0;margin-top: 5px;margin-left: 100px;}
+    </style>
+    <style type="text/css">
+      table, tr, td {border: 1px solid silver;}
+      td {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        // $("td:empty")表示选取内部没有文本也没有子元素的td元素。
+        // $("td:empty").css("background-color", "red");
+
+        // $("td:parent")表示选取内部有文本或者子元素的td元素。
+        // 注意，只要元素中有子元素或者文本内容，则该元素都会被选中。
+        $("td:parent").css("background-color", "red");
+      });
+    </script>
+</head>
+<body>
+  <table>
+    <tr>
+        <td>2</td>
+        <td>4</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>32</td>
+        <td>64</td>
+    </tr>
+    <tr>
+        <td>128</td>
+        <td>256</td>
+        <td></td>
+    </tr>
+  </table>
+</body>
+</html>

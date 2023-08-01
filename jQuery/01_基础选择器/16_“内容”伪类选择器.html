@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      内容伪类选择器，指的是根据元素的内部文本或者子元素来选取元素。在jQuery中，常用的内容伪类选择器如下表所示。
+      选择器	          说明
+      :contains(text)	选取包含指定文本的元素
+      :has(selector)	选取包含指定选择器的元素
+      :parent	        选取含有文本或者子元素的元素
+      :empty	        选取不含有文本以及子元素的元素，即空元素
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("p:contains(jQuery)").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <div>jQuery实战开发</div>
+  <p>write less do more</p>
+  <p>从JavaScript到jQuery</p>
+  <div>欢迎来到绿叶学习网</div>
+</body>
+</html>

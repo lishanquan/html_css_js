@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      一说起“伪类选择器”，大家可能首先想到的是:link、:visited、:hover、:active这4个超链接伪类。没错，这几个就是最常见的伪类选择器。
+
+      伪类选择器，可以看成是一种特殊的选择器。其中，伪类选择器都是以英文冒号（:）开头的。
+      jQuery参考CSS伪类选择器的形式，为我们提供了大量的伪类选择器，常用的包括以下6种。
+      （1）“位置”伪类选择器
+      （2）“子元素”伪类选择器
+      （3）“可见性”伪类选择器
+      （4）“内容”伪类选择器
+      （5）“表单”伪类选择器
+      （6）“表单属性”伪类选择器
+
+      位置伪类选择器，指的是根据页面中的位置来选取元素。在jQuery中，常见的位置伪类选择器如下表所示。
+      选择器	  说明
+      :first	选取某种元素的第一个
+      :last	  选取某种元素的最后一个
+      :odd	  选取某种元素中序号为“奇数”的所有元素，序号从0开始
+      :even	  选取某种元素中序号为“偶数”的所有元素，序号从0开始
+      :eq(n)	选取某种元素的第n个，n是一个整数，从0开始
+      :lt(n)	选取某种元素中小于n的所有元素，n是一个整数，从0开始
+      :gt(n)	选取某种元素中大于n的所有元素，n是一个整数，从0开始
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        // $("li:first, li:last").css("color", "red");
+        // $("li:even").css("color", "red");
+        $("li:lt(3)").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+</body>
+</html>
