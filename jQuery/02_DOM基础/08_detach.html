@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，detach()跟remove()的功能相似，都是将某个元素及其内部所有内容删除。但是两者也有明显的区别。
+      （1）remove()方法用于“彻底”删除元素。所谓的“彻底”，指的是不仅会删除元素，还会把元素绑定的事件删除。
+      （2）detach()方法用于“半彻底”删除元素。所谓的“半彻底”，指的是只会删除元素，不会把元素绑定的事件删除。
+      
+      语法：$().detach()
+
+      对于remove()和detach()这两个方法，可以总结一下：
+      元素被删除然后重新被添加，如果不希望该元素还保留原来绑定的事件，应该用remove()方法；
+      如果希望该元素还保留原来绑定的事件，应该使用detach()方法。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("li").click(function() {
+          alert("hello");
+        });
+        $("#btn").click(function() {
+          // var $li4 = $("li:nth-child(4)").remove();
+          var $li4 = $("li:nth-child(4)").detach();
+          $("ul").append($li4);
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+  <input id="btn" type="button" value="删除" />
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用字符串的形式来创建一个元素节点，然后再通过append()、before()等方法把这个字符串插入到现有的元素节点中。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function() {
+          var $li = "<li><a href='http://www.lvyestudy.com'>绿叶学习网</a></li>";
+          $("ul").append($li);
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li><a href="http://www.sina.com.cn">新浪</a></li>
+    <li><a href="http://www.sohu.com">搜狐</a></li>
+    <li><a href="http://www.163.com">网易</a></li>
+  </ul>
+  <input id="btn" type="button" value="添加" />
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用clone()方法来复制某一个元素。
+      语法：$().clone(bool)
+      说明：参数bool是一个布尔值，取值为true或false，默认值为false。
+      （1）true：表示不仅复制元素，并且还会复制元素所绑定的事件。
+      （2）false：表示仅仅复制元素，但不会复制元素所绑定的事件。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("li").click(function() {
+          alert("hello");
+        });
+        $("#btn").click(function() {
+          var $li = $("li:nth-child(4)").clone(true);
+          $($li).appendTo("ul");
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+  <input id="btn" type="button" value="复制" />
+</body>
+</html>

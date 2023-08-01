@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，除了:nth-child()和:nth-of-type()这两个的下标是从1开始的，其他所有选择器或jQuery方法的下标都是从0开始的。
+
+      remove()方法可以返回一个值，其中返回值为被删除的元素。
+      也就是说，虽然这个元素被删除了，但是我们可以把返回值赋值给一个变量，然后再次使用被删除的元素。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function() {
+          var $result = $("ul li:nth-child(4)").remove();
+          $("ul").append($result);
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+  <input id="btn" type="button" value="删除" />
+</body>
+</html>

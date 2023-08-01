@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在JavaScript中，插入节点只有appendChild()和insertBefore()两种方法。
+      不过在jQuery中，却为我们提供大量有关插入节点的方法，极大地方便了我们的操作。
+
+      在jQuery中，插入节点的方法有以下4组。
+      （1）prepend()和prependTo()
+      （2）append()和appendTo()
+      （3）before()和insertBefore()
+      （4）after()和insertAfter()
+
+      在jQuery中，我们可以使用prepend()方法向所选元素内部的“开始处”插入内容。
+      语法：$(A).prepend(B)
+      说明：$(A).prepend(B)表示往A的内部开始处插入B。
+
+      在jQuery中，prependTo()和prepend()这两个方法功能相似，都是向所选元素内部的“开始处”插入内容。但是两者的操作对象却是颠倒的。
+      语法：$(A).prependTo(B)
+      说明：$(A).prependTo(B)表示将A插入到B内部的开始处。
+    -->
+    <style type="text/css">
+      p{background-color: orange;}
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function() {
+          var $strong = "<strong>jQuery教程</strong>";
+          // $("p").prepend($strong);
+          $($strong).prependTo("p");
+        });
+      });
+    </script>
+</head>
+<body>
+  <p>绿叶学习网</p>
+  <input id="btn" type="button" value="插入" />
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用append()方法向所选元素内部的“末尾处”插入内容。
+      语法：$(A).append(B)
+      说明：$(A).append(B)表示往A的内部末尾处插入B。
+
+      在jQuery中，appendTo()和append()这两个方法功能相似，都是向所选元素内部的“末尾处”插入内容。但是两者的操作对象却是颠倒的。
+      语法：$(A).appendTo(B)
+      说明：$(A).appendTo(B)表示将A插入到B内部的末尾处。
+    -->
+    <style type="text/css">
+      p{background-color: orange;}
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function() {
+          var $strong = "<strong>jQuery教程</strong>";
+          // $("p").append($strong);
+          $($strong).appendTo("p");
+        });
+      });
+    </script>
+</head>
+<body>
+  <p>绿叶学习网</p>
+  <input id="btn" type="button" value="插入" />
+</body>
+</html>

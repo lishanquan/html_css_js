@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用wrapInner()方法将所选元素“内部所有元素以及文本”用其他元素包裹起来。
+      语法：$(A).wrapInner(B)
+      说明：$(A).wrapInner(B)表示将A元素“内部所有元素以及文本”使用B元素包裹起来。注意，wrapInner()方法不会包裹A元素本身。
+
+
+      下边的例子中，当我们点击【包裹】按钮后，此时得到的HTML结构如下：
+      <p><strong>绿叶学习网</strong></p>
+      <p><strong>绿叶学习网</strong></p>
+      <p><strong>绿叶学习网</strong></p>
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function() {
+          $("p").wrapInner('<strong></strong>')
+        });
+      });
+    </script>
+</head>
+<body>
+  <p>绿叶学习网</p>
+  <p>绿叶学习网</p>
+  <p>绿叶学习网</p>
+  <input id="btn" type="button" value="包裹" />
+</body>
+</html>
