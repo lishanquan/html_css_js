@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      如果想要获取元素的位置，jQuery为我们提供了两种方法：一种是offset()；另外一种是position()。
+
+      在jQuery中，我们可以使用offset()方法来获取或设置元素相对于“当前文档”（也就是浏览器窗口）的偏移距离。
+      语法：
+      $().offset().top
+      $().offset().left
+      说明：
+      offset()方法返回的是一个坐标对象，该对象有两个属性，这两个属性返回的都是一个不带单位的数字。
+      top属性，表示获取元素相当于当前文档“顶部”的距离。
+      left属性，表示获取元素相当于当前文档“左部”的距离。
+    -->
+    <style type="text/css">
+      body {
+        text-align: center;
+      }
+      #div1, #div2 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+      }
+      #div1 {background-color: lightskyblue;}
+      #div2 {background-color: hotpink;}
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        var top = $("#div2").offset().top;
+        var left = $("#div2").offset().left;
+        var result = "div2距离顶部：" + top + "px\n" + "div2距离左边：" + left + "px";
+        console.log(result);
+      });
+    </script>
+</head>
+<body>
+  <div id="div1"></div><br />
+  <div id="div2"></div>
+</body>
+</html>

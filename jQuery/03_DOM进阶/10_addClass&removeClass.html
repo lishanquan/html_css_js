@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      类名操作，指的是为元素添加一个class或删除一个class，从而整体控制元素的样式。在jQuery中，对于类名操作共有以下3种。
+      （1）添加class。
+      （2）删除class。
+      （3）切换class。
+
+      1．添加class
+      在jQuery中，我们可以使用addClass()方法为元素添加一个class。
+      语法：$().addClass("类名")
+
+      2、删除class
+      在jQuery中，我们可以使用removeClass()方法来为元素删除一个class。
+      语法：$().removeClass("类名")
+    -->
+    <style type="text/css">
+      .select {
+        color: red;
+        background-color: silver;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn_add").click(function() {
+          $("li:nth-child(odd)").addClass("select");
+        });
+        $("#btn_remove").click(function() {
+          $("li:nth-child(odd)").removeClass("select");
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+  <input id="btn_add" type="button" value="添加" />
+  <input id="btn_remove" type="button" value="删除" />
+</body>
+</html>

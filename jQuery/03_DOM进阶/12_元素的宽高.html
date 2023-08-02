@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，如果想要获取和设置一个元素的宽度和高度，我们可以使用css()方法来实现。
+      不过为了更加灵活地操作元素的宽高，jQuery为我们另外提供了更多更加强大的方法。
+
+      在jQuery中，如果我们想要“获取”和“设置”元素的宽高，共有3组方法。
+      （1）width()和height()
+      （2）innerWidth()和innerHeight()
+      （3）outerWidth()和outerHeight()
+
+      width()、innerWidth()、outerWidth()：
+      方法	          范围
+      width()	      width
+      innerWidth()	width + padding
+      outerWidth()	width + padding + border
+
+      height()、innerHeight()、outerHeight()：
+      方法	          范围
+      height()	    height
+      innerHeight()	height + padding
+      outerHeight()	height + padding + border
+
+      实际上，上面这三组方法是根据CSS盒子模型来划分的。对于这3组方法，一般情况下我们只会用到width()和height()这一组方法，其他两组方法了解一下即可。
+      
+      语法：
+      $().width()     //获取元素宽度
+      $().width(n)    //设置元素宽度，n是一个整数，表示n像素
+      $().height()     //获取元素高度
+      $().height(n)    //设置元素高度，n是一个整数，表示n像素
+      说明：
+      width()方法用于获取和设置元素的宽度，height()方法用于获取和设置元素的高度。
+
+      jQuery很多方法都有这样一个特点：没有参数的方法表示“获取”，带有参数的方法表示“设置”。
+
+      这里要注意一下，width(n)方法用于设置宽度时是不需要加单位的，像width(50px)这种写法是错误的，正确的写法应该是width(50)。
+    -->
+    <style type="text/css">
+      #div1, #div2 {
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        border: 1px solid gray;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn_get").click(function() {
+          var $width = $("#div1").width();
+          alert($width);
+        });
+        $("#btn_set").click(function() {
+          $("#div2").width(50);
+        });
+      });
+    </script>
+</head>
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div><br />
+  获取第1个div宽度：<input id="btn_get" type="button" value="获取" /><br />
+  设置第2个div宽度：<input id="btn_set" type="button" value="设置" />
+</body>
+</html>

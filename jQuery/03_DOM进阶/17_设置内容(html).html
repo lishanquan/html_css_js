@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用html()方法来获取和设置一个元素中的“html内容”。所谓的html内容，指的是所有的内部元素以及文本。
+
+      语法：
+      $().html()              //获取html内容
+      $().html("html内容")    //设置html内容
+      说明：
+      html()方法跟innerHTML是一样的，只不过html()是jQuery的实现方式，而innerHTML是JavaScript的实现方式。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function() {
+          var str = '<img src="../img/1.png" />';
+          $("div").html(str);
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="设置" />
+  <div></div>
+</body>
+</html>

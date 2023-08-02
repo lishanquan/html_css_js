@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用toggleClass()方法为元素切换类名。
+      语法：$().toggleClass("类名")
+      说明：toggleClass()方法用于检查元素是否有某个class。如果class不存在，则为元素添加该class；如果class已经存在，则为元素删除该class。
+
+      最后总结一下：
+      使用jQuery操作元素的样式时，如果样式比较少时，建议使用“属性操作”，也就是css()方法；
+      当样式比较多时，建议使用“类名操作”，也就是addClass()、removeClass()、toggleClass()等方法。
+    -->
+    <style type="text/css">
+      .select {
+        color: red;
+        background-color: silver;
+        font-weight: bold;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function() {
+          $("li:nth-child(odd)").toggleClass("select");
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+  <input id="btn" type="button" value="切换" />
+</body>
+</html>
