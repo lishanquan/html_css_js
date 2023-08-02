@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      样式操作，指的是使用jQuery来操作一个元素的CSS属性。
+      在jQuery中，对于样式操作共有以下3种。
+      （1）CSS属性操作
+      （2）CSS类名操作
+      （3）个别样式操作
+
+      在jQuery，对于CSS属性的操作有两种情况：一种是“获取属性”；另外一种是“设置属性”。
+      1．获取属性
+      在jQuery中，我们可以使用css()方法来获取一个CSS属性的取值。
+      语法：$().css("属性名")
+
+      2．设置属性
+      在jQuery中，设置元素的某一个CSS属性的值，我们用的也是css()方法。
+      不过对于css()方法，我们需要分两种情况来考虑：一种是“设置单个属性”；另外一种是“设置多个属性”。
+      语法：
+      //设置一个属性
+      $().css("属性", "取值")
+      //设置多个属性
+      $().css({"属性1":"取值1", "属性2":"取值2", ..., "属性n":"取值n"})
+      
+      说明：
+      当我们想要设置多个CSS属性时，使用的是对象的形式。其中属性与取值采用的是“键值对”方式，然后每个键值对之间用英文逗号隔开。
+    -->
+    <style type="text/css">
+      p{font-weight: bold;}
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function() {
+          var $fW = $("p").css("font-weight");
+          alert("font-weight:" + $fW);
+        });
+      });
+    </script>
+</head>
+<body>
+  <p>绿叶学习网</p>
+  <input id="btn" type="button" value="获取" />
+</body>
+</html>

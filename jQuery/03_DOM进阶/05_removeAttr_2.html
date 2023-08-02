@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用removeAttr()方法来删除元素的某个属性。
+      语法：$().removeAttr("属性名")
+
+      下面例子中，我们为p元素添加一个点击事件。
+      在点击事件中，我们使用removeAttr()方法来删除class属性，删除了类名之后该元素就没有那个类名对应的样式了。
+
+      removeAttr()方法更多情况下是结合class属性来“整体”控制元素的样式属性的。
+    -->
+    <style type="text/css">
+      .content{color: red; font-weight: bold;}
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn_add").click(function() {
+          $("p").attr("class", "content");
+        });
+        $("#btn_remove").click(function() {
+          $("p").removeAttr("class");
+        });
+      });
+    </script>
+</head>
+<body>
+  <p>绿叶学习网</p>
+  <input id="btn_add" type="button" value="添加样式" />
+  <input id="btn_remove" type="button" value="删除样式" />
+</body>
+</html>

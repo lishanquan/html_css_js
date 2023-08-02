@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      prop()方法跟attr()方法相似，都是用来获取或设置元素的HTML属性的。不过两者也有着本质上的区别。
+
+      jQuery官方建议：
+      具有true和false这两种取值的属性，如checked、selected或disabled等建议使用prop()来操作，
+      而其他的属性都建议使用attr()来操作。
+
+      实际上，prop()方法的出现就是为了弥补attr()方法在表单属性操作中的不足。
+      记住一句话就行了：如果某个属性没法使用attr()获取或设置，改换prop()就可以搞定。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $('input[type="radio"]').change(function() {
+          // 对于表单元素的checked、selected、disabled这些属性，我们使用attr()方法是没法获取的，而必须使用prop()方法来获取。
+          // var bool = $(this).attr("checked");
+          var bool = $(this).prop("checked");
+          if (bool) {
+            $("p").text("你选择的是：" + $(this).val())
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <div>
+    <label><input type="radio" name="fruit" value="苹果" />苹果</label>
+    <label><input type="radio" name="fruit" value="香蕉" />香蕉</label>
+    <label><input type="radio" name="fruit" value="西瓜" />西瓜</label>
+  </div>
+  <p></p>
+</body>
+</html>

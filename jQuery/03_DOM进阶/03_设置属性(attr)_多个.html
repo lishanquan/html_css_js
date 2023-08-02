@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，设置元素的某一个HTML属性的值，我们用的也是attr()方法。
+
+      语法：
+      //设置一个属性
+      $().attr("属性", "取值")
+      //设置多个属性
+      $().attr({"属性1": "取值1", "属性2":"取值2", …, "属性n":"取值n"})
+      
+      说明：
+      对于设置属性，jQuery有两种语法形式：一种是“设置一个属性”；另外一种是“设置多个属性”。
+      对于设置多个属性的语法，我们传入attr()方法的是一个包含键值对的对象。使用这种语法可以轻松地扩展，以便一次性地修改多个属性。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        var flag = true;
+        $("#btn").click(function() {
+          // 这里使用一个布尔变量flag来标识两种状态，使两张图片可以来回切换。
+          if (flag) {
+            $("#pic").attr({"src":"../img/2.png", "alt":"日向雏田", "title":"日向雏田"});
+            flag = false;
+          } else {
+            $("#pic").attr({"src":"../img/1.png", "alt":"旋涡香燐", "title":"旋涡香燐"});
+            flag = true;
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="修改" /><br />
+  <img id="pic" src="../img/1.png">
+</body>
+</html>
