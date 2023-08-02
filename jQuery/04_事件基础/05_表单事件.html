@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，常用的表单事件有3种。
+      （1）focus和blur
+      （2）select
+      （3）change
+      实际上，除了上面这几个，还有一个submit事件。不过submit事件一般都是结合后端技术来使用，所以可以暂时不管。
+
+      一、focus和blur
+      focus表示获取焦点时触发的事件，而blur表示失去焦点时触发的事件，两者是相反操作。
+      focus和blur这两个事件往往都是配合一起使用的。
+      例如用户准备在文本框中输入内容时，此时它会获得光标，就会触发focus事件。当文本框失去光标时，就会触发blur事件。
+
+      并不是所有的HTML元素都有焦点事件，具有“获取焦点”和“失去焦点”特点的元素只有两种。
+      （1）表单元素（单选框、复选框、单行文本框、多行文本框、下拉列表）
+      （2）超链接
+      判断一个元素是否具有焦点很简单，我们打开一个页面后按Tab键，能够选中的就是带有焦点特性的元素。
+      在实际开发中，焦点事件（focus和blur）一般用于单行文本框和多行文本框，其他地方比较少见。
+
+      二、select
+      在jQuery中，当我们选中“单行文本框”或“多行文本框”中的内容时，就会触发select事件。
+
+      三、change
+      在jQuery中，change事件常用于“具有多个选项的表单元素”。
+      （1）单选框选择某一项时触发。
+      （2）复选框选择某一项时触发。
+      （3）下拉菜单选择某一项时触发。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#selectAll").change(function() {
+          var bool = $(this).prop("checked");
+          if (bool) {
+            $(".fruit").prop("checked", "checked");
+          } else {
+            $(".fruit").removeProp("checked");
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <div>
+    <p><label><input id="selectAll" type="checkbox"/>全选/反选：</label></p>
+    <label><input type="checkbox" class="fruit" value="苹果" />苹果</label>
+    <label><input type="checkbox" class="fruit" value="香蕉" />香蕉</label>
+    <label><input type="checkbox" class="fruit" value="西瓜" />西瓜</label>
+  </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，ready也表示文档加载完成后再执行的一个事件。
+      语法：
+      $(document).ready(function(){
+          ……
+      })
+      说明：
+      对于jQuery的ready事件来说，只要页面所有DOM元素加载完成就可以执行，不需要再等外部文件（图片、外部CSS、外部JavaScript）加载完成。
+
+      jQuery的ready事件仅仅是DOM元素加载完成就可以执行，
+      而JavaScript的onload事件除了DOM元素加载完成后还需要等所有外部文件也加载完成才可以执行。
+      很明显，jQuery的ready事件相对于JavaScript的onload事件来说，可以极大地提高了页面的响应速度，有着更好的用户体验。
+
+
+      在jQuery中，对于ready事件，共有以下4种写法。
+      语法：
+      //写法1：
+      $(document).ready(function(){
+          ……
+      })
+      //写法2：
+      jQuery(document).ready(function(){
+          ……
+      })
+      //写法3：
+      $(function(){
+          …… 
+      })
+      //写法4：
+      jQuery(function(){
+          ……
+      })
+
+      如果多次调用window.onload，则JavaScript只会执行最后一次window.onload。
+      为了解决这个问题，我们大多数时候是使用addEventListener()来实现，代码如下：
+      window.addEventListener("load", function(){}, false);
+      但是在jQuery中，ready事件是可以多次执行的。从这里也可以看出jQuery近乎完美的兼容性。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        console.log("第1次调用");
+      })
+      $(document).ready(function () {
+        console.log("第2次调用");
+      })
+      $(document).ready(function () {
+        console.log("第3次调用");
+      })
+    </script>
+</head>
+<body>
+</body>
+</html>

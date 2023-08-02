@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      滚动事件，指的是拉动页面滚动条时触发的事件。滚动事件非常有用，特别是在“回顶部特效”以及“扁平化页面动画”中会大量用到。
+
+      在jQuery中，我们可以使用scroll()方法来表示滚动事件。
+      语法：
+      $().scroll(function(){
+          ……
+      })
+      说明：
+      scroll事件经常配合scrollTop()方法一起使用的。
+    -->
+    <style type="text/css">
+      body{height: 1800px;}
+      #box1, #box2 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+      }
+      #box1 {
+        background-color: red;
+      }
+      #box2 {
+        position: fixed;
+        background-color: orange;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        // 获取box2距离顶部的距离
+        var top = $("#box2").offset().top;
+        // 根据滚动距离判断定位
+        $(window).scroll(function() {
+          // 当滚动条距离大于box2距离顶部的距离时，设置固定定位
+          if ($(this).scrollTop() > top) {
+            $("#box2").css({"position":"fixed", "top":"0"});
+          } else {
+            // 当滚动条距离小于box2距离顶部的距离时，设置相对定位
+            $("#box2").css({"position":"relative"});
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <div id="box1"></div><br />
+  <div id="box2"></div>
+</body>
+</html>
