@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      既然存在绑定事件，那肯定也存在对应的解绑事件。绑定事件跟解绑事件是相反操作。
+      在jQuery中，我们可以使用off()方法来解除元素绑定的事件。
+      jQuery的off()方法，有点类似于JavaScript的removeEventListener()方法。
+
+      语法：$().off(type)
+      说明：
+      type是可选参数，它是一个字符串，表示事件类型。例如单击事件是"click"，按下事件是"mousedown"，以此类推。
+      如果参数省略，表示移除当前元素中的所有事件。
+
+      off()方法不仅可以用来解除使用“基本事件”方式添加的事件，还可以用来解除“绑定事件”添加的事件。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn_on").on("click", function() {
+          $("p").on("click", function() {
+            alert("勇士总冠军");
+          });
+        });
+        // 解除“基本事件”方式添加的事件
+        $("#btn_off").on("click", function() {
+          $("p").off("click");
+        });
+      });
+    </script>
+</head>
+<body>
+  <p>勇士总冠军</p>
+  <input id="btn_on" type="button" value="添加" /><br />
+  <input id="btn_off" type="button" value="解除" />
+</body>
+</html>

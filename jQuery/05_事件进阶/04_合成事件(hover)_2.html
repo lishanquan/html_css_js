@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      有些小伙伴可能会问：“对于上面这个例子，我们使用CSS的:hover伪类不一样可以实现吗？而且比jQuery更加简单呢。”
+      说得没错，不过CSS的:hover伪类只限于改变CSS样式，而对于更复杂的操作就没法了。
+    -->
+    <style type="text/css">
+      h3 {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #ddd;
+        cursor: pointer;
+      }
+      div {
+        display: none;/*设置默认情况下内容不显示*/
+        padding: 10px;
+        border: 1px solid silver;
+        text-indent: 32px;/*缩进段落的第一行32像素：*/
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("h3").hover(function() {
+          $("div").css("display", "block");
+        }, function() {
+          $("div").css("display", "none");
+        });
+      });
+    </script>
+</head>
+<body>
+  <h3>绿叶学习网</h3>
+  <div>绿叶学习网成立于2015年4月1日，是一个最富有活力的Web技术学习网站。在这里，我们只提供互联网最好的Web技术教程和最佳的学习体验。每一个教程、每一篇文章、甚至每一个知识点，都体现绿叶精品的态度。没有最好，但是我们可以做到更好！</div>
+</body>
+</html>

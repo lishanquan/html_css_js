@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以通过event对象来获取一个事件的详细信息。
+      这里只是介绍一下常用的属性，更深入的内容可以关注JavaScript进阶教程。
+
+      event对象的属性
+      属性	          说明
+      type	        事件类型
+      target	      事件元素
+      which	        鼠标左、中、右键
+      pageX、pageY	鼠标坐标
+      shiftKey	    是否按下shift键
+      ctrlKey	      是否按下ctrl键
+      altKey	      是否按下alt键
+      keyCode	      键码值
+
+      一、event.type
+      在jQuery中，我们可以使用event对象的type属性来获取事件的类型。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").click(function(e) {
+          alert(e.type);
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="按钮" />
+</body>
+</html>

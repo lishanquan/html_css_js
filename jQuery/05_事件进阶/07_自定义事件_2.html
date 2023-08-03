@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      $("#btn").on("click" ,function(){
+          alert("欢迎来到绿叶学习网！");
+      }).trigger("click");
+
+      上面这段代码其实可以等价于：
+
+      $("#btn").on("click" ,function(){
+          alert("欢迎来到绿叶学习网！");
+      }).click();
+
+      在这个例子中，我们使用trigger("click")自动触发鼠标点击事件。
+      在实际开发中，自动触发事件非常有用，例如图片轮播效果、模拟文件上传等功能都会用到，所以大家要重点掌握。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").click(function() {
+          alert("勇士总冠军");
+        }).trigger("click");
+      });
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="按钮" />
+</body>
+</html>

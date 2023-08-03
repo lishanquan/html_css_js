@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用event对象的target属性来获取触发事件的元素。
+
+      语法：event.target
+      说明：
+      在JavaScript中，事件是冒泡的，所以this是可以变化的。
+      但是event.target不会变化，它永远都是触发当前事件的元素。
+      一般来说，(this)和(event.target)是等价的。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("a").click(function(e) {
+          var result = $(e.target).attr("href");
+          alert(result);
+          return false; // 阻止超链接跳转
+        });
+      });
+    </script>
+</head>
+<body>
+  <a href="http://www.lvyestudy.com" target="_blank">绿叶学习网</a>
+</body>
+</html>

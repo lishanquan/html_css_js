@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      我们都知道，原生JavaScript中的this是非常复杂的。
+      不过在jQuery中，this的使用相对来说简单一点。jQuery中的this大多数都是用于事件操作中。
+
+      对于jQuery中的this，我们记住一句话就可以了：this始终指向触发当前事件的元素。
+
+      一开始想要实现的效果是：依次输出每一个li元素中的文本。
+      很多人自然而然就写下了上面这种代码。然后测试的时候，会发现效果却是:HTMLCSSJavaScript。这是怎么回事呢？
+
+      其实我们试着把$("li").text()改为$(this).text()就有效果了。
+      那么为什么用$("li")就不正确，而必须要用$(this)呢？
+      原因在于$("li")获取的是一个集合，而不是某一个元素。
+
+      在事件函数中，如果想要使用当前元素，我们尽量使用$(this)来代替$(selector)这种写法，不然可能会出现各种bug。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("li").each(function(index){
+          // var text = $("li").text();
+          var text = $(this).text();
+          console.log(text);
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+</body>
+</html>

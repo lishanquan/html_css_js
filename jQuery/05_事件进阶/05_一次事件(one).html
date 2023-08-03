@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用one()方法为元素添加一个“只触发一次”的事件。
+
+      语法：$().one(type, fn)
+      说明：type是必选参数，它是一个字符串，表示事件类型。fn也是必选参数，表示事件的处理函数。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").one('click', function() {
+          alert("勇士总冠军");
+        });
+
+        // 实际上，对于one()方法，我们可以使用on()和off()这两个方法模拟出来。
+        // $("#btn").on('click', function() {
+        //   alert("勇士总冠军");
+        //   $(this).off('click');
+        // });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="按钮" />
+</body>
+</html>

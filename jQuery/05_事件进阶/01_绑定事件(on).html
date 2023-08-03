@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用on()方法为元素绑定一个事件或者多个事件。jQuery的on()方法，有点类似于JavaScript的addEventListener()方法。
+
+      语法：$().on(type, fn)
+      说明：
+      type是必选参数，它是一个字符串，表示事件类型。例如单击事件是"click"，按下事件是"mousedown"，以此类推。
+      fn也是必选参数，它是一个匿名函数，即function(){}。
+
+      由此我们可以得出一个结论：
+      在jQuery中，如果想要为元素添加事件，我们有两种方法：
+      一种是“基本事件”（如click()等）；
+      另外一种是“绑定事件”。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").on("click", function() {
+          alert("勇士总冠军");
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="按钮" />
+</body>
+</html>

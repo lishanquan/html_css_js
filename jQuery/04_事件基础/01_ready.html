@@ -40,6 +40,10 @@
       为了解决这个问题，我们大多数时候是使用addEventListener()来实现，代码如下：
       window.addEventListener("load", function(){}, false);
       但是在jQuery中，ready事件是可以多次执行的。从这里也可以看出jQuery近乎完美的兼容性。
+
+      1、请简单说一下$(document).ready()和window.onload之间的区别。（前端面试题）
+      $(document).ready()仅仅是DOM元素加载完成就可以执行，而window.onload除了DOM元素加载完成后还需要等所有外部文件也加载完成才可以执行。
+      $(document).ready()相对window.onload来说，可以极大地提高了页面的响应速度，有着更好的用户体验。
     -->
     <script src="../js/jquery-1.12.4.min.js"></script>
     <script>

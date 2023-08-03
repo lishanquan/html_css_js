@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用event对象的which属性来获取单击事件中鼠标的左、中、右键。
+
+      语法：event.which
+      说明：event.which会返回一个数字，其中1表示左键，2表示中键，3表示右键。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("a").mousedown(function(e) {
+          switch (e.which) {
+            case 1 :
+              alert("左键");
+              break;
+            case 2 :
+              alert("中键");
+              break;
+            case 3 :
+              alert("右键");
+              break;
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <a href="http://www.lvyestudy.com" target="_blank">绿叶学习网</a>
+</body>
+</html>

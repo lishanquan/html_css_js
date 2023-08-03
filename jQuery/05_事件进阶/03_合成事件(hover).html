@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      从之前的学习我们知道，鼠标移入和鼠标移出这两个事件往往都是配合一起使用的，而我们需要分别对这两个事件定义。
+      为了简化代码，jQuery为我们提供hover()方法一次性定义这两个事件，这就是所谓的“合成事件”。
+
+      语法：$().hover(fn1, fn2)
+      说明：参数fn1表示鼠标移入事件触发的处理函数，参数fn2表示鼠标移出事件触发的处理函数。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("div").hover(function() {
+          $("div").css("color", "red");
+        }, function() {
+          $("div").css("color", "black");
+        });
+      });
+    </script>
+</head>
+<body>
+  <div>勇士总冠军</div>
+</body>
+</html>
