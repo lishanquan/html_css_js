@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，如果想要实现元素的淡入与淡出的渐变效果，有以下3种方式。
+      （1）fadeIn()和fadeOut()
+      （2）fadeToggle()
+      （3）fadeTo()
+
+      一、fadeIn()和fadeOut()
+      在jQuery中，我们可以使用fadeIn()方法来实现元素的淡入效果，可以使用fadeOut()方法来实现元素的淡出效果。
+      一般情况下，fadeIn()和fadeOut()这两个方法都是配合一起使用的。
+
+      语法：
+      $().fadeIn(speed, fn)
+      $().fadeOut(speed, fn)
+      说明：
+      speed是一个必选参数，表示动画的速度，单位为毫秒，默认为400毫秒。如果省略，则表示采用默认速度。
+      speed有两种取值：一种是“字符串”；另外一种是“数值”，如下所示。
+      取值	      说明
+      "fast"	  200毫秒
+      "normal"	400毫秒（默认值）
+      "slow"	  600毫秒
+      fn也是一个可选参数，表示动画执行完成后的回调函数。
+
+      可能有些小伙伴会发现，淡入淡出效果跟带动画的显示隐藏效果几乎是一模一样的。
+      确实，这两种方式很相似。但是我们不要被其表面给蒙蔽了双眼，实际上这两种方式还是有一定区别的。
+
+      show()与hide()：通过改变height、width、opacity、display来实现元素的显示与隐藏。
+
+      fadeIn()与fadeOut()：通过改变opacity、display来实现元素的显示与隐藏。
+
+      此外，这两种方式在视觉上也有一定的区别，例如，hide()方法是慢慢缩小来隐藏元素，而fadeOut()是整体淡化直至消失。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn_fadeIn").click(function() {
+          $("img").fadeIn();
+        });
+        $("#btn_fadeOut").click(function() {
+          $("img").fadeOut();
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn_fadeIn" type="button" value="淡入" />
+  <input id="btn_fadeOut" type="button" value="淡出" /><br/>
+  <img src="../img/jquery.png" alt=""/>
+</body>
+</html>

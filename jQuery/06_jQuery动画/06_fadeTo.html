@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在淡入效果中，透明度（opacity属性）是从0变化到1。在淡出效果中，透明度是从1变化到0的。在jQuery中，如果想要将元素透明度指定到0~1之间的某个值，可以使用fadeTo()方法。
+
+      语法：$().fadeTo(speed, opacity, fn)
+      说明：
+      speed是一个可选参数，表示动画的速度，单位为毫秒，默认为400毫秒。如果省略，则表示采用默认速度。
+      opacity是一个必选参数，表示元素指定的透明度，取值范围为0.0~1.0。
+
+      fn也是一个可选参数，表示动画执行完成后的回调函数。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("img").hover(function() {
+          // $(this).fadeTo(0.6); 这种省略speed的写法不会生效（diy）
+          $(this).fadeTo(200, 0.6);
+        }, function() {
+          $(this).fadeTo(200, 1);
+        });
+      });
+    </script>
+</head>
+<body>
+  <img src="../img/jquery.png" alt=""/>
+</body>
+</html>

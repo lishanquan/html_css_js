@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们还可以使用toggle()方法来“切换”元素的显示状态。也就是说，如果元素是显示状态，则会隐藏起来；如果元素是隐藏状态，则会显示出来。
+
+      语法：$().toggle(speed, fn)
+      说明：
+      speed是一个可选参数，表示动画的速度，单位为毫秒。如果省略，则表示没有动画效果。speed有两种取值：一种是“字符串”；另外一种是“数值”，如下表所示。
+
+      speed取值为字符串
+      取值	      说明
+      "fast"	  200毫秒
+      "normal"	400毫秒（默认值）
+      "slow"	  600毫秒
+      fn也是一个可选参数，表示动画执行完成后的回调函数。
+
+      此外要说明一点：toggle()方法在jQuery 3.x版本中已经被移除了。当然，如果使用jQuery 1.x版本则不用在意这个。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").click(function() {
+          $("img").toggle(1000);
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="切换" /><br/>
+  <img src="../img/jquery.png" alt=""/>
+</body>
+</html>

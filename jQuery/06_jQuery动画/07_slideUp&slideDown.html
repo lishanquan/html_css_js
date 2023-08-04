@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，如果想要实现元素的滑动效果，我们有以下2种方式。
+      （1）slideUp()和slideDown()
+      （2）slideToggle()
+
+      一、slideUp()和slideDown()
+      在jQuery中，我们可以使用slideUp()方法来实现元素的滑上效果，可以使用slideDown()方法来实现元素的滑下效果。
+      一般情况下，slideUp()和slideDown()这两个方法都是配合一起使用的。
+
+      语法：
+      $().slideUp(speed, fn)
+      $().slideDown(speed, fn)
+      说明：
+      speed是一个可选参数，表示动画的速度，单位为毫秒，默认为400毫秒。如果省略，则表示采用默认速度。
+      fn也是一个可选参数，表示动画执行完成后的回调函数。
+    -->
+    <style type="text/css">
+      div {width: 300px;}
+      h3 {
+        text-align: center;
+        padding: 10px;
+        background-color: #EEEEEE;
+      }
+      h3:hover {
+        background-color: #DDDDDD;
+        cursor: pointer;
+      }
+      p {
+        background-color: #F1F1F1;
+        padding: 8px;
+        line-height: 24px;
+        display: none;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        var flag = 0; // 注意变量要定义在click事件之前
+        $("h3").click(function() {
+          console.log(flag);
+          if (flag == 0) {
+            $("p").slideDown();
+            flag = 1;
+          } else {
+            $("p").slideUp();
+            flag = 0;
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <div>
+    <h3>绿叶学习网简介</h3>
+    <p>绿叶学习网成立于2015年4月1日，是一个最富有活力的Web技术学习网站。在这里，我们只提供互联网最好的Web技术教程和最佳的学习体验。每一个教程、每一篇文章、甚至每一个知识点，都体现绿叶精品的态度。没有最好，但是我们可以做到更好！</p>
+  </div>
+</body>
+</html>

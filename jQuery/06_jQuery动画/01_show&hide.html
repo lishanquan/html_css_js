@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，如果想要实现元素的显示与隐藏，有以下2种方式。
+      （1）show()和hide()
+      （2）toggle()
+
+      一、show()和hide()
+      在jQuery中，我们可以使用show()方法来显示元素，也可以使用hide()方法来隐藏元素。一般情况下，show()和hide()这两个方法都是配合一起使用的。
+
+      语法：
+      $().show(speed, fn)
+      $().hide(speed, fn)
+      说明：
+      show()方法会把元素由display: none;还原为原来的状态（display:block、display:inline-block等）。
+      hide()方法会为元素定义display:none;。
+      speed是一个可选参数，表示动画的速度，单位为毫秒。如果省略，则表示没有动画效果。
+      speed有两种取值：一种是“字符串”；另外一种是“数值”，如下表所示。
+      speed取值为字符串
+      取值	        说明
+      "fast"	    200毫秒
+      "normal"	  400毫秒（默认值）
+      "slow"	    600毫秒
+      fn也是一个可选参数，表示动画执行完成后的回调函数。在这里，所谓的回调函数，说白了就是在动画执行完成后执行的一个函数。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        // $("#btn_hide").click(function() {
+        //   $("img").hide();
+        // });
+        // $("#btn_show").click(function() {
+        //   $("img").show();
+        // });
+
+        // 上面代码等价于
+        $("#btn_hide").click(function() {
+          $("img").css("display", "none");
+        });
+        $("#btn_show").click(function() {
+          $("img").css("display", "block");
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn_hide" type="button" value="隐藏" />
+  <input id="btn_show" type="button" value="显示" /><br/>
+  <img src="../img/jquery.png" alt=""/>
+</body>
+</html>
