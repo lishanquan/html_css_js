@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，表达式过滤共有两个方法：一个是filter()；另外一个是has()。
+
+      一、filter()
+      在jQuery中，filter()是功能最强大的过滤方法，它可以使用选择器过滤，也可以使用函数过滤。
+
+      1．选择器过滤
+      选择器过滤，指的是使用选择器来选取符合条件的元素。
+
+      语法：$().filter(selector)
+
+      2、函数过滤
+      函数过滤，指的是根据函数的返回值来选取符合条件的元素。
+
+      语法：$().filter(fn)
+
+      filter()非常强大，几乎把之前学过的过滤方法的功能都包含进去了。
+      不过正是由于filter()内部封装的东西过多，导致运行速度非常慢。
+      因此在实际开发中，建议大家优先考虑其他过滤方法，实在迫不得已再用filter()方法。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        // 选择器过滤
+        // $("li").filter(".select").css("color", "red");
+
+        // 函数过滤
+        $("li").filter(function() {
+          return $(this).text() == "jQuery";
+        }).css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li class="select">jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+</body>
+</html>

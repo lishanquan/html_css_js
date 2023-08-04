@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      类名过滤，指的是根据元素的class来过滤。在jQuery中，我们可以使用hasClass()方法来实现类名过滤。
+
+      语法：$().hasClass(“类名”)
+      说明：hasClass()方法一般用于判断元素是否包含指定的类名：如果包含，则返回true；如果不包含，则返回false。
+
+      实际上，想要判断元素是否存在某个类名，我们有两种方法：一种是hasClass()；另外一种是is()。
+      在实际开发中，建议优先使用hasClass()，主要是从查找速度来看，hasClass()方法远远优于is()方法。
+      原因很简单，is()方法封装的东西比hasClass()方法的多得多，运行速度肯定也慢得多。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("li").each(function() {
+          // hasClass()方法一般用来实现判断操作
+          var bool = $(this).hasClass("select");
+          if (bool) {
+            $(this).css("color", "red");
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li class="select">jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，表达式过滤除了可以使用filter()访问外，我们还可以使用has()方法。has()方法虽然没有filter()方法那么强大，但是它的运行速度比较快。
+
+      语法：$().has(selector)
+      说明：参数selector是一个选择器。
+
+      has()方法与filter()方法功能相似，不过has()方法只有选择器过滤，没有函数过滤。
+      因此我们可以把has()方法看成是filter()方法的精简版。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("li").has("span").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li><span>JavaScript</span></li>
+    <li><span>jQuery</span></li>
+    <li>Vue.js</li>
+  </ul>
+</body>
+</html>

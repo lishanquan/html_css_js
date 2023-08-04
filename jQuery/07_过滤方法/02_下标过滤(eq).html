@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      下标过滤，指的是根据元素集合的下标来过滤。在jQuery中，我们可以使用eq()方法来实现下标过滤。
+
+      语法：$().eq(n)
+      说明：
+      n是一个整数，从0开始。当取值为正整数时，eq(0)获取的是第1个元素，eq(1)获取的是第2个元素，……，以此类推。
+      当取值为负整数时，eq(-1)获取的是倒数第1个元素，eq(-2)获取的是倒数第2个元素，……，以此类推。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("li").eq(3).css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+</body>
+</html>

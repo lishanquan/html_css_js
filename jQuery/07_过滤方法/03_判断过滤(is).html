@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      判断过滤，指的是根据某些条件进行判断，然后选取符合条件的元素。在jQuery中，我们可以使用is()方法来实现判断过滤。
+
+      语法：$().is(selector)
+      说明：参数selector是一个选择器。
+      is()方法用于判断当前选择的元素集合中，是否存在符合条件的元素。如果存在，则返回true；如果不存在，则返回false。
+
+      is()方法非常好用，能不能用好也直接决定你的代码是否高效。
+      使用jQuery开发，没有做不到，只有想不到。
+      
+      下面列出的是is()方法的常用做法。
+
+      //判断元素是否可见
+      $().is(":visible")
+      
+      //判断元素是否处于动画中
+      $().is(":animated")
+      
+      //判断单选框或复选框是否被选中
+      $().is(":checked")
+      
+      //判断当前元素是否第一个子元素
+      $(this).is(":first-child")
+      
+      //判断文本中是否包含jQuery这个词
+      $().is(":contains('jQuery')")
+      
+      //判断是否包含某些类名
+      $().is(".select")
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#selectAll").change(function() {
+          var bool = $(this).is(":checked");
+          if (bool) {
+            $(".fruit").prop("checked", "true");
+          } else {
+            $(".fruit").removeProp("checked");
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <div>
+    <p><label><input id="selectAll" type="checkbox"/>全选/反选：</label></p>
+    <label><input type="checkbox" class="fruit" value="苹果" />苹果</label>
+    <label><input type="checkbox" class="fruit" value="香蕉" />香蕉</label>
+    <label><input type="checkbox" class="fruit" value="西瓜" />西瓜</label>
+  </div>
+</body>
+</html>
