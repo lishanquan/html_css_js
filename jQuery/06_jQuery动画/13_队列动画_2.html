@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      这里实现了一个比较复杂的队列动画：
+      第1个动画是用animate()方法改变元素的宽高；
+      第2个动画是用fadeOut()方法实现元素的淡出效果；
+      第3个动画是用fadeIn()方法实现元素的淡入效果。
+
+      可能小伙伴会问：“队列动画不是按animate()方法的先后顺序执行的吗？为什么像fadeOut、fadeIn()这种也能加入到动画队列中呢？”
+      这是因为fadeOut、fadeIn()也属于动画，本质上也是使用animate()来实现的。
+
+      在jQuery中，队列动画可以是任何动画形式，包括：
+      （1）显示与隐藏
+      （2）淡入与淡出
+      （3）滑上与滑下
+      （4）自定义动画
+    -->
+    <style type="text/css">
+      div {
+        width: 50px;
+        height: 50px;
+        background-color: lightskyblue;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("div").click(function() {
+          $(this).animate({ "width":"150px", "height":"150px" }, 1000).fadeOut(1000).fadeIn(1000);
+        });
+      });
+    </script>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

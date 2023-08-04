@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用is()方法来判断元素是否正处于动画状态。
+      如果不处于动画状态，则添加新的动画；如果正处于动画状态，则不添加新的动画。
+
+      语法：
+      if(!$().is(":animated"))
+      {
+          //如果不处于动画状态，则添加新的动画
+      }
+
+      说明：:animated是一个伪类选择器，表示选取所有正在执行动画的元素。
+    -->
+    <style type="text/css">
+      figure {
+        position: relative;
+        width: 240px;
+        height: 200px;
+        overflow: hidden;
+      }
+      img {
+        width: 240px;
+        height: 200px;
+      }
+      figcaption {
+        position: absolute;
+        left: 0;
+        bottom: -30px;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        font-family: "微软雅黑";
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("figure").hover(function() {
+          // $(">figcaption", this)表示选取当前元素下面的子元素figcaption，它其实可以等价于$("figure>figcaption")。
+          if (!$(">figcaption", this).is(":animated")) {
+            $(">figcaption", this).animate({ "bottom": "0px" }, 200);
+          }
+        }, function() {
+          if (!$(">figcaption", this).is(":animated")) {
+            $(">figcaption", this).animate({ "bottom": "-30px" }, 200);
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <figure>
+    <img src="../img/ciri.png" alt="">
+    <figcaption>《巫师3》之希里</figcaption>
+  </figure>
+</body>
+</html>

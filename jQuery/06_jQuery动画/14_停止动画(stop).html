@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用stop()方法来停止元素正在执行的动画效果。
+
+      语法：$().stop(stopAll, goToEnd)
+      说明：
+      stopAll和goToEnd都是可选参数，它们取值都是布尔值，默认值都是false。
+      stopAll表示是否停止队列动画。当取值为false时，仅停止当前动画；当取值为true时，停止当前动画以及后面所有队列动画。
+      goToEnd表示是否将动画跳转到当前动画的最终效果状态。
+
+      其中，stop()方法共有4种形式，如下所示:
+      形式	              说明
+      stop()	          等价于stop(false, false)，仅停止当前动画，后面的动画还可以继续执行
+      stop(true)	      等价于stop(true,false)，停止当前动画，并且停止后面的动画
+      stop(true, true)	当前动画继续执行，只停止后面的动画
+      stop(false, true)	停止当前动画，跳到最后一个动画，并且执行最后一个动画
+      一般来说，在实际开发中我们只会用到stop()方法的第1个参数，很少用到第2个参数。
+    -->
+    <style type="text/css">
+      div {
+        width: 50px;
+        height: 50px;
+        background-color: lightskyblue;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.color.js"></script>
+    <script>
+      $(function() {
+        $("#btn_start").click(function() {
+          $("div").animate({ "width":"200px" }, 2000)
+                  .animate({ "background-color": "red" }, 2000)
+                  .animate({ "height": "200px" }, 2000)
+                  .animate({ "background-color": "blue" }, 2000);
+        });
+        $("#btn_stop").click(function() {
+          $("div").stop();
+          // 如果想要停止所有队列动画，可以定义stop()方法的第一个参数为true来实现
+          // $("div").stop(true);
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn_start" type="button" value="开始" />
+  <input id="btn_stop" type="button" value="停止" /><br />
+  <div></div>
+</body>
+</html>

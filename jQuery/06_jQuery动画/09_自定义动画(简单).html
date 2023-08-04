@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      为了满足实际开发中各种动画设计的需求，jQuery为我们提供了一种“自定义动画”的解决方案。对于自定义动画，我们分为以下3个方面来介绍。
+      （1）简单动画
+      （2）累积动画
+      （3）回调函数
+
+      一、简单动画
+      在jQuery中，对于自定义动画，我们都是使用animate()方法来实现的。
+
+      语法：$().animate(params, speed, fn)
+
+      说明：
+      params是一个必选参数，表示属性值列表，也就是元素在动画中变化的属性列表。
+      speed是一个可选参数，表示动画的速度，单位为毫秒，默认为400毫秒。如果省略，则表示采用默认速度。
+      fn也是一个可选参数，表示动画执行完成后的回调函数。
+
+      实际上，jQuery本身有一个缺陷，就是使用animate()方法时会无法识别background-color、border-color等颜色属性。
+      因此，我们还需要引入第三方插件jquery.color.js来修复这个bug。
+    -->
+    <style type="text/css">
+      div {
+        width: 50px;
+        height: 50px;
+        background-color: lightskyblue;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.color.js"></script>
+    <script>
+      $(function() {
+        $("div").click(function() {
+          $(this).animate({ "width":"150px", "height":"150px", "background-color": "red" }, 1000).css("border", "1px solid red");
+        });
+      });
+    </script>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

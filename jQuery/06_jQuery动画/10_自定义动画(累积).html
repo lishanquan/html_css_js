@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，对于元素的宽度和高度，我们可以结合+=和-=这两个运算符来实现累积动画。
+
+      举个例子，{“width”: “+=100px”}表示以元素本身的width为基点加上100px，而{“width”: “-=100px”}表示以元素本身的width为基点减去100px。
+
+      从这个例子我们可以看出，简单动画形式只是给定了元素属性的最终值，而累积动画形式是在元素原来值的基础上增加或减少。
+    -->
+    <style type="text/css">
+      div {
+        width: 50px;
+        height: 50px;
+        background-color: lightskyblue;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn1").click(function() {
+          $("#box1").animate({ "width":"100px", "height":"100px" }, 1000);
+        });
+        $("#btn2").click(function() {
+          $("#box2").animate({ "width":"+=100px", "height":"+=100px" }, 1000);
+        });
+      });
+    </script>
+</head>
+<body>
+  <div id="box1"></div>
+  <input id="btn1" type="button" value="简单动画" /><br />
+  <div id="box2"></div>
+  <input id="btn2" type="button" value="累积动画" />
+</body>
+</html>
