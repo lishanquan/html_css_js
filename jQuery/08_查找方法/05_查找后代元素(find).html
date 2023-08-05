@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用find()方法来查找当前元素的“后代元素”。注意，find()方法不仅能查找子元素，还能查找其他后代元素。
+
+      语法：$().find(selector)
+      说明：selector是一个可选参数，它是一个选择器，用来查找符合条件的后代元素。
+      当参数省略，表示选择所有后代元素；当参数不省略时，表示选择符合条件的后代元素。
+
+      在jQuery中，我们可以使用contents()方法来获取子元素及其内部文本。
+      contents()方法和children()方法相似，不同的是，contents()返回的jQuery对象中不仅包含子元素，还包含文本内容。
+      而children()方法返回的jQuery对象中只会包含子元素，不包含文本内容。
+
+      在实际开发中，我们极少会用到contents()方法
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#wrapper").hover(function() {
+          $(this).find(".select").css("color", "red");
+        }, function() {
+          $(this).find(".select").css("color", "black");
+        });
+      });
+    </script>
+</head>
+<body>
+  <div id="wrapper">
+    <p>子元素</p>
+    <p class="select">子元素</p>
+    <div>
+      <p>孙元素</p>
+      <p class="select">孙元素</p>
+    </div>
+    <p>子元素</p>
+    <p class="select">子元素</p>
+  </div>
+</body>
+</html>

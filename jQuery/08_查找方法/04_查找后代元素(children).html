@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，如果想要查找当前元素的后代元素（子元素、孙元素等），我们有以下3种方法：
+      （1）children()
+      （2）find()
+      （3）contents()
+      
+      一、children()
+      在jQuery中，我们可以使用children()方法来查找当前元素的“子元素”。
+      注意，children()方法只能查找子元素，不能查找其他后代元素。
+
+      语法：$().children(selector)
+      说明：selector是一个可选参数，它是一个选择器，用来查找符合条件的子元素。
+      当参数省略，表示选择所有子元素；当参数不省略时，表示选择符合条件的子元素。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#wrapper").hover(function() {
+          $(this).children(".select").css("color", "red");
+        }, function() {
+          $(this).children(".select").css("color", "black");
+        });
+      });
+    </script>
+</head>
+<body>
+  <div id="wrapper">
+    <p>子元素</p>
+    <p class="select">子元素</p>
+    <div>
+      <p>孙元素</p>
+      <p class="select">孙元素</p>
+    </div>
+    <p>子元素</p>
+    <p class="select">子元素</p>
+  </div>
+</body>
+</html>

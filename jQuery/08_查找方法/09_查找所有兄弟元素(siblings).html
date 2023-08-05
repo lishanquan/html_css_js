@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      jQuery还为我们提供另外一种不分前后的查找方法：siblings()。
+
+      语法：$().siblings(selector)
+      说明：selector是一个可选参数，它是一个选择器，用来查找符合条件的兄弟元素。
+      当参数省略，表示选择所有兄弟元素；当参数不省略时，表示选择满足条件的兄弟元素。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        // 不带参数的siblings()
+        // $("#lvye").siblings().css("color", "red");
+
+        // 带参数的siblings()
+        $("#lvye").siblings(".select").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>红：red</li>
+    <li class="select">橙：orange</li>
+    <li>黄：yellow</li>
+    <li id="lvye">绿：green</li>
+    <li>青：cyan</li>
+    <li class="select">蓝：blue</li>
+    <li>紫：purple</li>
+  </ul>
+</body>
+</html>

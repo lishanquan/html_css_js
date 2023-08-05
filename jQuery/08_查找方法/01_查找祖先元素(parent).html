@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，如果想要查找当前元素的祖先元素（父元素、爷元素等），我们有以下3种方法。
+      （1）parent()
+      （2）parents()
+      （3）parentsUntil()
+
+      一、parent()
+      在jQuery中，我们可以使用parent()方法来查找当前元素的“父元素”。注意，元素只有一个父元素。
+
+      语法：$.parent(selector)
+      说明：selector是一个可选参数，它是一个选择器，用来查找符合条件的父元素。
+      当参数省略，表示父元素不需要满足任何条件；当参数不省略时，表示父元素需要满足条件。
+    -->
+    <style type="text/css">
+      table, tr, td { border: 1px solid silver }
+      td {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        // 不带参数的parent()
+        // $("td").hover(function() {
+        //   $(this).parent().css("background-color", "silver");
+        // }, function() {
+        //   $(this).parent().css("background-color", "white");
+        // });
+        
+        // 带参数的parent()
+        $("td").hover(function() {
+          $(this).parent(".select").css("background-color", "silver");
+        }, function() {
+          $(this).parent(".select").css("background-color", "white");
+        });
+      });
+    </script>
+</head>
+<body>
+  <table>
+    <tr>
+        <td>2</td>
+        <td>4</td>
+        <td>8</td>
+    </tr>
+    <tr class="select">
+        <td>16</td>
+        <td>32</td>
+        <td>64</td>
+    </tr>
+    <tr>
+        <td>128</td>
+        <td>256</td>
+        <td>512</td>
+    </tr>
+  </table>
+</body>
+</html>
