@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      有关字符串操作的工具函数，暂时只有一种，那就是$.trim()。
+      在jQuery中，我们可以使用$.trim()方法来去除字符串首尾的空白字符。
+
+      语法：$.trim(str)
+      说明：$.trim()方法是一个全局函数，应该使用jQuery对象直接调用。这个方法会返回去除空格后的字符串。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        var str = " 勇士，总冠军  "
+        console.log("开始长度：" + str.length);
+        str = $.trim(str);
+        console.log("最终长度：" + str.length);
+      });
+    </script>
+</head>
+<body>
+</body>
+</html>

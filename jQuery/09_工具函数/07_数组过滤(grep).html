@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用$.grep()方法来过滤数组中不符合条件的元素。
+
+      语法：
+      $.grep(array, function(value,index){
+          ……
+      }, false)
+
+      说明：
+      第1个参数array是一个数组。
+      第2个参数是一个匿名函数。该匿名函数有两个形参：value表示当前元素的“值”；index表示当前元素的“索引”。
+      第3个参数是一个布尔值。如果为false，则.grep()只会收集函数返回true的数组元素；如果为true，则.grep()只会收集函数返回false的数组元素。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        var arr = [3, 9, 1, 12, 50, 21];
+        var result = $.grep(arr, function(value, index) {
+          return value > 10;
+        }, false);
+        console.log(result);
+      });
+    </script>
+</head>
+<body>
+</body>
+</html>

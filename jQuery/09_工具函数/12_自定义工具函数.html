@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在前面几节中，我们学习了各种jQuery内置的工具函数。
+      但是这些内置工具函数功能是有限的，如果我们想要自己定义一个工具函数，此时又该怎么实现呢？
+
+      在jQuery中，我们可以使用$.extend()方法来自定义工具函数，以便供自己开发使用。
+
+      语法：
+      (function($){
+          $.extend({
+              "函数名": function(参数){
+                  ……
+              }
+          });
+      })(jQuery);
+
+      说明：
+      (function(){})()
+      是JavaScript立即执行函数，这种用法在高级开发中经常用到。
+
+      $.extend({
+          "函数名": function(参数){
+              ……
+          }
+      });
+      如果不考虑其他情况，仅仅使用上面这段代码，其实也可以定义jQuery工具函数。
+      但是为什么我们不这样做，而还要在外面套一个立即执行函数呢？
+
+      这是因为很多其他的JavaScript库都会使用到“$”这个符号，
+      使用$.extend()定义工具函数时，就有可能受到其他JavaScript库中“$”变量的影响。
+      我们在外面套一个如下所示的立即执行函数，是为了让“$”变量只属于这个立即执行函数的作用域，从而避免受到其他JavaScript库的污染。
+
+      (function($){
+          ……
+      })(jQuery);
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      (function($) {
+        $.extend({
+          "maxNum": function(m, n) {
+            return (m > n) ? m : n;
+          }
+        });
+      })(jQuery);
+      $(function() {
+        var result = $.maxNum(10, 5);
+        console.log("最大值是：" + result);
+      });
+    </script>
+</head>
+<body>
+</body>
+</html>

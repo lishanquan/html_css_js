@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用$.makeArray()方法将“类数组对象”转换为真正的数组。那什么叫类数组对象呢？类数组对象必须有length属性，例如arguments、nodeList等。
+
+      语法：$.makeArray(obj)
+      说明：$.makeArray()方法返回值是一个数组。如果参数obj不是类数组对象，则返回值是一个空数组。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        // 将nodeList转换为Array
+        var arr = $.makeArray($("li"));
+        $("ul").html(arr.reverse());
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+    <li>Vue.js</li>
+  </ul>
+</body>
+</html>

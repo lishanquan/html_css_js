@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，涉及对象操作的工具函数只有一个，那就是$.each()。实际上，$.each()不仅可以用于遍历数组，还可以用于遍历对象。
+
+      语法：
+      $.each(obj, function(key, value){
+          ……
+      })
+
+      说明：
+      在$.each()方法中，第1个参数obj是一个对象，第2个参数是一个匿名函数。该匿名函数有两个形参：key表示“键”；value表示“值”。
+
+      如果需要退出each循环，可以在回调函数中返回false，即return false。
+
+      从语法上看，$.each()用于遍历数组，跟用于遍历对象，是完全不一样的。这一点要重点区分一下。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        var person = {
+          name : "daniel",
+          age : 25,
+          hobby : "codding"
+        };
+        $.each(person, function(key, value) {
+          console.log(value);
+        });
+      });
+    </script>
+</head>
+<body>
+</body>
+</html>
