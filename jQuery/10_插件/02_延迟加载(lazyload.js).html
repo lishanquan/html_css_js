@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      lazyload.js的使用很简单，需要以下3步。
+
+      ① 引入jQuery库和lazyload.js，如下所示：
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script src="js/jquery.lazyload.min.js"></script>
+
+      ② 图片的src用data-origin代替，如下所示：
+      <img class="lazy" data-original="img/haizei1.png" alt="">
+      
+      ③ 添加jQuery代码，如下所示：
+      $().lazyload({
+          effect: "fadeIn"
+      });
+
+      上面这段代码表示使用“渐入”的方式来加载图片，大多数情况下我们只会用到effect这一个参数，不过lazyload.js的功能远不止如此。
+      
+      对于更多功能，小伙伴们可以看一下中文文档或github文档。
+      （1）中文文档：http://code.ciaoca.com/jquery/lazyload
+      （2）github文档：https://github.com/tuupola/jquery_lazyload
+      
+      lazyload.js对于提高页面加载速度非常有用。
+    -->
+    <style type="text/css">
+      div {
+        height: 1000px;
+        background-color: lightskyblue;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.lazyload.min.js"></script>
+    <script>
+      $(function() {
+        $("img").lazyload({
+          effect: "fadeIn"
+        });
+      });
+    </script>
+</head>
+<body>
+  <div></div>
+  <img data-original="../img/haizei1.png" alt="">
+  <img data-original="../img/haizei2.png" alt="">
+  <img data-original="../img/haizei3.png" alt="">
+  <img data-original="../img/haizei4.png" alt="">
+  <img data-original="../img/haizei5.png" alt="">
+  <img data-original="../img/haizei6.png" alt="">
+  <img data-original="../img/haizei7.png" alt="">
+</body>
+</html>

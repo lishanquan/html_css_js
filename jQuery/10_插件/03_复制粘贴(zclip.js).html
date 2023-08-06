@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用zclip.js插件来实现页面文本的复制粘贴，只需要两步就可以了。
+
+      ① 引入jQuery库和zclip.js，如下所示：
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script src="js/jquery.zclip.min.js"></script>
+
+      ② 添加jQuery代码，如下所示：
+      $().zclip({
+          path:"swf文件路径",
+          //复制内容
+          copy:function(){
+              return xxx;
+          },
+          //复制成功后的操作
+          afterCopy:function(){
+              ……
+          }
+      })
+
+      由于zclip.js插件是借助Flash来实现复制的，因此我们需要使用path参数引入相应的Flash文件地址。小伙伴们可以从本书源代码中找到这个Flash文件。
+
+      此外，zclip.js是依赖于服务器环境的，如果仅仅是使用本地环境，是没有效果的。至于怎么搭建一个服务器环境，小伙伴们可以先去看一下后面“13.1 搭建服务器环境”这一节。
+
+      zclip.js插件的github地址：https://github.com/patricklodder/jquery-zclip。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.zclip.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").zclip({
+          path: "../js/ZeroClipboard.swf",
+          copy: function() {
+            return $("#txt").val();
+          },
+          afterCopy: function() {
+            alert("复制成功")
+          }
+        })
+      });
+    </script>
+</head>
+<body>
+  <input id="txt" type="text" />
+  <input id="btn" type="button" value="复制"></input>
+</body>
+</html>

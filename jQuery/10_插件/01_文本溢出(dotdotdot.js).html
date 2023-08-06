@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      学过HTML5+CSS3的小伙伴都知道，我们可以使用以下功能代码来实现文本溢出时显示省略号的效果：
+      overflow:hidden; 
+      white-space:nowrap;
+      text-overflow:ellipsis; 
+
+      但是这个功能代码只能实现“单行文本”的省略号，并不能用来实现“多行文本”的省略号。
+      如果想要实现“多行文本”的省略号效果，我们可以使用dotdotdot.js这个jQuery插件来实现。
+
+      dotdotdot.js的使用方法非常简单：
+      首先为元素定义一个宽度和高度，然后针对该元素使用dotdotdot()这个方法就可以了。
+      当内容超出元素时，就会以省略号的形式来显示。
+    -->
+    <style type="text/css">
+      div {
+        width: 200px;
+        height: 100px;
+        padding: 10px;
+        font-family: "微软雅黑";
+        line-height: 20px;
+        text-indent: 2em;
+        border: 1px solid silver;
+      }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.dotdotdot.min.js"></script>
+    <script>
+      $(function() {
+        $("div").dotdotdot();
+      });
+    </script>
+</head>
+<body>
+  <div>绿叶学习网成立于2015年4月1日，是一个最富有活力的Web技术学习网站。在这里，我们只提供互联网最好的Web技术教程和最佳的学习体验。每一个教程、每一篇文章、甚至每一个知识点，都体现绿叶精品的态度。没有最好，但是我们可以做到更好！</div>
+</body>
+</html>

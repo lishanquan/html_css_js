@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      validate.js是一个非常优秀的表单验证插件，它广泛地用于很多大型网站中。其中使用validate.js，也是需要两步就可以了。
+
+      ① 引入jQuery库、validate.js以及message_zh.js，如下所示：
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script src="js/jquery.validate.min.js"></script>
+      <script src="js/jquery.message_zh.min.js"></script>
+
+      ② 添加jQuery代码，如下所示：
+      $().validate({
+          //自定义验证规则
+          rules:{
+              ……
+          }
+      })
+
+      validate.js插件的参数非常多，使用也非常灵活。小伙伴们可以到官网查看：https://plugins.jquery.com/validate/
+
+      在这一节中，我们只是介绍了几种比较常见的jQuery插件，事实上jQuery插件有成千上万种，
+      小伙伴们可以到jQuery官网（plugins.jquery.com）查找自己想要的插件。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script>
+      $(function() {
+        $("#myform").validate({
+          rules: {
+            // 表示id="myname"这个文本框是一个必填的，并且最大长度为6个字符。
+            myname: {required: true, maxlength: 6},
+
+            // 表示id="myemail"这个文本框是必填的，并且启动email验证规则。
+            myemail: {required: true, email: true}
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+  <form id="myform" method="post">
+    <p><label>账号：<input id="myname" name="myname" type="text" required/></label></p>
+    <p><label>邮箱：<input id="myemail" name="myemail" type="email" required/></label></p>
+    <input type="submit" value="提交">
+  </form>
+</body>
+</html>
