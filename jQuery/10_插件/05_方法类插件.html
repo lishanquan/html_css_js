@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      学习使用jQuery并不难，因为它非常简单易学。但是如果你想要将能力上升一个台阶，学会编写一个属于自己的jQuery插件是一个不错的选择。
+
+      从广义上来说，jQuery插件可以分为以下3种。
+
+      （1）方法类插件
+      （2）函数类插件
+      （3）选择器插件
+      其中对于选择器插件，很少人会去开发使用，因为jQuery内置的选择器已经足够完善了，所以这一节我们只会介绍方法类插件和函数类插件。
+
+      一、方法类插件
+      在jQuery中，我们可以使用$.fn.extend()方法来定义一个方法类插件。
+      方法类插件，说白了就是：首先你使用了jQuery选择器来获取一个jQuery对象，然后针对你获取的这个jQuery对象添加一个方法。
+
+      语法：
+      (function($){
+          $.fn.extend({
+              "插件名": function(参数){
+                  ……
+              }
+          });
+      })(jQuery);
+
+      说明：
+      (function(){})()
+      是JavaScript立即执行函数，这种用法在实际开发中经常用到。
+
+      $.fn.extend({
+          "插件名": function(参数){
+              ……
+          }
+      });
+      如果不考虑其他情况，仅仅使用上面这段代码，其实也可以定义jQuery插件了。
+      但是为什么我们不这样做，而还要在外面套一个立即执行函数呢？
+
+      之前也说过，这是因为很多其他的JavaScript库都会使用到“$”这个符号，
+      使用.fn.extend()定义插件的时候，就有可能受到其他JavaScript库中“$”变量的影响。
+      我们在外面套一个如下所示的立即执行函数，是为了让“$”变量只属于这个立即执行函数的作用域，从而避免受到其他JavaScript库的污染。
+
+      (function($){
+          ……
+      })(jQuery);
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      // 定义插件
+      (function() {
+        $.fn.extend({
+          // 插件名为"changeColor"，有两个参数fgColor, bgColor
+          "changeColor": function(fgColor, bgColor) {
+            // 定义鼠标移入移出效果
+            $(this).mouseover(function() {
+              $(this).css({"color": fgColor, "background": bgColor});
+            }).mouseout(function() {
+              $(this).css({"color": "black", "background": "white"});
+            });
+            // 返回jQuery对象，以便链式调用
+            return $(this);
+          }
+        });
+      })(jQuery);
+    </script>
+    <script>
+      $(function() {
+        // 调用插件
+        $("h1").changeColor("red", "#F1F1F1");
+      });
+    </script>
+</head>
+<body>
+  <h1>绿叶学习网</h1>
+</body>
+</html>

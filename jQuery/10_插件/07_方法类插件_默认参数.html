@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      可能有些小伙伴又会问了：很多插件的参数都有默认值，如果我也想设置默认值，又该怎么实现呢？
+      接下来，我们对上面代码进一步优化，请看下面例子。
+
+      想要设置参数的默认值，我们需要在插件内部另外定义一个选项对象，然后使用.extend()，
+      来将参数对象options和选项对象defaults合并成一个对象。
+      .extend()方法允许你使用一个或多个对象来扩展一个基准对象，扩展的方式是依序将右边的对象合并到基准对象（也就是左边第一个对象）。
+
+      最后，如果想要同时封装多个jQuery插件，我们可以采用以下的语法：
+
+      (function($){
+          $.fn.extend({
+              "插件1": function(参数){
+                  ……
+              },
+              "插件2": function(参数){
+                  ……
+              },
+              "插件3": function(参数){
+                  ……
+              }
+          });
+      })(jQuery);
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      (function() {
+        $.fn.extend({
+          "changeColor": function(options) {
+            // 设置参数的默认值
+            var defaults = {
+              fgColor: "hotpink",
+              bgColor: "lightskyblue"
+            };
+            var options = $.extend(defaults, options);
+            $(this).mouseover(function() {
+              $(this).css({"color": options.fgColor, "background": options.bgColor});
+            }).mouseout(function() {
+              $(this).css({"color": "black", "background": "white"});
+            });
+            return $(this);
+          }
+        });
+      })(jQuery);
+    </script>
+    <script>
+      $(function() {
+        $("h1").changeColor();
+      });
+    </script>
+</head>
+<body>
+  <h1>绿叶学习网</h1>
+</body>
+</html>
