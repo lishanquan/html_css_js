@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用.getScript()方法通过AJAX来获取并运行一个外部JavaScript文件。.getScript()是一个用于动态加载JavaScript的方法。当网站需要加载大量JavaScript时，动态加载JavaScript就是一个比较好的方法。当需要某个功能时再将相应的JavaScript加载进来。
+
+      语法：$.getScript(url, fn)
+      说明：$.getScript()方法有3个参数，如下所示：
+
+      url	必选参数，表示被加载的JavaScript文件路径
+      fn	可选参数，表示请求成功后的回调函数
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").click(function() {
+          $.getScript("test.js");
+        });
+      });
+    </script>
+</head>
+<body>
+ <input id="btn" type="button" value="加载" />
+</body>
+</html>

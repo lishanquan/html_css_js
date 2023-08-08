@@ -38,6 +38,10 @@
       （4）方法类插件使用的是$.fn.extend()，而函数类插件使用的是$.extend()。我们常说的jQuery插件，指的都是方法类插件。
       （5）$.extend()是在jQuery全局对象上扩展一个方法，而$.fn.extend()是在选择器上扩展一个方法。
       因此定义工具函数应该用$.extend()，而定义jQuery插件应该用$.fn.extend()。
+
+      1. 在jQuery中，.extend()与.fn.extend()这两个方法之间有什么区别？（前端面试题）
+      $.extend()与$.fn.extend()是jQuery为扩展插件提供的两个方法。
+      其中，$.extend()是在全局对象下定义一个方法，而$.fn.extend()是在所获取的jQuery对象下定义一个方法。
     -->
     <script src="../js/jquery-1.12.4.min.js"></script>
     <script>

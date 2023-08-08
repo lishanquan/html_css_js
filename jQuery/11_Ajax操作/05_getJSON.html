@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用$.getJSON()方法来通过Ajax获取服务器中JSON格式的数据。
+
+      语法：
+      $.getJSON(url ,data, function(data){
+          ……
+      })
+
+      说明：.getJSON()是一个全局方法，所谓“全局方法”，指的是直接定义在jQuery对象（即“$”）下的方法。
+
+      参数url表示被加载的文件地址；
+      参数data表示发送到服务器的数据，数据为“键值对”格式；
+      参数fn表示请求成功后的回调函数，请求失败是不会处理的。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").click(function() {
+          $.getJSON("info.json", function(data) {
+            var str = "";
+            $.each(data, function(index, info) {
+              str += "姓名：" + info["name"] +"<br/>";
+              str += "性别：" + info["sex"] + "<br/>";
+              str += "年龄：" + info["age"] + "<br/>";
+              str += "<hr/>";
+            });
+            // 插入数据
+            $("div").html(str);
+          });
+        });
+      });
+    </script>
+</head>
+<body>
+ <input id="btn" type="button" value="获取数据" />
+ <div></div>
+</body>
+</html>

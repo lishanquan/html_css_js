@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在jQuery中，我们可以使用load()方法来通过Ajax请求从服务器中获取数据，然后把获取的数据插入到指定的元素中。
+
+      语法：$().load(url, data, fn)
+      说明：
+      load()方法有3个参数，如下所示:
+      参数	  说明
+      url	  必选参数，表示被加载的页面地址
+      data	可选参数，表示发送到服务器的数据
+      fn	  可选参数，表示请求完成后的回调函数
+
+      注意，由于浏览器安全方面的限制，大多数Ajax请求遵守“同源策略”。也就说，Ajax请求无法从不同的域、子域或协议中获取数据。
+
+      二、传递数据
+      在jQuery中，load()方法的传递方式是根据第二个参数data来“自动”指定的。
+      如果参数data省略，那么会自动采用get方式；如果参数data不省略，那么会自动采用post()方式。
+
+      这里注意一下，参数data的格式为“键值对”，比如：{name: “小杰”, age:24}。
+
+      语法：
+      //参数data省略，则是get方式
+      $().load("test.php", function(){
+          ……
+      })
+
+      //参数data不省略，则是post方式
+      $().load("test.php", {name: "小杰", age: 24}, function(){
+          ……
+      })
+
+      三、回调函数
+      load()方法的第3个参数就是一个回调函数，表示请求完成后执行的代码，完整的语法如下：
+
+      $().load(url, data, function(response, status, xhr){
+          ……
+      })
+
+      说明：
+      该回调函数也有3个参数：response、status和xhr。
+      其中，response表示“请求后返回的内容”，status表示“请求状态”，xhr表示“XMLHttpRequest对象”。
+
+      最后，还有几点要特别说明。
+      （1）在load()方法中，无论AJAX请求是否成功，只要当请求完成（complete）后，回调函数（fn）都会被触发
+      （2）load()方法一般只会用到第1个参数，很少会用第2和第3个参数。
+      （3）load()一般是用来向服务器请求静态的数据文件。在实际开发中，如果需要传递一些参数给服务器中的页面，应该使用.get()、.post()或$.ajax()。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#wrapper").load("welcome.txt");
+      });
+    </script>
+</head>
+<body>
+  <div id="wrapper"></div>
+</body>
+</html>
