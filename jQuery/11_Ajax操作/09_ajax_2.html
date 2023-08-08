@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      .ajax()代替.getScript()
+
+      分析：
+      
+      一开始控制台是没有内容输出的，当我们点击【加载】按钮后，才会尝试加载test.js这个文件。
+
+      $.ajax({
+          url:"js/test.js",
+          type:"get",
+          dataType:"script"
+      })
+
+      上面这段代码，跟下面这段代码其实是等价的：
+
+      $.getScript("js/test.js")
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function(){
+        $("#btn").click(function(){
+          $.ajax({
+            url:"js/test.js",
+            type:"get",
+            dataType:"script"
+          })
+        })
+      })
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="加载"/>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      前面几节，我们介绍了很多有关Ajax的方法，如load()、.getJSON()、.get()、.post()。
+      事实上，这几种方法从本质上来说都是使用.ajax()来实现的。
+      换一句来说，它们都是.ajax()方法的简化版，它们能实现的功能，.ajax()都能实现，因为$.ajax()是最底层的方法。
+
+      语法：$.ajax(options)
+      说明：
+      $.ajax()方法只有一个参数，这个参数是一个对象。该对象中包含了Ajax请求所需要的各种信息，并且以“键值对”的形式存在。
+
+      options是一个对象，这个对象内部有很多参数可以设置，所有参数都是可选的，如下表所示：
+
+      $.ajax()中的参数
+      url	        被加载的页面地址
+      type	      数据请求方式，“get"或"post”，默认为"get"
+      data	      发送到服务器的数据，可以是字符串或对象
+      dataType	  服务器返回数据的类型，如：text、html、script、json、xml
+      beforeSend	发送请求前可以修改XMLHttpRequest对象的函数
+      complete	  请求“完成”后的回调函数
+      success	    请求“成功”后的回调函数
+      error	      请求“失败”后的回调函数
+      timeout	    请求超时的时间，单位为“毫秒”
+      global	    是否响应全局事件，默认为true（即响应）
+      async	      是否为异步请求，默认为true（即异步）
+      cache	      是否进行页面缓存，true表示缓存，false表示不缓存
+
+      分析：
+      $.ajax({
+          url:"info.json",
+          type:"get",
+          dataType:"json",
+          success:function(data){
+              ……
+          }
+      })
+
+      上面这段代码，跟下面这段代码其实是等价的：
+
+      $.getJSON("info.json", function (data) {
+          ……
+      })
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        $("#btn").click(function() {
+          $.ajax({
+            url: "info.json",
+            type: "get",
+            dataType: "json",
+            success: function(data) {
+              var str = "";
+              $.each(data, function(index, info) {
+                str += "姓名：" + info["name"] +"<br/>";
+                str += "性别：" + info["sex"] + "<br/>";
+                str += "年龄：" + info["age"] + "<br/>";
+                str += "<hr/>";
+              });
+              // 插入数据
+              $("div").html(str);
+            }
+          });
+        });
+      });
+    </script>
+</head>
+<body>
+  <input id="btn" type="button" value="获取数据" />
+  <div></div>
+</body>
+</html>

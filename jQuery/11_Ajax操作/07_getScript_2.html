@@ -20,17 +20,44 @@
       相对传统的加载方式，$.getScript()有以下两个优点。
       （1）异步跨域加载JavaScript文件。
       （2）可避免提前加载JavaScript文件，只有需要的时候才会去加载。这样可以减少服务器和客户端的负担，加快页面加载速度。
+
+      对于上面的第2点，我们可以看一个非常有用的例子，请看下面的代码。
+
+      jQuery本身有一个缺陷，就是使用animate()方法会无法识别background-color、border-color等颜色属性。
+      因此，我们还需要引入第三方插件jquery.color.js来修复这个bug。对于这一点，我们在“8.5 自定义动画”这一节中已经详细介绍过了。
+
+      上面这个例子就是使用script标签来引入jquery.color.js的，这种方式会在页面一打开的时候就会立即加载。
+      像这种插件性的东西，大多数时候我们都是希望在要用到它的时候才会去加载，
+      此时就可以使用$.getScript()方法来优化了，优化后的代码如下：
+
+      常见问题：
+      1.每次执行该功能的时候都会去请求一次这个JavaScript文件，这样不是在帮倒忙吗？
+
+      其实$.getScript()是对ajax()方法的一个封装，
+      可以使用ajax()方法的缓存来将http的状态从200改变成304，从而使用客户端的缓存。
+
+      $.ajaxSetup({
+          cache:true
+      })
     -->
+    <style type="text/css">
+      div {
+        width: 50px;
+        height: 50px;
+        background-color: lightskyblue;
+      }
+    </style>
     <script src="../js/jquery-1.12.4.min.js"></script>
     <script>
       $(function() {
-        $("#btn").click(function() {
-          $.getScript("js/test.js");
+        $("div").click(function() {
+          $.getScript("js/jquery.color.js");
+          $(this).animate({ "width": "150px", "height": "150px", "background-color": "red" }, 1000);
         });
       });
     </script>
 </head>
 <body>
- <input id="btn" type="button" value="加载" />
+  <div></div>
 </body>
 </html>
