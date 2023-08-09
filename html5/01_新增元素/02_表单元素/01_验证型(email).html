@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在HTML4.01中，表单的类型以及使用方法都非常有限。HTML5在HTML4.01的基础上，对表单进行了以下两个方向的扩展。
+      ▶ 新增input元素类型。
+      ▶ 新增其他表单元素。
+      
+      这两个方向的扩展，使得代码量大大减少，可以极大地提高开发效率。
+      
+      2.2.1 新增input元素类型
+      
+      在HTML5中，大量地增加了input元素的种类。
+      换句话说就是，input元素的type属性新增了大量属性值，如下所示：
+
+      新增的type属性值（验证型）
+      email   邮件类型
+      tel     电话号码
+      url     URL类型
+
+      新增的type属性值（取值型）
+      range     取数字（滑块方式）
+      number    取数字（微调方式）
+      color     取颜色
+      date      取日期（如2018-11-11）
+      time      取时间（08:04）
+      month     取月份
+      week      取周数
+
+      除此之外，type属性还有一个取值：datetime。
+      不过，Chrome、Firefox、IE等浏览器的最新版本中已经不再支持了，小伙伴们如果在其他地方看到的话，直接忽略即可。
+
+
+      当type属性取值为“email”时，表示这是输入电子邮件的文本框（语义化）。
+      语法：<input type="email" />
+    -->
+</head>
+<body>
+  <form method="post">
+    <p><label>电子邮件：<input type="email" /></label></p>
+    <!--
+      这里有一点要说明，即必须是submit按钮才会弹出提示内容，使用其他按钮（如button按钮）则不会。
+      这是因为email类型的文本框采用了浏览器内置的验证机制，而浏览器内置的验证机制必须使用submit按钮才会触发。
+    -->
+    <input type="submit" value="提交" />
+  </form>
+</body>
+</html>

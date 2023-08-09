@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      当type属性取值为“url”时，表示这是输入URL的文本框（语义化）
+      语法：<input type="url" />
+
+      所谓的URL格式字符，指的是以“http://”或者“https://”开头的网络地址。
+      有些小伙伴会发现，像https://www、tps://www.lvyestudy.com这种字符串也能提交！
+      原因也是一样的：url类型文本框也不具备完备的验证功能，如果想要达到验证效果，需要结合pattern属性来实现。
+    -->
+</head>
+<body>
+  <form method="post">
+    <p><label>网址：<input type="url" /></label></p>
+    <input type="submit" value="提交" />
+  </form>
+</body>
+</html>

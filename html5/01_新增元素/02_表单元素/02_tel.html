@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      当type属性取值为“tel”时，表示这是输入电话号码的文本框（语义化）。
+      语法：<input type="tel" />
+
+      分析：
+      当我们输入非电话号码格式的字符，然后点击【提交】按钮时，却发现居然可以提交！
+      这是怎么回事呢？
+      其实tel类型文本框并不具备完备的验证功能，如果想要达到验证效果，则需要结合3.2节介绍的pattern属性来实现。
+    -->
+</head>
+<body>
+  <form method="post">
+    <p><label>电话号码：<input type="tel" /></label></p>
+    <input type="submit" value="提交" />
+  </form>
+</body>
+</html>
