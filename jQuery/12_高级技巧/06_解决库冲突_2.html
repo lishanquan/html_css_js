@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      使用了jQuery.noConflict()之后，如果还想继续使得“$”指向jQuery对象，
+      我们可以使用一个立即执行函数来建立一个封闭环境，使得在函数内部中，“$”指向jQuery对象。
+      这样，就不会跟外部的“$”冲突了。
+
+      (function ($) {
+          ……
+      })(jQuery)
+      
+      立即执行函数并不属于jQuery的内容，而是属于JavaScript的内容。
+    -->
+    <script src="../js/prototype.min.js"></script>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      jQuery.noConflict();
+      //这里之后可以把“$”交给prototype库使用
+  </script>
+    <script>
+      (function($) {
+        $(function() {
+          $("div").html("勇士总冠军");
+        });
+      })(jQuery)
+    </script>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

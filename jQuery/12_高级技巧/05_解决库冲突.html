@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在某些情况下，可能有必要在同一个页面中使用多个JavaScript库。
+      但是很多库都使用了“$”这个符号（因为它简短方便），这时就需要有一种方式来避免名称的冲突了。
+
+      在jQuery中，我们可以使用jQuery.noConflict()方法来把“$”符号的控制器过渡给其他库。
+      其中，jQuery.noConflict()方法的一般使用模式如下：
+      <script src="prototype.js"></script>
+      <script src="jquery-12.8.min.js"></script>
+      <script>
+          jQuery.noConflict();
+      </script>
+      首先引入prototye库，然后引入jQuery库。
+      接着我们使用noConflict()方法让出“$”，以便将“$”的控制权让出给prototype库。
+      这样，我们就可以在页面中同时使用两个库了。
+
+      还有一点要注意的，使用jQuery.noConflict()之后，如果还想要使用jQuery库的方法，
+      我们必须使用“jQuery”来代替“$”，因为此时“$”的使用权已经让出去了。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        // 使用jQuery.onConflict()前后的“$”
+        // console.log($);
+        // jQuery.noConflict();
+        // console.log($);
+
+        // 从输出结果可以看出，使用jQuery.noConflict()之前，“$”指向的还是jQuery对象。
+        // 但是使用了jQuery.noConflict()之后，“$”就不再是指向jQuery对象，而是变成undefined了。
+        // 这个时候，“$”就等于让出去了，可以用于其他目的了。
+
+        // 使用jQuery.onConflict()前后的“jQuery”
+        console.log(jQuery);
+        jQuery.noConflict();
+        console.log(jQuery);
+
+        // 从输出结果可以看出，不管是否使用jQuery.noConflict()，“jQuery”这个变量始终指向的是jQuery对象本身。
+        // 利用“$”和“jQuery”在使用jQuery.noConflict()之后的不同，我们可以在使用jQuery.noConflict()之后，
+        // 把“$”这个变量让给其他库来使用，这样就不会导致两个库之间的冲突。
+      });
+    </script>
+</head>
+<body>
+</body>
+</html>

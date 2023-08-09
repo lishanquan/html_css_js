@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      想要布置副本服务器，需要耗费大量的资金，不过，我们可以借助第三方提供的CDN路线。对于jQuery CDN，常用的路线有：
+
+      //jQuery官网
+      <script
+        src="http://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous">
+      </script>
+      //bootCDN
+      <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+      
+      简单来说，我们只要引入上面的代码，就不需要引入本地的jQuery库了
+
+      
+      为什么要使用第三方CDN来引用jQuery库文件？
+      使用第三方CDN引用jQuery库文件，可以减少带宽的浪费，加快页面加载速度，以及更好地缓存。
+    -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(function() {
+        $("div").css("color", "red");
+      });
+    </script>
+</head>
+<body>
+  <div>虽然长的丑，但是想得美。</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在使用jQuery的过程中，有时我们又想使用DOM对象的方法或属性，这个时候就需要将jQuery对象转化为DOM对象。
+      在jQuery中，想要将一个jQuery对象转化为DOM对象，有两种方法：一种是“下标方式”；另外一种是“get()方法”。
+
+      语法：
+      //方法1
+      $()[n]
+
+      //方法2
+      $().get(n)
+
+      说明：
+      这里，$()表示的是你获取的jQuery对象。对于get()方法来说，get(0)表示获取第1个元素，get(1)表示获取第2个元素……以此类推。
+      当参数省略时，表示获取的是一个元素集合。
+
+      分析：
+      由于get()方法的参数省略，因此$("li").get()获取的是一个DOM元素集合。
+      如果想要获取第1个li元素，我们可以使用$("li").get(0)来实现。下面两行代码其实是等价的：
+      $("li").get(0)
+      $("li")[0]
+      
+      不过注意一点，上面两行代码获取的结果都是DOM对象，而不再是jQuery对象了。
+    -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        var $li = $("li");        // 获取jQuery对象
+        var oLi = $("li").get();  // 转换为DOM对象
+        oLi.reverse();            // 调用原生js数组方法，颠倒元素排序
+        $("ul").html(oLi);        // 插入元素
+      });
+    </script>
+</head>
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+</body>
+</html>
