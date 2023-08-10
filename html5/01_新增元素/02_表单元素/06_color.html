@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      当type属性取值为“color”时，我们可以直接使用浏览器自带的取色工具来获取颜色值。
+      
+      语法：
+
+      说明：value属性用于设置颜色初始值，格式必须是十六进制颜色值如#F1F1F1，
+          不能是关键字（如black）和rgba颜色（如rgba(255, 255, 255, 0.5)）。
+    -->
+    <script>
+      window.onload = function() {
+        var input = document.getElementsByTagName("input")[0];
+        var output = document.getElementsByTagName("output")[0];
+        // 页面载入，获取color初始值
+        output.value = input.value;
+        // 选择颜色，改变output值
+        input.onchange = function() {
+          output.value = input.value;
+        }
+      }
+    </script>
+</head>
+<body>
+  <form method="post">
+    <input type="color" value="#000000" />
+    <output></output>
+  </form>
+</body>
+</html>

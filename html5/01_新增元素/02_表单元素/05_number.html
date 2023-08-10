@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      当type属性取值为“number”时，我们可以通过使用微调按钮来获取某一个范围的数字。
+      
+      语法：<input type="number" min="最小值" max="最大值" step="间隔数"/>
+
+      说明：min属性用于设置最小值，max属性用于设置最大值，step属性用于设置间隔数。
+      它们的属性取值可以是整数，也可以是小数。number类型跟range类型功能非常相似，都是获取某一个范围内的数字。
+      不过两者的外观不一样，其中number类型使用的是“微调按钮”，而range类型使用的是“滑块”。
+
+      在这个例子中，我们可以直接在文本框中输入数字，也可以通过右边的微调按钮来改变数字。
+    -->
+    <script>
+      window.onload = function() {
+        var input = document.getElementsByTagName("input")[0];
+        var output = document.getElementsByTagName("output")[0];
+        // 获取number初始值
+        output.value = input.value;
+        // 拖动滑动条，改变output值
+        input.onchange = function() {
+          output.value = input.value;
+        }
+      }
+    </script>
+</head>
+<body>
+  <form method="post">
+    <input type="number" min="-10" max="10" step="5" value="-10" />
+    <output></output>
+  </form>
+</body>
+</html>

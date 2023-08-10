@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      range当type属性取值为“range”时，我们可以通过拖动滑动条获取某一个范围内的数字。
+      
+      语法：<input type="range" min="最小值" max="最大值" step="间隔数"/>
+
+      说明：min属性用于设置最小值，max属性用于设置最大值，step属性用于设置间隔数。这3个属性的取值可以是整数，也可以是小数。
+
+      在实际开发中，range类型元素都是需要结合JavaScript来操作的，上面这个例子就是最简单也是最经典的。
+      此外，output元素用于定义表单元素的输出结果，我们在这一节的后面会详细介绍。
+    -->
+    <script>
+      window.onload = function() {
+        var input = document.getElementsByTagName("input")[0];
+        var output = document.getElementsByTagName("output")[0];
+        // 获取range初始值
+        output.value = input.value;
+        // 拖动滑动条，改变output值
+        input.onchange = function() {
+          output.value = input.value;
+        }
+      }
+    </script>
+</head>
+<body>
+  <form method="post">
+    <input type="range" min="-10" max="10" step="5" value="-10" />
+    <output></output>
+  </form>
+</body>
+</html>
