@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，我们可以使用progress元素以进度条的形式来显示某一个任务的完成度，如上传文件、下载文件等。
+    
+    语法：<progress max="最大值" value="当前值"></progress>
+
+    说明：max属性表示最大值，value属性表示当前值。对于progress元素来说，它只有max属性，而没有min属性。
+
+    为什么呢？
+    原因很简单：任何进度条的最小值都是0，因此progress元素默认最小值也是0。
+    此外，max和value必须是0或正数，并且max值必须大于等于value值。
+
+    在实际开发中，progress元素一般结合上传文件或下载文件操作来显示进度，或者展示一个loading图标，以便增强用户体验。
+    对于这些高级效果，我们学到后面就知道怎么去实现了。
+  -->
+  <script>
+    window.onload = function() {
+      var oProgress = document.getElementsByTagName("progress")[0];
+      var oSpan = document.getElementsByTagName("span")[0];
+      var oBtn = document.getElementsByTagName("input")[0];
+      oBtn.onclick = function() {
+        var i = 0;
+        setInterval(function() {
+          if (i < 100) {
+            i++;
+            oProgress.value = i;
+            oSpan.innerText = i;
+          }
+        }, 100);
+      };
+    };
+  </script>
+</head>
+<body>
+  <!-- 
+    “进度=value/max”，因此虽然两个progress元素的max和value不一致，但是进度是相同的，都是80%。 
+    <progress max="10" value="8"></progress><br />
+    <progress max="100" value="80"></progress>
+  -->
+  <p>
+    <progress max="100" value="0"></progress>
+    <span>0</span>%
+  </p>
+  <input type="button" value="显示进度" />
+</body>
+</html>

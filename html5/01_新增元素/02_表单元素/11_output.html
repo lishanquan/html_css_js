@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，我们可以使用output元素来定义表单元素的输出结果或计算结果。
+    
+    语法：<output></output>
+    
+    说明：output元素是一个行内元素，只不过它比span元素更具有语义化。
+
+    output元素一般放在form元素内部，并且配合其他表单元素（如文本框等）来使用。
+  -->
+  <script>
+    window.onload = function() {
+      var input = document.getElementsByTagName("input")[0];
+      var output = document.getElementsByTagName("output")[0];
+      // 获取range初始值
+      output.value = input.value;
+      // 拖动滑动条，改变output值
+      input.onchange = function() {
+        output.value = input.value;
+      }
+    }
+  </script>
+</head>
+<body>
+  <form method="post">
+    <input type="range" min="-10" max="10" step="5" value="-10" />
+    <output></output>
+  </form>
+</body>
+</html>

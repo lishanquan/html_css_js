@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，我们可以使用更具有语义化的time元素来显示页面中的日期时间信息。
+    
+    语法：<time datetime="时间"></time>
+    
+    说明：datetime属性取值是一个时间，可以省略不写。
+    datetime属性中的时间是提供给搜索引擎看的，而time标签内的时间是提供给用户看的，两者内容可以一样也可以不一样。
+    time元素与datetime属性的关系，有点类似于img元素与alt属性的关系。
+
+    在实际开发中，大多数情况下我们是不用datetime属性的。
+    用一句话总结就是：对于time元素的使用，我们不必过于拘泥，想要显示一段有意义的日期时间，用<time></time>括起来就可以了。
+  -->
+</head>
+<body>
+  方式1：<br />
+  <time>2023-08-11</time>
+  <br />
+  方式2：<br />
+  <time datetime="2023-08-11">2023-08-11</time>
+  <br />
+  方式3：<br />
+  <time datetime="2023-08-11 08:00">2023年8月11日早上8点</time>
+  <br />
+  方式4：<br />
+  <time datetime="2023-08-11 08:00~12:00">2023年8月11日早上8点~12点</time>
+</body>
+</html>
