@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    一、a元素
+    HTML5为a元素新增了3个属性，如下所示：
+    download    定义被下载的目标（如文件、图片等）
+    media       定义被链接文档为何种媒介/设备优化的
+    type        定义被链接文档的MIME类型
+
+    media和type这两个属性用得很少，我们只需要掌握download这一个属性即可。
+
+    语法：<a href="文件地址" download="新文件名"></a>
+
+    说明：download属性用于为文件取一个新的文件名。如果download属性值省略，则表示使用旧的文件名。
+
+    二、ol元素
+    HTML5为ol元素新增了一个reversed属性，用于设置列表顺序为降序显示。
+    
+    语法：
+    <ol reversed>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+    
+    说明：在实际开发中，reversed属性用得很少，简单了解一下即可。
+
+    三、small元素
+    在HTML5中，我们可以使用更具有语义化的small元素来表示“小字印刷体”的文字。
+    small元素一般用于网站底部的免责声明、版权声明等。
+    
+    语法：<small>你的内容</small>
+
+    四、script元素
+    HTML5为script元素新增了两个属性：defer和async。
+    这两个属性的作用都是加快页面的加载速度，两者区别如下。
+    ▶ defer属性用于异步加载外部JavaScript文件，当异步加载完成后，该外部JavaScript文件不会立即执行，而是等到整个HTML文档加载完成才会执行。
+    ▶ async属性用于异步加载外部JavaScript文件，当异步加载完成后，该外部JavaScript文件会立即执行，即使整个HTML文档还没有加载完成。
+    
+    defer和async都是异步加载的，两者区别在于，异步加载外部JavaScript文件完成后何时执行。
+    
+    从上面也可以看出，defer属性相对于async属性来说，更符合大多数开发场景对脚本加载执行的要求。
+  -->
+</head>
+<body>
+  <form action="index.php" method="post">
+    <fieldset>
+      <legend>登录绿叶学习网</legend>
+      <p>
+        <label for="name">账号：</label>
+        <input type="text" name="name" id="name" />
+      </p>
+      <p>
+        <label for="pwd">密码：</label>
+        <input type="password" name="pwd" id="pwd" />
+      </p>
+      <input type="checkbox" id="remember-me" name="remember-me" />
+      <label for="remember-me">记住我</label>
+      <input type="submit" value="登录" />
+    </fieldset>
+  </form>
+</body>
+</html>

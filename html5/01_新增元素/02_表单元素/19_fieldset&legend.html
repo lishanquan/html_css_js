@@ -8,12 +8,32 @@
     
     语法：
     <fieldset>
-      
+      <legend>表单组标题</legend>
+      ...
     </fieldset>
     
-    说明：使用fieldset和legend有两个作用：增强表单的语义；定义fieldset元素的disabled属性来禁用整个组中的表单元素。
+    说明：
+    使用fieldset和legend有两个作用：
+    1)增强表单的语义；
+    2)定义fieldset元素的disabled属性来禁用整个组中的表单元素。
   -->
 </head>
 <body>
+  <form action="index.php" method="post">
+    <fieldset>
+      <legend>登录绿叶学习网</legend>
+      <p>
+        <label for="name">账号：</label>
+        <input type="text" name="name" id="name" />
+      </p>
+      <p>
+        <label for="pwd">密码：</label>
+        <input type="password" name="pwd" id="pwd" />
+      </p>
+      <input type="checkbox" id="remember-me" name="remember-me" />
+      <label for="remember-me">记住我</label>
+      <input type="submit" value="登录" />
+    </fieldset>
+  </form>
 </body>
 </html>
