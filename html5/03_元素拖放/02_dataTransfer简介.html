@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，如果想要在元素拖放中实现数据传递，我们需要使用dataTransfer对象。
+    dataTransfer对象主要用于在“源元素”与“目标元素”之间传递数据。
+    dataTransfer对象有两个最重要的方法：setData()和getData()。
+    
+    在整个拖曳过程中，具体操作是这样的：
+    开始拖放源元素时（ondragstart事件），调用setData()方法保存数据；
+    然后在放入目标元素时（ondrop事件），调用getData()方法读取数据。
+    
+    1．setData()方法
+
+    在拖放操作中，我们可以使用setData()方法保存数据。
+    
+    语法：setData(format, data);
+    
+    说明：参数format表示数据格式如下所示
+    text/plain      文本文字格式
+    text/html       HTML代码格式
+    text/xml        XML字符格式
+    text/url-list   URL列表格式
+
+    举例：
+      source.ondragstart = function(e) {
+        e.dataTransfer.setData("text/plain", e.target.id);
+      }
+
+    2．getData()方法
+
+    在拖放操作中，我们可以使用getData()方法读取数据。
+    
+    语法：getData(format);
+
+    说明：参数format表示数据格式
+
+    举例：
+      dest.ondrop = function(e) {
+        e.dataTransfer.getData("text/plain");
+      }
+  -->
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      position: relative;
+    }
+    img {
+      position: absolute;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var oImg = document.getElementsByTagName("img")[0];
+      // e.offsetX、e.offsetY分别表示鼠标相对于触发事件的对象的X坐标、Y坐标
+      var offsetX, offsetY;
+      // 元素每次拖动开始时，记录它的坐标（偏移量）
+      oImg.ondragstart = function(e) {
+        offsetX = e.offsetX;
+        offsetY = e.offsetY;
+      };
+      // 元素拖动过程中，重新设置它的坐标（偏移量）
+      oImg.ondrag = function(e) {
+        // e.pageX、e.pageY分别表示鼠标相对于当前窗口的X坐标、Y坐标。
+        if (e.pageX == 0 && e.pageY == 0) {
+          return;
+        }
+        oImg.style.left = (e.pageX - offsetX) + "px";
+        oImg.style.top = (e.pageY - offsetY) + "px";
+      };
+    }
+  </script>
+</head>
+<body>
+  <img src="../img/judy.png" alt="" draggable="true">
+</body>
+</html>
