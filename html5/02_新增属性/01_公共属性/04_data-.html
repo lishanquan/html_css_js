@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    三、data-*
+    在HTML5中，我们可以使用data-*属性来为元素实现自定义属性。
+    
+    语法：<element data-*="属性值"></element>
+    
+    说明：“data-”只是一个前缀，后面接一个小写的字符串，例如data-color、data-article-title等。
+
+    例一分析：我们可以使用DOM操作中的obj.dataset.xxx来获取data-*属性的值。其中，obj是一个DOM对象，xxx是data-的后缀字符。
+
+    例二分析：
+    在使用JavaScript获取data-*属性的值时，要注意书写格式。
+    ▶ 如果是data-xxx格式，则应该写成obj.dataset.xxx。
+      例如data-color应该写成obj.dataset.color，而data-content应该写成obj.dataset.content。
+    ▶ 如果是data-xxx-yyy格式，则应该写成obj.dataset.xxxYyy。
+      例如data-fruit-price应该写成obj.dataset.fruitPrice，而data-animal-type应该写成obj.dataset.animalType。
+  -->
+  <script>
+    window.onload = function() {
+      /*
+        例1. 
+        var oP = document.getElementsByTagName("p")[0];
+        oP.style.color = oP.dataset.color;
+      */
+     /* 例2. */
+      var oLi = document.getElementsByTagName("li");
+      for (var i = 0; i < oLi.length; i++) {
+        console.log(oLi[i].innerText + ":" + oLi[i].dataset.fruitPrice);
+      }
+    };
+  </script>
+</head>
+<body>
+  <!-- 
+    例1：
+    <p data-color="red">你的努力程度之低，根本轮不到拼天赋。</p> 
+  -->
+  <!-- 例2 -->
+  <ul>
+    <li data-fruit-price="￥6.15">苹果</li>
+    <li data-fruit-price="￥12.5">香蕉</li>
+    <li data-fruit-price="￥1.98">西瓜</li>
+  </ul>
+</body>
+</html>

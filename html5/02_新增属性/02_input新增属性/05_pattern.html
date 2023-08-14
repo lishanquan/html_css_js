@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    三、pattern
+    在HTML5中，我们可以使用pattern属性来为文本框添加验证功能。
+    
+    语法：<input type="text" pattern="正则表达式" />
+    
+    说明：
+      pattern属性取值是一个正则表达式。正则表达式内容比较多，不了解的小伙伴可以参考绿叶学习网开源的正则表达式教程，这里就不再详细展开介绍了。
+    
+      此外，email、url、tel这3个类型的input元素，本质上都内置了pattern属性，因此它们会自动进行相关匹配验证。
+  -->
+</head>
+<body>
+  <form method="post">
+    <!-- 以字母开头，包含字母、数字或下划线，并且长度在5~10之间 -->
+    <input type="text" pattern="^[a-zA-Z]\w{4,9}$" /><br />
+    <input type="submit" value="提交">
+  </form>
+</body>
+</html>

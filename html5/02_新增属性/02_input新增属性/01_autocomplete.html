@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    为了提高开发效率，以及达到更好的用户体验，HTML5为input元素新增了大量的属性。
+    其中，在实际开发中用得最多的有以下5个。
+    ▶ autocomplete
+    ▶ autofocus
+    ▶ placeholder
+    ▶ required
+    ▶ pattern
+    
+    注意，上面这些新增属性只是针对input元素，并非所有元素都有。
+    
+    除了上面列出的，我们在其他地方可能会看到formaction、formmethod、formtarget等。
+    不过这些属性在实际开发中极少会用到。
+
+    一、autocomplete
+    在HTML5中，我们可以使用autocomplete属性来实现文本框的自动提示功能。
+    
+    语法:
+    
+    说明：
+      autocomplete属性有两个属性值：on和off。on表示开启，off表示关闭。
+      
+      autocomplete属性一般都是结合datalist元素来实现自动提示功能。
+      
+      autocomplete属性适用于所有文本框型的input元素，包括text、password、email、url、tel等。
+  -->
+</head>
+<body>
+  <form method="post">
+    <input type="text" autocomplete="on" list="tips">
+    <datalist id="tips">
+      <option value="HTML"></option>
+      <option value="CSS"></option>
+      <option value="JavaScript"></option>
+      <option value="Vue.js"></option>
+      <option value="React.js"></option>
+      <option value="Angular.js"></option>
+    </datalist>
+  </form>
+</body>
+</html>

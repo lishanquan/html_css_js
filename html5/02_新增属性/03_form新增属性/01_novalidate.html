@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，form元素的新增属性中比较重要的只有一个，那就是：novalidate。
+    从“2.2表单元素”这一节我们可以知道，email、tel、url等类型的input元素中内置的验证机制默认会自动执行。
+    但是在某些情况下，我们需要使用JavaScript来创建更为复杂且健全的验证，这时就要覆盖原有的验证机制了。
+    
+    现在问题来了，怎么覆盖呢？
+    
+    在HTML5中，我们可以使用novalidate属性来禁用form元素的所有文本框内置的验证功能。
+
+    语法：
+    <form novalidate="novalidate">
+      ……
+    </form>
+    
+    说明：novalidate只有一个属性值：novalidate。当然，你也可以直接简写为：<form novalidate></form>。
+
+    在这个例子中，我们为form元素添加了novalidate属性，
+    因此当点击按钮提交表单时，form元素内的文本框就不会采用浏览器内置的验证机制，
+    然后我们就可以使用JavaScript来创建新的验证规则。
+  -->
+</head>
+<body>
+  <form method="post" novalidate>
+    <p><label>电子邮箱：<input type="email" /></label></p>
+    <p><label>手机号码：<input type="tel" /></label></p>
+    <input type="submit" value="提交" />
+  </form>
+</body>
+</html>
