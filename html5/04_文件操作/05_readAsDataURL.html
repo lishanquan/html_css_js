@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在线预览图片（readAsDataURL()方法）
+
+    我们都知道，“img元素的src属性”或者“其他元素的background属性的url”，都可以被赋值为Base64编码，然后显示图片。
+    在HTML5以前，我们一般都是先将本地图片上传到服务器，等上传成功后再由后台返回图片的地址在前端显示。
+    到了HTML5时代，我们使用FileReader对象的readAsDataURL()方法，
+    可以不经过后台而直接将本地图片显示在页面中，这样可以减少前后端的频繁交互，减少服务器端的压力。
+  -->
+  <script>
+    window.onload = function() {
+      var oFile = document.getElementById("file");
+      oFile.onchange = function() {
+        var file = oFile.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function() {
+          // 添加图片到页面中
+          oImg = document.createElement("img");
+          oImg.src = this.result;
+          document.body.appendChild(oImg);
+        }
+      };
+    }
+  </script>
+</head>
+<body>
+  <input type="file" id="file" /><br />
+</body>
+</html>

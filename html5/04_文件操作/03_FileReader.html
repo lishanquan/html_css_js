@@ -6,33 +6,36 @@
   <!--
     在HTML5中，专门提供了一个文件操作的API，即FileReader对象。
     我们通过FileReader对象可以很方便地读取文件中的数据。
-    FileReader对象有5个方法，其中4个用来读取文件数据，另外1个用于中断读取操作，如表5-3所示。
+    FileReader对象有5个方法，其中4个用来读取文件数据，另外1个用于中断读取操作，如下所示：
+    readAsText()          将文件读取为“文本”
+    readAsDataURL()       将文件读取为“DataURL”
+    readAsBinaryString()  将文件读取为“二进制编码”
+    readAsArrayBuffer()   将文件读取为一个“ArrayBuffer对象”
+    abort()               中止读取操作
+
+    readAsText()方法有两个参数：第1个参数为File对象，第2个参数为文本的编码方式，默认值为“utf-8”。
+    这个方法非常容易理解，表示将文件以文本方式读取，读取的结果就是这个文本文件的内容。
+    
+    readAsBinaryString()方法将文件读取为二进制字符串，通常我们将它传送到后端，后端可以通过这段字符串来存储文件。
+    
+    abort()方法可以用来中止读取操作，在读取大文件时，这个方法非常有用。
+
+    FileReader对象提供了6个事件，用于检测文件的读取状态，如下所示：
+    onloadstart         开始读取
+    onprogress          正在读取
+    onload              成功读取
+    onloadend           读取完成（无论成功或失败）
+    onabort             中断
+    onerror             出错
+
+    语法：
+      var reader = new FileReader();
+      reader.readAsText(file, 编码);
+      reader.onload = function() {
+        // 成功读取后的操作
+      }
   -->
-  <script>
-    window.onload = function() {
-      // 获取FileList对象
-      var oFile = document.getElementById("file");
-      oFile.onchange = function() {
-        // 获取第1个文件
-        var file = oFile.files[0];
-        // 将单位“B”转换成"KB"
-        var size = file.size / 1024;
-        var unitArr = ["KB", "MB", "GB", "TB"];
-        // 转换单位
-        for (var i = 0; size > 1; i++) {
-          // size.toFixed(2)表示将size值四舍五入，只取两位小数。
-          var fileSizeString = size.toFixed(2) + unitArr[i];
-          size /= 1024;
-        }
-        console.log("图片名称为：" + file.name);
-        console.log("图片大小为：" + fileSizeString);
-        console.log("图片类型为：" + file.type);
-        console.log("图片最后修改时间为：" + file.lastModifiedDate);
-      };
-    }
-  </script>
 </head>
 <body>
-  <input id="file" type="file" accept="image/*" />
 </body>
 </html>

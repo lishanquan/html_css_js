@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，还新增了一个Blob对象，用于代表原始二进制数据。实际上，前面介绍的File对象也继承于Blob对象。
+    
+    语法：var blob = new Blob(dataArray, type);
+    
+    说明：Blob()构造函数有两个参数，这两个参数都是可选参数，而并非必选参数。
+    第1个参数dataArray是一个数组，数组中的元素可以是以下类型的对象。
+    ▶ String对象（即字符串）
+    ▶ Blob对象（即其他Blob对象）
+    ▶ ArrayBuffer对象
+    ▶ ArrayBufferView对象
+    第2个参数type是一个字符串，表示Blob对象的MIME类型。
+
+    创建并下载TXT文件:
+    
+    分析：
+      Blob对象可以通过window.URL对象的createObjectURL()方法生成一个网络地址，然后结合a标签的download属性来实现下载文件的功能。
+
+      如果想要创建及下载HTML文件，只需要把var blob = new Blob([text],{type:"text/plain"});
+      改为var blob = new Blob([text],{type: "text/html"});就可以了。
+      此外，想要重命名文件，可以使用a元素的download属性。
+  -->
+  </style>
+  <script>
+    window.onload = function() {
+      var oTxt = document.getElementById("txt");
+      var oBtn = document.getElementById("btn");
+      var oDiv = document.getElementById("container");
+      oBtn.onclick = function() {
+        var text = oTxt.value;
+        var blob = new Blob([text], {type: "text/plain"});
+        oDiv.innerHTML = '<a download href="' + window.URL.createObjectURL(blob) + '" target="_blank">下载文件</a>';
+      };
+    }
+  </script>
+</head>
+<body>
+  <textarea id="txt" cols="30" rows="10"></textarea><br />
+  <input id="btn" type="button" value="创建链接" />
+  <div id="container"></div>
+</body>
+</html>
