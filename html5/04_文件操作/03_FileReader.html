@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，专门提供了一个文件操作的API，即FileReader对象。
+    我们通过FileReader对象可以很方便地读取文件中的数据。
+    FileReader对象有5个方法，其中4个用来读取文件数据，另外1个用于中断读取操作，如表5-3所示。
+  -->
+  <script>
+    window.onload = function() {
+      // 获取FileList对象
+      var oFile = document.getElementById("file");
+      oFile.onchange = function() {
+        // 获取第1个文件
+        var file = oFile.files[0];
+        // 将单位“B”转换成"KB"
+        var size = file.size / 1024;
+        var unitArr = ["KB", "MB", "GB", "TB"];
+        // 转换单位
+        for (var i = 0; size > 1; i++) {
+          // size.toFixed(2)表示将size值四舍五入，只取两位小数。
+          var fileSizeString = size.toFixed(2) + unitArr[i];
+          size /= 1024;
+        }
+        console.log("图片名称为：" + file.name);
+        console.log("图片大小为：" + fileSizeString);
+        console.log("图片类型为：" + file.type);
+        console.log("图片最后修改时间为：" + file.lastModifiedDate);
+      };
+    }
+  </script>
+</head>
+<body>
+  <input id="file" type="file" accept="image/*" />
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，文件上传是使用input元素来实现的，其中type属性取值为"file"。
+
+    语法：<input type="file" />
+    
+    说明：文件上传input元素有两个重要属性：multiple和accept。multiple属性表示“是否选择多个文件”。
+    
+    其中，下面两句代码是等价的：
+    <input type="file" multiple />
+    <input type="file" multiple="multiple" />
+    
+    accept属性用于设置文件的过滤类型（MIME类型），常见的accept属性取值如下所示：
+    image/jpeg            JPEG图片
+    image/png             PNG图片
+    ……
+
+    如果想要同时设置多个过滤类型，可以使用英文逗号（,）隔开，
+    例如：<input type="file" accept="image/jpeg, image/png" />
+
+    分析：
+      为元素添加multiple属性后，就可以选择多个文件了。
+      当选择成功后，按钮右侧不再显示文件的名称，而是显示文件的总量。当将鼠标指针移到上面时，就会显示全部上传文件的详细列表。
+    
+    分析：
+      accept="image/png"表示只可以上传后缀名为.png格式的文件（也就是PNG图片），如果选择其他文件，则是无法上传的。
+      默认的<input type="file" />元素比较难看，
+      在实际开发中，为了获得更好的用户体验，我们一般都是使用“opacity: 0;”来隐藏原来的表单元素，然后在上面覆盖一个美化的按钮或者提示语。
+
+    分析：
+      想要对file类型元素进行美化，我们都是这样处理的：首先使用opacity: 0;将表单设置为透明，
+      然后使用绝对定位在表单原来的位置上面定义一个label就可以了。
+      这里还要说明一下，使用了opacity:0;之后，虽然表单看不见了，但它并没有消失，还占据着原来的位置，
+      从浏览器控制台也可以很清楚地看出来。因此，我们点击原来的位置，还可以继续使用表单的功能。这个地方非常巧妙，也是实现的关键。
+  -->
+  <style type="text/css">
+    /* 去除默认样式 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 160px;
+      margin: 30px auto;
+    }
+    .filePicker {
+      position: relative;
+      width: 160px;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      color: #ffffff;
+      background-color: #00b7ee;
+    }
+    .filePicker input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 160px;
+      height: 44px;
+      opacity: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="file" />
+  </div>
+  <div class="container">
+    <div class="filePicker">
+      <label>点击选择文件</label>
+      <input id="fileInput" type="file" accept="image/*" multiple />
+    </div>
+  </div>
+</body>
+</html>

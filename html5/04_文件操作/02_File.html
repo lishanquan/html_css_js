@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在文件上传元素中，将会产生一个FileList对象，它是一个类数组对象，表示所有文件的集合。其中，每一个文件就是一个File对象。
+    想要获取某一个文件对象（即File对象），我们首先需要获取FileList对象，然后再通过数组下标形式来获取。
+    
+    File对象有以下4个属性，如下所示：
+    name                文件名称
+    type                文件类型
+    size                文件大小（单件为B）
+    lastModifiedDate    文件最后修改时间
+
+  -->
+  <script>
+    window.onload = function() {
+      // 获取FileList对象
+      var oFile = document.getElementById("file");
+      oFile.onchange = function() {
+        // 获取第1个文件
+        var file = oFile.files[0];
+        // 将单位“B”转换成"KB"
+        var size = file.size / 1024;
+        var unitArr = ["KB", "MB", "GB", "TB"];
+        // 转换单位
+        for (var i = 0; size > 1; i++) {
+          // size.toFixed(2)表示将size值四舍五入，只取两位小数。
+          var fileSizeString = size.toFixed(2) + unitArr[i];
+          size /= 1024;
+        }
+        console.log("图片名称为：" + file.name);
+        console.log("图片大小为：" + fileSizeString);
+        console.log("图片类型为：" + file.type);
+        console.log("图片最后修改时间为：" + file.lastModifiedDate);
+      };
+    }
+  </script>
+</head>
+<body>
+  <input id="file" type="file" accept="image/*" />
+</body>
+</html>
