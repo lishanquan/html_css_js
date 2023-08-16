@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，我们使用indexedDB对象的open()方法来创建或者打开一个数据库。
+    
+    语法：
+    var request = window.indexedDB.open(数据库名, 版本号);
+    request.onerror = function() {
+      console.log("创建或打开数据库失败！");
+    };
+    request.onsuccess = function(e) {
+      console.log("创建或打开数据库成功！");
+    };
+    
+    说明：
+    indexedDB对象是window对象下的一个子对象，我们可以使用indexedDB对象的open()方法来创建或打开一个数据库。
+    
+    open()方法有两个参数：第1个参数是数据库名；第2个参数是数据库版本号。其中版本号可以随便取，你可以取“1.0”，也可以取“20170804”等。
+    
+    如果数据库已经存在，则open()方法表示打开数据库；如果数据库不存在，则open()方法表示创建数据库。
+    
+    window.indexedDB.open()方法返回一个请求对象，我们将其赋值给变量request。
+    该请求对象有两个事件：onerror事件和onsuccess事件。
+    onerror事件表示请求失败时触发的事件，onsuccess事件表示请求成功时触发的事件。
+  -->
+  <script>
+    var request = window.indexedDB.open("mydb", 1.0);
+    request.onerror = function() {
+      console.log("创建或打开数据库失败！");
+    };
+    request.onsuccess = function(e) {
+      console.log("创建或打开数据库成功！");
+      // e.target.result获取的是一个IDBDatabase对象。就是我们刚刚创建或者打开的数据库。
+      var db = e.target.result;
+      console.log(db);
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    接触过SQL的小伙伴都知道，创建了数据库后，接着肯定就是创建一个“表”来存储数据。
+    但是在indexedDB中，是没有“表”这个概念的，而是用“对象仓库（Object Store）”来代替。
+    我们一定要时刻记住：在indexedDB中，一个对象仓库就是一张表。
+    
+    在indexedDB中，我们可以使用IDBDatabase对象的createObjectStore()方法来创建一个新的对象仓库。
+
+    语法：
+    var request = window.indexedDB.open(数据库名, 版本号);
+    request.onerror = function(){
+      console.log("创建或打开数据库失败！");
+    };
+    request.onsuccess = function(){
+      console.log("创建或打开数据库成功！");
+    };
+    request.onupgradeneeded=function(e){
+      var db = e.target.result;
+      // 如果数据库中不包含该对象仓库，则创建新的对象仓库
+      if(!db.objectStoreNames.contains("对象仓库名")){
+        var store = db.createObjectStore("对象仓库名",{keyPath:"主键名"});
+        for(var i = 0 ; i < data.length;i++){
+          var addRequest = store.add(data[i]);
+          addRequest.onerror = function(){
+            console.log("添加数据失败！")
+          };
+          addRequest.onsuccess = function(){
+            console.log("添加数据成功！")
+          };
+        }
+      }
+    };
+
+    说明：
+    实际上，请求对象request除了onerror和onsuccess这两个事件外，
+    还有一个onupgradeneeded事件，它表示版本号更新时触发的事件。
+    对于对象仓库的创建，我们一般都是在onupgradeneeded事件中操作的。
+
+    createObjectStore()方法有两个参数：第1个参数是“对象仓库名”；第2个参数用于设置对象仓库的主键。
+    
+    如果你想要让主键是一个递增的数字，可以使用下面这一句代码：
+    var store = db.createObjectStore("对象仓库名",{autoIncrement:true});
+    
+    此外，db.createObjectStore()方法返回一个ObjectStore对象。简单来说，ObjectStore对象就是我们刚刚创建的对象仓库。
+
+    store.add()同样会返回一个请求对象。
+    该请求对象也有两个事件：onerror和onsuccess。onerror表示添加数据失败时所触发的事件，onsuccess表示添加数据成功时所触发的事件。
+  -->
+  <script>
+    // 定义对象仓库数据
+    var data = [{
+      id: 1001,
+      name: "Kobe",
+      age: 41
+    },{
+      id: 1002,
+      name: "Curry",
+      age: 36
+    },{
+      id: 1003,
+      name: "James",
+      age: 38
+    }]
+    // 一定要更新版本号，以便触发onupgradeneeded事件
+    var request = window.indexedDB.open("mydb", 2.0);
+    request.onerror = function() {
+      console.log("创建或打开数据库失败！");
+    };
+    request.onsuccess = function(e) {
+      console.log("创建或打开数据库成功！");
+    };
+    request.onupgradeneeded = function(e) {
+      var db = e.target.result;
+      // 如果数据库不包含"students"这张表，则创建新表
+      if (!db.objectStoreNames.contains("students")) {
+        var store = db.createObjectStore("students", {keyPath: "id"});
+        for (var i = 0; i < data.length; i++) {
+          var addRequest = store.add(data[i]);
+          addRequest.onerror = function() {
+            console.log("添加数据失败！");
+          };
+          addRequest.onsuccess = function(e) {
+            console.log("添加数据成功！");
+          };
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>

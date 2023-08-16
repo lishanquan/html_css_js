@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在indexedDB中，当想要使用对象仓库进行增删查改操作时，我们都需要开始一个事务。
+    事务，简单来说就是“一组操作步骤”。这组操作步骤要么全部执行，要么一步也不执行。
+    大家记住一点就可以了：凡是涉及对象仓库的增删查改，都是使用事务来处理。
+    
+    1．增
+    在indexedDB中，我们可以使用事务的add()方法来为对象仓库增加数据
+
+    语法：
+    request.onsuccess = function(e){
+      console.log("创建或打开数据库成功！");
+      var db = e.target.result;
+      var transaction = db.transaction(["students"],"readwrite");
+      var store = transaction.objectStore("students");
+      for(var i = 0 ; i < data.length;i++){
+        var dataRequest = store.add(data[i]);
+        dataRequest.onerror = function(){
+          console.log("添加数据失败！");
+        };
+        dataRequest.onsuccess = function(){
+          console.log("添加数据成功！");
+        };
+      }
+    };
+
+    说明：
+    凡是对象仓库的增删查改，都是在请求对象request的onsuccess事件中操作的。
+    
+    var transaction = db.transaction(["students"],"readwrite");
+
+    上面这句代码中，表示使用IDBDatabase对象的transaction()方法开启一个事务，返回的是一个事务对象，即transaction对象。
+    transaction()方法有两个参数：
+    第1个参数是“对象仓库名”，它是“字符串数组”；
+    第2个参数是“事务模式”，有两个取值。
+    ▶ "read"：只读；
+    ▶ "readwrite"：可读写。
+
+    var store = transaction.objectStore("students");
+    在上面这句代码中，调用transaction对象的objectStore()方法来连接对象仓库。objectStore()方法有一个参数，表示“对象仓库名”。
+    
+    var dataRequest = store.add(data[i]);
+    在上面这句代码中，调用objectStore对象的add()方法来为对象仓库添加数据，该方法返回一个请求对象。这个请求对象也有两个事件：onerror和onsuccess。
+
+    分析：
+    增加数据跟创建新表的操作很相似，不过两者也有明显的区别：
+    增加数据使用的是transaction()方法，而创建新表使用的是createObjectStore()方法。
+  -->
+  <script>
+    // 定义对象仓库数据
+    var data = [{
+      id: 1004,
+      name: "Durant",
+      age: 36
+    },{
+      id: 1005,
+      name: "Wade",
+      age: 40
+    },{
+      id: 1006,
+      name: "Harden",
+      age: 35
+    }]
+    var request = window.indexedDB.open("mydb", 2.0);
+    request.onerror = function() {
+      console.log("创建或打开数据库失败！");
+    };
+    request.onsuccess = function(e) {
+      console.log("创建或打开数据库成功！");
+      var db = e.target.result;
+      // 开户事务
+      var transaction = db.transaction(["students"], "readwrite");
+      // 连接对象仓库
+      var store = transaction.objectStore("students");
+      // 添加数据
+      for (var i = 0; i < data.length; i++) {
+        var addRequest = store.add(data[i]);
+        addRequest.onerror = function() {
+          console.log("添加数据失败！");
+        };
+        addRequest.onsuccess = function(e) {
+          console.log("添加数据成功！");
+        };
+      }
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>
