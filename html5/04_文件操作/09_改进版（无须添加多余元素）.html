@@ -16,14 +16,22 @@
       oBtn.onclick = function() {
         var text = oTxt.value;
         var blob = new Blob([text], {type: "text/plain"});
-        oDiv.innerHTML = '<a download href="' + window.URL.createObjectURL(blob) + '" target="_blank">下载文件</a>';
+        var oA = document.createElement("a");
+        var url = window.URL.createObjectURL(blob);
+        oA.download = "download";
+        oA.href = url;
+        // 添加元素
+        document.body.appendChild(oA);
+        // 触发点击
+        oA.click();
+        // 移除元素
+        document.body.removeChild(oA);
       };
     }
   </script>
 </head>
 <body>
   <textarea id="txt" cols="30" rows="10"></textarea><br />
-  <input id="btn" type="button" value="创建链接" />
-  <div id="container"></div>
+  <input id="btn" type="button" value="下载文件" />
 </body>
 </html>

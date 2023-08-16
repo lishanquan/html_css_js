@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，我们可以使用sessionStorage对象来“暂时”保存客户端的少量数据。
+    sessionStorage对象跟localStorage对象非常相似，两者有着完全相同的方法。
+    
+    不过，sessionStorage对象跟localStorage对象也有本质上的区别：
+    sessionStorage对象保存的是“临时数据”，用户关闭浏览器后，数据就会丢失；
+    而localStorage对象保存的是“永久数据”，用户关闭浏览器后，数据依然存在。
+
+    此外，localStorage和sessionStorage都是window对象下的子对象。
+    也就是说，localStorage.getItem()其实是window.localStorage.getItem()的简写。
+
+    当我们关闭当前页面（注意是只需要关闭当前页面，而不需要关闭浏览器），
+    然后重新打开页面时，此时会发现sessionStorage数据并没有保存下来。
+    并且打开控制台也找不到sessionStorage保存的数据。
+
+    实际上，localStorage和sessionStorage并没有大家想象中那么复杂，
+    这两个对象无非就是用来操作键值对而已，非常简单。
+    对于localStorage和sessionStorage，我们可以总结出以下4点。
+    ▶ localStorage和sessionStorage都是window对象下的子对象。
+    ▶ 两者具有完全相同的操作，比如获取数据使用的是getItem()，保存数据使用的是setItem()等。
+    ▶ localStorage对象保存的是“永久数据”，而sessionStorage对象保存的是“临时数据”。
+    ▶ 在实际开发中，localStorage用得比较多，sessionStorage很少用到，我们只需要重点掌握localStorage就行。
+  -->
+</head>
+<body>
+</body>
+</html>
