@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在indexedDB中，我们可以使用事务的delete()方法来删除对象仓库的数据。
+    
+    语法：
+    request.onsuccess = function(e){
+      console.log("创建或打开数据库成功！");
+      var db = e.target.result;
+      var transaction = db.transaction(["students"],"readwrite");
+      var store = transaction.objectStore("students");
+      var dataRequest = store.delete(1001);
+      dataRequest.onerror = function(){
+        console.log("删除数据失败！");
+      };
+      dataRequest.onsuccess = function(){
+        console.log("删除数据成功！");
+      };
+    };
+    
+    说明对象仓库的“删”操作，也是在请求对象request的onsuccess事件中操作的。
+    
+    var dataRequest = store.delete(1001);
+
+    在上面这句代码中，调用objectStore对象的delete()方法来为对象仓库删除数据，这个方法只有一个参数，这个参数是主键名。
+    delete()方法返回一个请求对象，这个请求对象也有两个事件：onerror和onsuccess。
+  -->
+  <script>
+    var request = window.indexedDB.open("mydb", 2.0);
+    request.onerror = function() {
+      console.log("创建或打开数据库失败！");
+    };
+    request.onsuccess = function(e) {
+      console.log("创建或打开数据库成功！");
+      var db = e.target.result;
+      var transaction = db.transaction(["students"], "readwrite");
+      var store = transaction.objectStore("students");
+      var deleteRequest = store.delete(1003);
+      deleteRequest.onerror = function() {
+        console.log("删除数据失败！");
+      };
+      deleteRequest.onsuccess = function() {
+        console.log("删除数据成功！");
+      };
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>

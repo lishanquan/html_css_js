@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在indexedDB中，我们可以使用事务的get()方法来查询对象仓库的数据。
+    
+    语法：
+    request.onsuccess = function(e){
+      console.log("创建或打开数据库成功") ;
+      var db = e.target.result;
+      var transaction = db.transaction(["students"],"readwrite");
+      var store = transaction.objectStore("students");
+      var dataRequest = store.get(主键名);
+      dataRequest.onerror = function(){
+        alert("获取数据失败");
+      };
+      dataRequest.onsuccess = function(){
+        if(this.result == undefined){
+          console.log("没有符合条件的数据");
+        }else{
+          console.log(this.result);
+        }
+      };
+    };
+    
+    说明：对象仓库的“查”操作，也是在请求对象request的onsuccess事件中操作的。
+    
+    var dataRequest = store.get(1002);
+
+    上面这句代码中，调用objectStore对象的get()方法来为对象仓库查询数据，这个方法只有一个参数，这个参数是主键名。
+    get()方法返回一个请求对象，这个请求对象也有两个事件：onerror和onsuccess。
+  -->
+  <script>
+    var request = window.indexedDB.open("mydb", 2.0);
+    request.onerror = function() {
+      console.log("创建或打开数据库失败！");
+    };
+    request.onsuccess = function(e) {
+      console.log("创建或打开数据库成功！");
+      var db = e.target.result;
+      var transaction = db.transaction(["students"], "readwrite");
+      var store = transaction.objectStore("students");
+      var getRequest = store.get(1001);
+      getRequest.onerror = function() {
+        console.log("获取数据失败！");
+      };
+      getRequest.onsuccess = function() {
+        if (this.result == undefined) {
+          console.log("没有符合条件的数据");
+        } else {
+          console.log(this.result);
+        }
+      };
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>

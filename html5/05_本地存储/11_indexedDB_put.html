@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在indexedDB中，我们可以使用事务的put()方法来更新对象仓库的数据。
+    
+    语法：
+    request.onsuccess = function(e){
+      var db = e.target.result;
+      console.log("创建或打开数据库成功") ;
+      var transaction = db.transaction(["students"],"readwrite");
+      var store = transaction.objectStore("students");
+      var value = {……}
+      var dataRequest = store.put(value);
+      dataRequest.onerror = function(){
+        console.log("更新数据失败！");
+      };
+      dataRequest.onsuccess = function(){
+        console.log("更新数据成功！");
+      };
+    };
+    
+    说明对象仓库的“改”操作，也是在请求对象request的onsuccess事件中操作的。
+    
+    var dataRequest = store.put(value);
+
+    在上面这句代码中，调用objectStore对象的put()方法来为对象仓库更新数据，这个方法只有一个参数，这个参数是一条数据记录。
+    put()方法返回一个请求对象，这个请求对象也有两个事件：onerror和onsuccess。
+  -->
+  <script>
+    var request = window.indexedDB.open("mydb", 2.0);
+    request.onerror = function() {
+      console.log("创建或打开数据库失败！");
+    };
+    request.onsuccess = function(e) {
+      console.log("创建或打开数据库成功！");
+      var db = e.target.result;
+      var transaction = db.transaction(["students"], "readwrite");
+      var store = transaction.objectStore("students");
+      var value = {
+        id:1004,
+        name:"Thompson",
+        age:35
+      }
+      var putRequest = store.put(value);
+      putRequest.onerror = function() {
+        console.log("更新数据失败！");
+      };
+      putRequest.onsuccess = function() {
+        console.log("更新数据成功！");
+      };
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>

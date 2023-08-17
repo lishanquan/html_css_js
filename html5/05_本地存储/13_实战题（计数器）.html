@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    根据localStorage和sessionStorage的特点，localStorage可以作为Web应用访问计数器，而sessionStorage可以作为会话计数器。
+
+    分析：
+    当我们刷新页面时，会发现计数器数值在增长。当关闭浏览器，然后再打开的时候，数据还会保留下来。
+
+    实际上，var xxx=localStorage.getItem("count")可以等价于var xxx=localStorage.count，
+    而localStorage.setItem("count", xxx)可以等价于localStorage.count=xxx。
+
+    请简单说一下Cookie、localStorage和sessionStorage之间的区别。（前端面试题）
+    （1）localStorage用于永久保存客户端的少量数据，关闭浏览器后数据会保存下来
+    （2）sessionStorage用于临时保存客户端的少量数据，关闭浏览器后数据不会保存下来
+    （3）indexedDB用于永久保存客户端的大量数据，关闭浏览器后数据会保存下来
+  -->
+  <script>
+    // if (localStorage.getItem("count")) {
+    //   n = Number(localStorage.getItem("count")) + 1;
+    //   localStorage.setItem("count", n);
+    // } else {
+    //   localStorage.setItem("count", 1);
+    // }
+    // console.log("页面总访问数：" + localStorage.getItem("count"));
+
+    /* 可简化为以下代码 */
+    if (localStorage.count) {
+      localStorage.count = Number(localStorage.count) + 1;
+    } else {
+      localStorage.count = 1;
+    }
+    console.log("页面总访问数：" + localStorage.count);
+  </script>
+</head>
+<body>
+</body>
+</html>
