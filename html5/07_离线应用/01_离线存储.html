@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    想要实现离线存储，我们一般需要以下3步。
+    
+    ① 配置httpd.conf文件：
+    鼠标左键点击桌面右下角的WampServer图标，在管理面板中找到Apache选项中的httpd.conf。
+    然后在httpd.conf文件最底部加入下面这一句代码（特别注意空格），添加后记得重启一下服务器：
+    
+    AddType text/cache-manifest .manifest
+
+    ② 页面头部加入manifest属性：manifest属性的取值是cache.manifest文件的路径。
+    注意，这里是文件路径：
+
+    <!DOCTYPE html>
+    <html manifest="cache.manifest">
+    <head>
+      ……
+    </html>
+
+    ③ 在www文件目录建立一个cache.manifest文件，其中cache.manifest文件格式如下：
+
+    CACHE MANIFEST
+    # 上面这一句必须存在，而且必须放在头部
+    # version xx.xx.xx
+    # 指明缓存入口
+    CACHE:
+    index.html
+    style.css
+    images/logo.png
+    scripts/main.js
+    # 以下资源必须在线访问，离线是不可访问
+    NETWORK:
+    login.php
+    # 如果index.php无法访问则用404.html代替
+    FALLBACK:
+    /index.php /404.html
+
+    说明：
+    CACHE MANIFEST这一句必须放在文件头部，表示这是一个进行离线存储的格式文件。
+    
+    CACHE表示浏览器需要进行缓存的文件列表。
+    
+    NETWORK表示只限在线访问的文件列表。这里的文件只有在浏览器与服务器建立连接时才能访问。
+    如果设置为星号（*），则表示除了CACHE中的文件之外，所有的文件都不进行本地缓存。
+    
+    FALLBACK表示页面无法访问时的404页面。
+
+    在实际开发中，一般使用CACHE比较多，而NETWORK和FALLBACK用得比较少，了解一下即可。
+  -->
+</head>
+<body>
+</body>
+</html>
