@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    对于HTML5视频格式，主要有3种，分别是ogg、mp4和webm。
+    不过，主流浏览器对这3种视频格式的支持程度都不一样。
+    
+    从上面可以知道，如果想要视频在所有主流浏览器中成功播放，我们还得做兼容处理。
+    
+    在HTML5中，我们可以配合使用video元素和source元素，实现多种格式的视频播放。
+    
+    语法：
+    <video>
+      <source type="vdieo/ogg" src="文件路径" />
+      <source type="video/mp4" src="文件路径" />
+      <source type="video/webm" src="文件路径" />
+    </video>
+    
+    说明：
+    特别注意，此时src属性是放在source元素中，而不是放在video元素中。
+    如果当前浏览器能同时识别几种视频格式，则最终将使用第一个可识别的格式文件。
+  -->
+</head>
+<body>
+  <video controls>
+    <source type="video/ogg" src="../../media/music.ogg" />
+    <source type="video/mp4" src="../../media/music.mp4" />
+    <source type="video/webm" src="../../media/music.webm" />
+  </video>
+</body>
+</html>

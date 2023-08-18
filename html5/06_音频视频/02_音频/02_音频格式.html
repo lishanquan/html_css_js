@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    对于HTML5音频格式，主要有3种，分别是ogg、mp3和wav。
+    主流浏览器对这3种音频格式的支持程度都不一样。
+    
+    从上面可以知道，如果想要音频在所有主流浏览器中成功播放，我们还得做兼容处理。
+    
+    在HTML5中，我们可以使用audio元素和source元素来实现多种格式的音频播放。
+    
+    语法：
+    <audio>
+      <source type="audio/ogg" src="文件路径" />
+      <source type="audio/mp3" src="文件路径" />
+    </audio>
+    
+    说明：一般来说，我们只需要提供ogg和mp3这两种音频格式，就可以支持所有主流浏览器了。
+  -->
+</head>
+<body>
+  <audio autoplay controls loop>
+    <source src="../../media/music.mp3" type="audio/mp3" />
+    <source src="../../media/music.ogg" type="audio/ogg" />
+  </video>
+</body>
+</html>

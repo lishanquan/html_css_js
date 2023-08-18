@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5时代中，正确的做法是：对于音频，使用audio元素来开发；对于视频，使用video元素来开发。
+    audio和video这两个元素大多数的属性和方法都是相同的。
+
+    在HTML5中，我们可以使用video元素来开发视频。
+    
+    语法：
+    <video>
+      你的浏览器不支持video元素，请升级到最新版本
+    </video>
+    
+    说明如果浏览器不支持video元素，就会显示标签中的内容“你的浏览器不支持video元素，请升级到最新版本”。
+    当然，这个提示文字可加可不加。
+    
+    video元素的属性有很多，常用的如下所示：
+    autoplay      是否自动播放
+    controls      是否显示控件
+    loop          是否循环播放
+    preload       是否预加载
+    
+    autoplay、controls和loop属性无须多说。而preload属性表示是否预加载，它有3个取值：
+    auto          预加载（默认值）
+    metadata      只预加载元数据（即媒体字节数、第一帧、播放列表等）
+    none          不预加载
+  -->
+</head>
+<body>
+  <!-- 建议小伙伴们一定要使用width和height这两个属性来定义视频的宽度和高度。
+    如果没有定义，则浏览器显示的是视频原来的大小。如果视频本身过于大，则会影响页面布局。 -->
+  <video width="320" height="240" src="../../media/movie.mp4" autoplay controls loop></video>
+</body>
+</html>

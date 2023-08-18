@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    视频，我们可以将其分为两种：
+    一种是“默认样式的视频”，另一种是“自定义样式的视频”。
+    其中，默认样式的视频采用的是浏览器默认外观，只需要借助HTML就能实现。
+    
+    而自定义样式的视频，则需要我们结合CSS和JavaScript来操作。
+    视频的默认样式一般比较难看，用户体验并不好。在实际开发中，大多数情况下我们都需要自己重新设计。
+    像Youtube、Bilibili等大型视频网站，为了更高的个性化以及用户体验，肯定不会用浏览器默认样式的，而都是采用自定义样式。
+    
+    在自定义视频中，我们不仅需要使用CSS重新制作外观样式，
+    还需要借助JavaScript来将播放、暂停、进度条显示、音量控制等功能实现才行。
+    对于CSS外观控制，这里就不多说了，就是简单的布局而已。
+    下面着重讲解怎么使用JavaScript来实现视频的各种功能。
+
+    对于使用JavaScript来实现视频的各种功能，用最简单的一句话来说就是：对video元素的DOM操作。
+
+    video元素的DOM属性
+    volume          音量
+    currentTime     当前播放时间（单位秒）
+    startTime       设置播放时间（单位秒），也就是在哪里开始播放
+    duration        总的播放时间（单位秒）
+    playbackRate    当前播放速率，默许值为1
+    muted           是否静音，默认值为false
+    paused          是否处于暂停，取值为true或false
+    end             是否播放完毕，取值为true或false
+
+    video元素的DOM方法
+    play()          播放
+    pause()         暂停
+
+    video元素的DOM事件
+    timeupdate      视频时间改变时触发
+  -->
+  <script>
+    window.onload = function() {
+      var oVideo = document.getElementsByTagName("video")[0];
+      var oPlay = document.getElementById("play");
+      var oPause = document.getElementById("pause");
+      oPlay.onclick = function() {
+        oVideo.play();
+      };
+      oPause.onclick = function() {
+        oVideo.pause();
+      };
+    }
+  </script>
+</head>
+<body>
+  <video width="320" height="240" src="../../media/movie.mp4"></video><br />
+  <input id="play" type="button" value="播放" />
+  <input id="pause" type="button" value="暂停" />
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，我们可以使用audio元素来开发音频。
+    
+    语法：
+    <audio src="文件地址">
+      你的浏览器不支持audio元素，请升级到最新版本
+    </audio>
+    
+    说明：
+    如果浏览器不支持audio元素，就会显示标签中的内容“你的浏览器不支持audio元素，请升级到最新版本”。
+    
+    当然，这个提示文字可加可不加。audio元素的属性跟video元素的属性几乎是一样的
+    
+    audio元素的属性有很多，常用的如下所示：
+    autoplay      是否自动播放
+    controls      是否显示控件
+    loop          是否循环播放
+    preload       是否预加载
+    
+    autoplay、controls和loop属性无须多说。而preload属性表示是否预加载，它有3个取值：
+    auto          预加载（默认值）
+    metadata      只预加载元数据（即媒体字节数、第一帧、播放列表等）
+    none          不预加载
+  -->
+</head>
+<body>
+  <!-- 实现网页背景音乐很简单，只要隐藏控件就可以了，也就是不添加controls属性。 -->
+  <audio src="../../media/music.mp3" autoplay loop></video>
+</body>
+</html>
