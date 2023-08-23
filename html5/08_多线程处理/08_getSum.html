@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title></title>
+  <script>
+    window.onload = function() {
+      var oGetSum = document.getElementById("getSum");
+      var oTxt = document.getElementById("txt");
+      
+      oGetSum.onclick = function() {
+        var n = parseInt(oTxt.value);
+        console.log("html.n:" + n)
+        var worker = new Worker("getSum.js");
+        worker.postMessage(n);
+        worker.onmessage = function(e) {
+          alert(e.data);
+        };
+      };
+    };
+  </script>
+</head>
+<body>
+  <input id="txt" type="text" />
+  <input id="getSum" type="button" value="求和" />
+</body>
+</html>

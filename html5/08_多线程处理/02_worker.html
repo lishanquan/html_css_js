@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <script>
+    var worker = new Worker("worker.js");
+    worker.postMessage("勇士总冠军");
+    worker.onmessage = function(e) {
+      console.log(e.data);
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>

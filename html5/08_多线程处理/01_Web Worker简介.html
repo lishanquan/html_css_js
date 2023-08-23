@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    在HTML5中，我们可以使用Web Worker创建一个“后台线程”来执行某一段耗时较长的JavaScript程序，而不会影响页面响应。
+    Web Worker其实就是HTML5提供的“JavaScript多线程”解决方案。
+    
+    Web Worker技术基本原理就是：
+    在当前JavaScript的主线程中，使用Worker()构造函数新建一个worker实例，
+    然后加载某一个JavaScript文件，发送给一个后台线程来处理（注意，这里是后台线程）。
+
+    语法：
+    //新建worker实例
+    var worker = new Worker(url);
+    //向后台发送数据
+    worker.postMessage(yourdata);
+    //接收后台处理完成的数据
+    worker.onmessage = function(e){
+      //e.data
+    };
+    
+    说明：
+    想要使用Web Worker，首先我们需要使用Worker()构造函数新建一个worker实例，
+    其中，参数url表示需要发送到后台线程处理的JavaScript文件的路径。
+    
+    worker.postMessage()表示发送数据给worker线程，其中参数yourdata可以是数字、字符串、对象等。
+    
+    worker.onmessage = function(e){};
+    表示接收worker发过来的数据，然后进行处理。
+    在处理函数内部，我们可以使用e.data来获取发过来的数据。
+    
+    特别注意一点，Web Worker必须依赖服务器环境，毕竟是开辟了一个“后台线程”嘛。
+    也就是说，想要使用Web Worker，我们必须先要搭建服务器环境。
+
+    分析对于Web Worker，最后还有以下3点需要跟小伙伴说明一下。
+    ▶ Web Worker由于使用的是后台线程，发送给后台线程的那个JavaScript文件的使用有一定的限制，
+      例如无法访问DOM、无法访问全局变量或全局函数等。
+    ▶ Web Worker依然可以使用定时器的4个函数：setTimeout()、clearTimeout()、setInterval()、clearInterval()。
+    ▶ Web Worker不支持跨域加载JavaScript。
+  -->
+</head>
+<body>
+</body>
+</html>
