@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <!-- 用于实现页面处适应于手机 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title></title>
+  <!--
+    在geolocation对象中，我们可以使用watchPosition()方法来持续不断地获取当前位置的坐标，也就是追踪移动中的用户的位置。
+
+    语法：navigator.geolocation.watchPosition(function(position){...}, error, option);
+
+    说明：
+    watchPosition()跟getCurrentPosition()方法非常相似，两者有着共同的参数。不过我们只需要关注第1个参数就可以了。
+    此外，watchPosition()回调函数中的position对象跟getCurrentPosition()回调函数中的position对象的用法是一样的。
+    
+    使用watchPosition()方法，它会定期地自动获取位置信息，不需要我们手动刷新页面。
+    也就是说，当你在移动的时候，可以使用watchPosition()来动态获取当前位置坐标。
+
+    实际上，对于watchPosition()的效果，也可以使用getCurrentPosition()结合setInterval()来实现。
+    上面这段代码可以等价于以下代码：
+    setInterval(function () {
+      navigator.geolocation.getCurrentPosition(function(position){
+        ……
+      });
+    },500);
+  -->
+  <script>
+    window.onload = function() {
+      var oP = document.getElementById("content");
+      navigator.geolocation.getCurrentPosition(function(position) {
+        oP.innerHTML = "经度：" + position.coords.longitude + "<br />纬度：" + position.coords.latitude;
+      });
+    };
+  </script>
+</head>
+<body>
+  <p id="content"></p>
+</body>
+</html>

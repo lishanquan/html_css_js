@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <!-- 用于实现页面处适应于手机 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title></title>
+  <!--
+    watchPosition()会一直监视位置，不过在geolocation对象中，我们可以使用clearWatch()方法来取消这个监视过程。
+
+    语法：
+    var watchID = navigator.geolocation.watchPosition(function(position){
+    ……
+    }, error, option);
+    navigator.clearWatch(watchID);
+
+    说明：
+    watchPosition()方法会返回一个数字，我们可以把它保存在变量watchID中。
+    当想要停止监视用户位置时，把这个watchID作为参数传递给clearWatch()方法就可以实现。
+  -->
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oP = document.getElementById("content");
+      var watchID = navigator.geolocation.getCurrentPosition(function(position) {
+        oP.innerHTML = "经度：" + position.coords.longitude + "<br />纬度：" + position.coords.latitude;
+      });
+      // 点击按钮，停止监听
+      oBtn.onclick = function() {
+        navigator.geolocation.clearWatch(watchID);
+      };
+    };
+  </script>
+</head>
+<body>
+  <input id="btn" type="button" value="停止监听" />
+  <p id="content"></p>
+</body>
+</html>

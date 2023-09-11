@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <!-- 用于实现页面处适应于手机 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title></title>
+  <!--
+    在geolocation对象中，我们可以使用getCurrentPosition()方法获取当前位置的坐标（经度和纬度）。
+    
+    语法：navigator.geolocation.getCurrentPosition(function(position){...}, error, option);
+    
+    说明：getCurrentPosition()方法有3个参数：
+    第1个参数是一个回调函数，表示在成功获取到当前地理位置后才会执行；
+    第2个参数也是一个回调函数，表示在获取当前地理位置失败时才会去执行；
+    第3个参数是一些可选属性的列表，它包含多个属性。
+    大多数情况下，我们只会用到第1个参数。如果想要获取当前位置的信息，都是在回调函数中利用position对象来获取。
+    
+    position对象有很多属性，如下所示：
+    coords.longitude                经度
+    coords.latitude                 纬度
+    coords.accuracy                 准确度
+    coords.altitude                 海拔
+    coords.altitudeAccuracy         海拔准确度
+    coords.heading                  行进方向
+    coords.speed                    行走速度
+    new Date(position, timestamp)   时间戳
+
+    分析：
+    特别注意，上面代码在电脑端使用浏览器来查看是没有效果的，而必须使用手机端的浏览器查看才会有效果。这是因为HTML5定位就是针对手机端的。
+  -->
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      var oP = document.getElementById("content");
+      oBtn.onclick = function() {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          oP.innerHTML = "经度：" + position.coords.longitude + "<br />纬度：" + position.coords.latitude;
+        });
+      };
+    };
+  </script>
+</head>
+<body>
+  <input id="btn" type="button" value="获取位置" />
+  <p id="content"></p>
+</body>
+</html>
