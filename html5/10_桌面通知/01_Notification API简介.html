@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <!--
+    随着HTML5时代的来临，我们可以使用新增的Notification API来轻松实现桌面通知功能。
+    Notification API通知属于桌面性质的通知，有点类似于显示器右下角弹出来的QQ弹框、360杀毒提示等，它跟浏览器是脱离的，消息是置顶的。
+    Notification API已经得到绝大多数最新版本主流浏览器的支持。
+    
+    语法：var notice = new Notification(title,options);
+    
+    说明：我们都是使用Notification()这个构建函数来创建一个桌面通知。
+    title是必选参数，表示通知框的标题内容；
+    options是一个对象，用来设置一些可选参数。
+    
+    其中options对象中的参数有很多，常见的如下所示：
+    body        主体内容
+    icon        图标地址
+    renotify    是否覆盖之前的通知，默认为false(不覆盖)
+    silent      是否要有声音，默认为false(无声)
+    noscreen    是否不在屏幕显示，默认为false(显示通知)
+
+    最后特别要注意一点，Notification API必须在服务器环境下才会有效果，仅仅是本地环境是没有效果的。
+
+    分析：
+    Notification.permission表示调用Notification对象下的permission属性，
+    这个属性用于获取用户的确认信息，也就是确认提示框返回的值。
+    permission属性有3种返回值，如下所示：
+    default     默认(即用户目前没有回应)
+    granted     同意
+    denied      拒绝
+  -->
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById("btn");
+      oBtn.onclick = function() {
+        if(Notification.permission == "granted") {
+          var title = "Welcome";
+          var options = {
+            body: "勇士总冠军",
+            icon: "../img/curry.jpg"
+          }
+          var notification = new Notification(title, options);
+        }
+      };
+    }
+  </script>
+</head>
+<body>
+  <input id="btn" type="button" value="查看消息" />
+</body>
+</html>
