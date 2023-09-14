@@ -4,48 +4,54 @@
     <meta charset="utf-8" />
     <title></title>
     <!--
-      实际上，属性选择器在CSS2.1时已经存在了，而CSS3在CSS2.1基础上对其进行了扩展，主要新增了3种，如下所示。
+      在CSS3中，子元素伪类选择器有两大类。
+      
+      （1）:first-child、:last-child、:nth-child(n)、:only-child
+      选择器	         说明
+      E:first-child	  选择父元素下的第一个子元素（该子元素类型为E，以下类同）
+      E:last-child	  选择父元素下的最后一个子元素
+      E:nth-child(n)	选择父元素下的第n个子元素或奇偶元素，n取值有3种：数字、odd和even，其中n从1开始
+      E:only-child	  选择父元素下唯一的子元素，该父元素只有一个子元素
 
-      CSS3属性选择器
-      选择器	           说明
-      E[attr^=“xxx”]	  选择元素E，其中E元素的attr属性是以xxx开头的任何字符
-      E[attr$=“xxx”]	  选择元素E，其中E元素的attr属性是以xxx结尾的任何字符
-      E[attr*=“xxx”]	  选择元素E，其中E元素的attr属性是包含xxx的任何字符
-      CSS3新增的这3个属性选择器使得选择器具有通配符的功能，有点正则表达式的感觉。
+      分析：
+      想要实现上面同样的效果，很多初学者首先想到的是为每一个li元素都添加id或class来实现。
+      但是这样会导致id和class泛滥，不利于网站后期的维护。
+      而使用子元素伪类选择器，可以让结构与样式分离，使得HTML结构更加清晰，更利于后期维护和搜索引擎优化（即SEO）。
+
+      （2）:first-of-type、:last-of-type、:nth-of-type(n)、:only-of-type
+      选择器	            说明
+      E:first-of-type	  选择父元素下的第一个E类型的子元素
+      E:last-of-type	  选择父元素下的最后一个E类型的子元素
+      E:nth-of-type(n)	选择父元素下的第n个E类型的子元素或奇偶元素，n取值有3种：数字、odd和even，n从1开始
+      E:only-of-type	  选择父元素下唯一的E类型的子元素，该父元素可以有多个子元素
+
+      :first-child在选择父元素下的子元素时，不仅要区分元素类型，还要求是第一个子元素。
+      而:first-of-type在选择父元素下的子元素时，只需要区分元素类型，不要求是第一个子元素实际上，
+      :last-child和:last-of-type、:nth-child(n)和:nth-of-type(n)、:only-child和:only-of-type这几个的区别都是相似的。
+      
+
+      在实际开发中，一般情况下只会用到第一类子元素伪类选择器。
     -->
     <style type="text/css">
-      /*清除所有元素默认的padding和margin*/
-      * { padding: 0; margin: 0; }
-      /*清除列表项符号*/
-      ul { list-style-type: none; }
-      a {
-        display: inline-block;
-        font-size: 12px;
+      *{padding: 0; margin: 0;}
+      ul{list-style-type: none;}
+      ul li {
         height: 20px;
-        line-height: 20px;
       }
-      /*
-        匹配doc文件,
-        ::before是伪元素，常配合content属性使用，实现为元素插入内容。
-      */
-      a[href$="doc"]::before {
-        content: url("../img/1.png");
-      }
-      /*匹配pdf文件*/
-      a[href$="pdf"]::before {
-        content: url("../img/2.png");
-      }
-      /*匹配ppt文件*/
-      a[href$="ppt"]::before {
-        content: url("../img/3.png");
-      }
+      ul li:first-child{background-color: red;}
+      ul li:nth-child(2){background-color: orange;}
+      ul li:nth-child(3){background-color: yellow;}
+      ul li:nth-child(4){background-color: green;}
+      ul li:last-child{background-color: blue;}
     </style>
 </head>
 <body>
   <ul>
-    <li><a href="test.doc" download>下载doc文件</a></li>
-    <li><a href="test.pdf" download>下载pdf文件</a></li>
-    <li><a href="test.ppt" download>下载ppt文件</a></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
   </ul>
 </body>
 </html>

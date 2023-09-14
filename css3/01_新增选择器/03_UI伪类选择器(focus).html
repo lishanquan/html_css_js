@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      UI伪类选择器，指的是针对“元素的状态”来选择元素的一种伪类选择器。UI，全称“User Interface”，也就是用户界面。
+
+      元素的状态包括：可用、不可用、选中、未选中、获取焦点、失去焦点等。
+      UI伪类选择器共同特点就是：对于指定的样式，在默认状态下不起作用，只有当元素处于某种状态时才起作用。
+      此外，记住一点，大多数UI伪类选择器都是针对表单元素的。
+
+      在CSS3中，UI伪类选择器主要包括以下5类:
+      （1）:focus
+      （2）::selection
+      （3）:checked
+      （4）:enabled和:disabled
+      （5）:read-write和:read-only
+
+      一、:focus
+      在CSS3中，我们可以使用:focus选择器来定义元素获取焦点时使用的样式。
+      不过并不是所有的HTML元素都有焦点样式，具有“获取焦点”和“失去焦点”特点的元素只有两种。
+      （1）表单元素（按钮、单选框、复选框、文本框、下拉列表）
+      （2）超链接
+
+      判断一个元素是否具有焦点很简单，我们打开一个页面后按Tab键，能够被选中的就是带有焦点特性的元素。
+    -->
+    <style type="text/css">
+      input:focus {
+        outline: 1px solid red;
+      }
+    </style>
+</head>
+<body>
+  <p><label for="user">账号：</label><input id="user" type="text" /></p>
+  <p><label for="pwd">密码：</label><input id="pwd" type="password" /></p>
+</body>
+</html>
