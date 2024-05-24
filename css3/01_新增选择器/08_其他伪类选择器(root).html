@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在CSS3中，我们可以使用:root选择器来选择HTML页面的根元素，也就是。
+	  
+	  分析：
+	  在这个例子中，我们使用:root选择器来定义整个页面的背景色为灰色，然后将body元素的背景色定义为红色。
+	  
+	  其中，下面两句代码是等价的：
+	  :root{background-color:gray;}
+	  html{background-color:gray;}
+	  
+	  从这个例子的预览效果，我们也应该知道：
+	  如果想要设置整个页面的背景色，我们应该针对html元素来设置，而不是body元素。
+    -->
+    <style type="text/css">
+      :root {
+		background-color: grey;
+	  }
+	  body {
+		background-color: red;
+	  }
+    </style>
+</head>
+<body>
+  <h1>勇士总冠军</h1>
+</body>
+</html>

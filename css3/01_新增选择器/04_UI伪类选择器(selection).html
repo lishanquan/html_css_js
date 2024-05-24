@@ -19,15 +19,24 @@
 
       二、::selection
       默认情况下，使用鼠标来选取页面的文本内容时，该文本内容都是以“蓝色背景、白色字体”来显示的。
+	  
+	  在CSS3中，我们可以使用::selection选择器来定义页面中被选中文本的样式。
+	  注意，::selection选择器使用的是双冒号，而不是单冒号。
+	  实际上，单冒号往往都是伪类，而双冒号往往都是伪元素。
+	  
+	  在实际开发中，我们很少单独对某个元素定义选中样式，一般都是统一为整个页面的选中文本定义样式，如下例所示。
+	  
+	  想要为整个页面的选中文本定义样式，我们只需要使用::selection{}就可以实现。其中，::selection前面是不需要加任何元素的。
     -->
     <style type="text/css">
-      input:focus {
-        outline: 1px solid red;
-      }
+      ::selection {
+		color:red;
+		background-color:blue;
+	  }
     </style>
 </head>
 <body>
-  <p><label for="user">账号：</label><input id="user" type="text" /></p>
-  <p><label for="pwd">密码：</label><input id="pwd" type="password" /></p>
+  <div>绿叶学习网，给你初恋般的感觉。</div>
+  <p>绿叶学习网，给你初恋般的感觉。</p>
 </body>
 </html>

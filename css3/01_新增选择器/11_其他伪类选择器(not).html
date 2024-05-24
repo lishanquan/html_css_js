@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在CSS3中，我们可以使用:not()选择器来选取某一个元素之外的所有元素。
+	  这个选择器非常重要，在实际开发中用得非常多，大家要重点掌握。
+	  
+	  分析：
+	  对于“ul li:not(.first)”这个选择器，我们分两步来看：
+	  首先.first表示选择class="first"的元素，即第一个li元素。
+	  因此，“ul li:not(.first)”表示选择ul元素下除了第一个li元素之外的所有li元素。
+
+	  如果没有借助:not()选择器，想要实现上面这种效果是非常麻烦的一件事，冗余代码也非常多。
+    -->
+    <style type="text/css">
+      * {
+		padding:0;margin:0;
+	  }
+  	  ul{list-style-type:none;}
+	  ul li:not(.first)
+	  {
+		color:red;
+	  }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="first">绿叶学习网</li>
+        <li>绿叶学习网</li>
+        <li>绿叶学习网</li>
+        <li>绿叶学习网</li>
+    </ul>
+</body>
+</html>

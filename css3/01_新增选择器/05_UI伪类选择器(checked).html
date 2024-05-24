@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+      在CSS3中，我们可以使用:checked选择器来定义单选框或复选框被选中时的样式。
+
+	  在兼容性方面，暂时只有Opera浏览器支持:checked。由于兼容性很差，所以我们只需要简单了解一下即可。
+    -->
+    <style type="text/css">
+      input:checked {
+		background-color: red;
+	  }
+    </style>
+</head>
+<body>
+  性别：
+  <label><input type="radio" name="gender" value="man" checked />男</label>
+  <label><input type="radio" name="gender" value="woman" />女</label>
+</body>
+</html>
